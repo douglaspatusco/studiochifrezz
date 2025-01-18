@@ -9,16 +9,20 @@ export const colors = {
     branco: '#ffffff',
 }
 
+/* Candara (fonte do sistema) */
 const GlobalStyles = createGlobalStyle`
+    /* Candara (fonte do sistema) */
+    @font-face {
+        font-family: 'Candara';
+        src: url('/Candara.ttf'), format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
     html,
     body {
     overflow-x: hidden;
-    }
-
-    body {
-    font-family: sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Candara', sans-serif;
     }
 
     * {
