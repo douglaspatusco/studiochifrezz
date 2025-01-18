@@ -1,7 +1,7 @@
-import Head from "next/head"
-import HeaderBar from "@/components/HeaderBar"
+import Head from 'next/head'
+import HeaderBar from '@/components/HeaderBar'
 
-import { Container } from "./styles"
+import { Container } from './styles'
 
 export const Home = () => {
   return (
@@ -14,9 +14,7 @@ export const Home = () => {
       </Head>
       <Container>
         <HeaderBar />
-        <div>
-          Content
-        </div>
+        <div>Content</div>
       </Container>
     </>
   )

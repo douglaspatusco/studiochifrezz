@@ -1,12 +1,12 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 export const colors = {
-    cinzaChumbo: '#333333',
-    lavandaSuave: '#6767a8',
-    roxoPastel: '#9a9ad1',
-    cinzaMedio: '#b0b0d3',
-    azulClaro: '#ccccff',
-    branco: '#ffffff',
+  cinzaChumbo: '#333333',
+  lavandaSuave: '#6767a8',
+  roxoPastel: '#9a9ad1',
+  cinzaMedio: '#b0b0d3',
+  azulClaro: '#ccccff',
+  branco: '#ffffff',
 }
 
 /* Candara (fonte do sistema) */
