@@ -1,4 +1,4 @@
-import { Title, FirstLetter } from "@/pages/styles"
+import { Title, FirstLetter } from './styles'
 
 const StudioChifrezz = () => {
     return (
