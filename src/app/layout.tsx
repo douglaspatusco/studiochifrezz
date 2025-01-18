@@ -1,16 +1,16 @@
 export const metadata = {
-    title: 'Vânia Costura Criativa',
-    description: 'Transformando suas idéias em realidade.',
+	title: 'Studio Chifrezz',
+	description: 'Animation Studio',
 }
 
-    export default function RootLayout({
-    children,
-    }: {
-    children: React.ReactNode
-    }) {
-    return (
-        <html lang="pr-BR">
-            <body>{children}</body>
-        </html>
-    )
+	export default function RootLayout({
+	children,
+	}: {
+	children: React.ReactNode
+	}) {
+	return (
+		<html lang="pr-BR">
+			<body>{children}</body>
+		</html>
+	)
 }
