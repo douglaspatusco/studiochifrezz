@@ -15,6 +15,7 @@ export const Bar = styled.header`
   padding: 0.5em 4em;
 
   background-color: ${colors.lavandaSuave};
+  z-index: 1;
 `
 
 export const Menu = styled.ul`
