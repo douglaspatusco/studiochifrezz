@@ -11,9 +11,9 @@ export const Bar = styled.header`
   align-items: center;
 
   width: 100%;
+  height: auto;
   padding: 0.5em 4em;
 
-  height: 8em;
   background-color: ${colors.lavandaSuave};
 `
 
