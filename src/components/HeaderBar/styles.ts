@@ -6,10 +6,11 @@ export const Bar = styled.header`
   top: 0;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
   width: 100%;
+  padding: 0.5em 4em;
 
   height: 8em;
   background-color: ${colors.lavandaSuave};
@@ -23,5 +24,17 @@ export const LogoAndName = styled.div`
   img {
     width: 4em;
     height: 4em;
+  }
+`
+
+export const Menu = styled.ul`
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+
+  li {
+    color: ${colors.branco};
+    font-size: 18px;
+    font-weight: bold;
   }
 `

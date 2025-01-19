@@ -1,6 +1,6 @@
 import StudioChifrezz from '@/components/StudioChifrezz'
 
-import { Bar, LogoAndName } from './styles'
+import { Bar, LogoAndName, Menu } from './styles'
 import Image from 'next/image'
 
 const HeaderBar = () => {
@@ -15,6 +15,12 @@ const HeaderBar = () => {
         />
         <StudioChifrezz />
       </LogoAndName>
+      <Menu>
+        <li>INÍCIO</li>
+        <li>PROJETOS</li>
+        <li>SOBRE</li>
+        <li>CONTATO</li>
+      </Menu>
     </Bar>
   )
 }
