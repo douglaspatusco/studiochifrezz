@@ -1,24 +1,14 @@
 import { useState } from 'react';
-import Image from 'next/image'
 
-import StudioChifrezz from '@/components/StudioChifrezz'
-
-import { Bar, LogoAndName, Menu, MenuItem,  ItemLink } from './styles'
+import { Bar, Menu, MenuItem,  ItemLink } from './styles'
+import LogoAndName from '../LogoAndName';
 
 const HeaderBar = () => {
   const [hovered, setHovered] = useState<number | null>(null)
 
   return (
     <Bar>
-      <LogoAndName>
-        <Image
-          src={'/favicon.ico'}
-          alt="Studio Chifrezz Logotype"
-          width={100}
-          height={100}
-        />
-        <StudioChifrezz />
-      </LogoAndName>
+      <LogoAndName />
       <Menu>
         <MenuItem isHovered={hovered !== null && hovered !== 0}
         onMouseEnter={() => setHovered(0)}

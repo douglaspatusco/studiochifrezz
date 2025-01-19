@@ -17,17 +17,6 @@ export const Bar = styled.header`
   background-color: ${colors.lavandaSuave};
 `
 
-export const LogoAndName = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  img {
-    width: 4em;
-    height: 4em;
-  }
-`
-
 export const Menu = styled.ul`
   display: flex;
   gap: 2em;
