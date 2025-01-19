@@ -1,12 +1,19 @@
 import type { AppProps } from 'next/app'
 
 import GlobalStyles from '@/styles/GlobalStyles'
+import { Content } from './styles'
+import HeaderBar from '@/components/HeaderBar'
+import FooterBar from '@/components/FooterBar'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <GlobalStyles />
-      <Component {...pageProps} />
+      <HeaderBar />
+      <Content>
+        <Component {...pageProps} />
+      </Content>
+      <FooterBar />
     </>
   )
 }
