@@ -1,4 +1,5 @@
 import { colors } from '@/styles/GlobalStyles'
+import Link from 'next/link'
 import styled from 'styled-components'
 
 export const Bar = styled.header`
@@ -29,12 +30,25 @@ export const LogoAndName = styled.div`
 
 export const Menu = styled.ul`
   display: flex;
-  flex-direction: row;
-  gap: 1em;
+  gap: 2em;
 
-  li {
-    color: ${colors.branco};
-    font-size: 18px;
-    font-weight: bold;
+`
+
+export const MenuItem = styled.li<{ isHovered: boolean }>`
+  color: ${colors.branco};
+  font-size: 18px;
+  font-weight: bold;
+  transition: .3s;
+  opacity: ${({ isHovered }) => (isHovered ? 0.5 : 1)};
+
+  &:hover {
+    transform: scale(1.1);
+    opacity: 1;
   }
+`
+
+export const ItemLink = styled(Link)`
+  padding: 0.25em;
+  margin: 0.5em 0em;
+  cursor: pointer;
 `
