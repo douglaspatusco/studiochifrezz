@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import { Container } from './styles'
+import { Container, Video } from './styles'
 
 export const Home = () => {
   return (
@@ -12,7 +12,19 @@ export const Home = () => {
         <link rel="icon" type="image/png" href="/favicon.ico" />
       </Head>
       <Container>
-        <div>Content</div>
+        <Video>
+          <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/WyUCPVqOAK8?vq=hd1080&autoplay=1&mute=1&controls=0&loop=1&playlist=WyUCPVqOAK8&"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+          >
+        </iframe>
+      </Video>
       </Container>
     </>
   )
