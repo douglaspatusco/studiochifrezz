@@ -2,11 +2,19 @@ import styled from "styled-components";
 import Image from "next/image";
 import { colors } from "@/styles/GlobalStyles";
 
+// [index.tsx]
 
 export const ProjectsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 4em;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   h1 {
     padding-top: 1em;

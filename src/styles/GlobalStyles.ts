@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
 export const colors = {
   cinzaChumbo: '#333333',
@@ -37,5 +37,16 @@ const GlobalStyles = createGlobalStyle`
     list-style: none;
   }
 `
+
+export const WordWithLargeFirstLetter = styled.span`
+  display: inline-block;
+  font-size: 2em;
+
+  &::first-letter {
+    font-size: 1.25em;
+  }
+`;
+
+
 
 export default GlobalStyles
