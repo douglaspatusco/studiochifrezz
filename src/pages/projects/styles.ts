@@ -46,3 +46,22 @@ export const Picture = styled(Image)`
     transform: scale(1.05);
   }
 `
+
+export const ContainerProduct = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  width: 100%;
+  height: 20em;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  h1 {
+    color: ${colors.cinzaChumbo};
+  }
+`
