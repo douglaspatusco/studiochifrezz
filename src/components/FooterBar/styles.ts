@@ -11,7 +11,7 @@ export const Footer = styled.footer`
   height: auto;
   padding: 1em;
 
-  background-color: ${colors.lavandaSuave};
+  background-color: ${colors.roxoEscuro};
 
   color: #fff;
 

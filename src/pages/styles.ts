@@ -1,3 +1,4 @@
+import { colors } from '@/styles/GlobalStyles'
 import styled from 'styled-components'
 
 export const Content = styled.main`
@@ -5,7 +6,7 @@ export const Content = styled.main`
   justify-content: center;
   min-height: 100vh;
   padding-top: 7.5em;
-  background-color:#ababab;
+  background-color:${colors.branco};
 `
 
 export const Container = styled.div`

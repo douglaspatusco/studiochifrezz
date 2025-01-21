@@ -14,7 +14,7 @@ export const Bar = styled.header`
   height: auto;
   padding: 0.5em 4em;
 
-  background-color: ${colors.lavandaSuave};
+  background-color: ${colors.roxoEscuro};
   z-index: 1;
 `
 
