@@ -61,9 +61,8 @@ export const ContainerProduct = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1em;
   width: 100%;
-  height: 20em;
+  height: 100%;
 
   h1 {
     color: ${colors.cinzaChumbo};
@@ -73,11 +72,10 @@ export const ContainerProduct = styled.section`
 
 export const Infos = styled.div`
   display: flex;
-  justify-content: center;
   justify-content: space-around;
-  gap: 2em;
+  gap: 4em;
   width: 100%;
-  padding: 0em 8em;
+  margin: 4em 0;
 `
 export const FichaTecnica = styled.div`
   display: flex;
@@ -85,14 +83,12 @@ export const FichaTecnica = styled.div`
   align-items: center;
   gap: 2em;
   padding: 0.5em;
-  border-radius: 0.5em;
-  min-width: 45%;
 `
 
 export const TechnicalSheet = styled.div`
   display: flex;
   gap: 2em;
-  width: 30vw;
+  min-width: max-content;
 
   h1 {
     font-size: 1.5em;
@@ -129,6 +125,8 @@ export const Description = styled.div`
   width: 30vw;
   padding: 0.5em;
   border-radius: 0.5em;
+  width: 36em;
+  min-width: 30em;
 
   p {
     font-size: 1.25em;

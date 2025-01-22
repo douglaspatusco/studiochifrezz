@@ -1,30 +1,23 @@
-import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-
-import * as S from './styles'
 import Head from 'next/head'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
+
+import useFetchProjects from '@/hooks/useFetchProjects'
+
+import * as S from './styles'
 
 const ProjectPage = () => {
   const { query } = useRouter()
   const [projectName, setProjectName] = useState<string | null>(null)
-  const [projects, setProjects] = useState<Project[]>([]);
-  const imagePath = `/images/projects-banners/banner-.png`
+  const imagePath = `/images/projects-banners/banner-${query.project}.png`
 
+  const { data } = useFetchProjects()
+  console.log(data.length)
 
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const response = await fetch('/api/apiProjects');
-        const data = await response.json();
-        setProjects(data);
-      } catch (error) {
-        console.error('Error fetching projects:', error);
-      }
-    };
-
-    fetchProjects();
-  }, []);
+  // Filtra os dados do projeto com base no projectName
+  const projectData = data?.find((project) => project.slug === query.project)
+  console.log(projectData?.name)
 
   // Aguarda o carregamento do valor vindo de [query.project]
   useEffect(() => {
@@ -40,12 +33,12 @@ const ProjectPage = () => {
   return (
     <>
       <Head>
-        <title>provisorio | Studio Chifrezz</title>
-      </Head>0
+        <title>{projectData?.name} | Studio Chifrezz</title>
+      </Head>
       <S.ContainerProduct>
       <Image
       src={imagePath}
-      alt={`provisorio`}
+      alt={projectData?.name as string}
       width={2560}
       height={300}
       />
@@ -54,33 +47,31 @@ const ProjectPage = () => {
           <h1>Ficha Técnica</h1>
           <S.TechnicalSheet>
             <S.Role>
-              <h3>Criadora</h3>
-              <h3>Diretoras</h3>
-              <h3>Produção</h3>
-              <h3>Direção de arte</h3>
-              <h3>Trilha Sonora</h3>
-              <h3>Conceito de Personagem</h3>
-              <h3>Storyboard</h3>
-              <h3>Consultoria</h3>
+              { projectData?.technicalSheet?.creators ? <h3>Criado por</h3> : null}
+              { projectData?.technicalSheet?.directors ? <h3>Direção</h3> : null}
+              { projectData?.technicalSheet?.production ? <h3>Produção</h3> : null}
+              { projectData?.technicalSheet?.artDirection ? <h3>Direção de arte</h3> : null}
+              { projectData?.technicalSheet?.soundtrack ? <h3>Trilha Sonora</h3> : null}
+              { projectData?.technicalSheet?.characterConcept ? <h3>Conceito de Personagem</h3> : null}
+              { projectData?.technicalSheet?.storyboard ? <h3>Storyboard</h3> : null}
+              { projectData?.technicalSheet?.consulting ? <h3>Consultoria</h3> : null}
             </S.Role>
             <S.Person>
-              <h3>Lena Franzz</h3>
-              <h3>Lena Franzz e Priscila Vilas Boas</h3>
+              <h3>{projectData?.technicalSheet?.creators}</h3>
+              <h3>{projectData?.technicalSheet?.directors}</h3>
+              <h3>{projectData?.technicalSheet?.production}</h3>
+              <h3>{projectData?.technicalSheet?.artDirection}</h3>
+              <h3>{projectData?.technicalSheet?.soundtrack}</h3>
+              <h3>{projectData?.technicalSheet?.characterConcept}</h3>
+              <h3>{projectData?.technicalSheet?.storyboard}</h3>
+              <h3>{projectData?.technicalSheet?.consulting}</h3>
             </S.Person>
           </S.TechnicalSheet>
         </S.FichaTecnica>
-        {projects.map((project) => (
-          <div key={project.slug}>
-            <h2>{project.name}</h2>
-            <p>{project.sinopse}</p>
-            <p>{project.status}</p>
-            <p>{project.description.productionType}</p>
-          </div>
-        ))}
         <S.Description>
-          <h1>KALE DO MUSEU ASSUSTADOR</h1>
+          <h1>{projectData?.name}</h1>
           <p>
-          Kale assume a direção do museu assustador enquanto seus avós viajam, mas para provar que está à altura dessa missão ele precisa controlar o caos diário gerado por sua irmã mais nova e pelas assombrações que os dois precisam derrotar juntos, acompanhados por seu amigo Mano e ocasionalmente, o faxineiro Seu Neto.
+            {projectData?.sinopse}
           </p>
         </S.Description>
       </S.Infos>
