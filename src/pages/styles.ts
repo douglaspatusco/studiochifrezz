@@ -5,7 +5,7 @@ export const Content = styled.main`
   display: flex;
   justify-content: center;
   min-height: 100vh;
-  padding-top: 7.5em;
+  padding-top: 7.25em;
   background-color:${colors.branco};
 `
 
