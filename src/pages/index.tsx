@@ -3,6 +3,8 @@ import Head from 'next/head'
 import { Container, Video } from './styles'
 
 export const Home = () => {
+  const srcVideo = '/videos/hornzz-teaser-1920X600.mp4#t=13'
+
   return (
     <>
       <Head>
@@ -13,18 +15,16 @@ export const Home = () => {
       </Head>
       <Container>
         <Video>
-          <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/WyUCPVqOAK8?vq=hd1080&autoplay=1&mute=1&controls=0&loop=1&playlist=WyUCPVqOAK8&"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-          >
-        </iframe>
-      </Video>
+          <video
+              loop
+              muted
+              autoPlay
+              controls={false} // Desativa os controles, se necessário
+            >
+              <source src={srcVideo} type="video/mp4" />
+              Seu navegador não suporta o formato de vídeo.
+          </video>
+        </Video>
       </Container>
     </>
   )
