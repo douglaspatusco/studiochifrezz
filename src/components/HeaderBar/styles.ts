@@ -21,14 +21,13 @@ export const HeaderBarContainer = styled.header`
 export const Menu = styled.ul`
   display: flex;
   gap: 2em;
-
 `
 
 export const MenuItem = styled.li<{ isHovered: boolean }>`
   color: ${colors.branco};
   font-size: 18px;
   font-weight: bold;
-  transition: .3s;
+  transition: 0.3s;
   opacity: ${({ isHovered }) => (isHovered ? 0.5 : 1)};
 
   &:hover {

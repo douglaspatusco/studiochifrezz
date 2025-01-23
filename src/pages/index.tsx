@@ -1,3 +1,4 @@
+import React from 'react'
 import Head from 'next/head'
 
 import { Container, Video } from './styles'
@@ -16,13 +17,13 @@ export const Home = () => {
       <Container>
         <Video>
           <video
-              loop
-              muted
-              autoPlay
-              controls={false} // Desativa os controles, se necessário
-            >
-              <source src={srcVideo} type="video/mp4" />
-              Seu navegador não suporta o formato de vídeo.
+            loop
+            muted
+            autoPlay
+            controls={false} // Desativa os controles, se necessário
+          >
+            <source src={srcVideo} type="video/mp4" />
+            Seu navegador não suporta o formato de vídeo.
           </video>
         </Video>
       </Container>

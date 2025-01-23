@@ -1,5 +1,5 @@
-import { colors } from "@/styles/GlobalStyles";
-import { styled } from "styled-components";
+import { colors } from '@/styles/GlobalStyles'
+import { styled } from 'styled-components'
 
 export const Container = styled.section`
   display: flex;
@@ -56,7 +56,9 @@ export const TextArea = styled.textarea`
 
   &:focus {
     border-color: ${colors.roxoEscuro};
-    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1), inset 0 0 5px 2px ${colors.roxoPastel};
+    box-shadow:
+      2px 4px 6px rgba(0, 0, 0, 0.1),
+      inset 0 0 5px 2px ${colors.roxoPastel};
   }
 `
 
@@ -72,7 +74,8 @@ export const Input = styled.input`
 
   &:focus {
     border-color: ${colors.roxoEscuro};
-    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1),
+    box-shadow:
+      2px 4px 6px rgba(0, 0, 0, 0.1),
       inset 0 0 5px 0px ${colors.roxoPastel};
   }
 `

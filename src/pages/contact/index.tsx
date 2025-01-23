@@ -1,5 +1,5 @@
-import Head from "next/head"
-import * as S from "./styles"
+import Head from 'next/head'
+import * as S from './styles'
 
 const Contact = () => {
   return (

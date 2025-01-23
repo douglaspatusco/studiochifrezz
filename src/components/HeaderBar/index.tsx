@@ -1,40 +1,42 @@
-import { useEffect, useState, useCallback } from 'react';
-import { HeaderBarContainer, Menu, MenuItem, ItemLink } from './styles';
-import LogoAndName from '../LogoAndName';
+import { useCallback, useEffect, useState } from 'react'
+import LogoAndName from '../LogoAndName'
+import { HeaderBarContainer, ItemLink, Menu, MenuItem } from './styles'
 
-const HOME_URL = '/';
-const PROJECTS_URL = '/projects';
-const ABOUT_URL = '/about';
-const CONTACT_URL = '/contact';
+const HOME_URL = '/'
+const PROJECTS_URL = '/projects'
+const ABOUT_URL = '/about'
+const CONTACT_URL = '/contact'
 
 const HeaderBar = () => {
-  const [hovered, setHovered] = useState<number | null>(null);
-  const [opacity, setOpacity] = useState<number>(1);
+  const [hovered, setHovered] = useState<number | null>(null)
+  const [opacity, setOpacity] = useState<number>(1)
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const maxScroll = 200; // Ajuste conforme necessário
-      const newOpacity = Math.max(0, 1 - scrollTop / maxScroll);
-      setOpacity(newOpacity);
-    };
+      const scrollTop = window.scrollY
+      const maxScroll = 200 // Ajuste conforme necessário
+      const newOpacity = Math.max(0, 1 - scrollTop / maxScroll)
+      setOpacity(newOpacity)
+    }
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll)
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   const handleMouseEnter = useCallback((index: number) => {
-    setHovered(index);
-  }, []);
+    setHovered(index)
+  }, [])
 
   const handleMouseLeave = useCallback(() => {
-    setHovered(null);
-  }, []);
+    setHovered(null)
+  }, [])
 
   return (
-    <HeaderBarContainer style={{ opacity, pointerEvents: opacity === 0 ? 'none' : 'auto' }}>
+    <HeaderBarContainer
+      style={{ opacity, pointerEvents: opacity === 0 ? 'none' : 'auto' }}
+    >
       <LogoAndName />
       <Menu>
         <MenuItem
@@ -75,8 +77,7 @@ const HeaderBar = () => {
         </MenuItem>
       </Menu>
     </HeaderBarContainer>
-  );
-};
+  )
+}
 
-export default HeaderBar;
-
+export default HeaderBar

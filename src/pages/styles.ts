@@ -6,7 +6,7 @@ export const Content = styled.main`
   justify-content: center;
   min-height: 100vh;
   padding-top: 7.25em;
-  background-color:${colors.branco};
+  background-color: ${colors.branco};
 `
 
 export const Container = styled.div`
