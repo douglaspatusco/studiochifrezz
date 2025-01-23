@@ -1,7 +1,11 @@
-import { useEffect, useState } from 'react';
-
-import { HeaderBarContainer, Menu, MenuItem,  ItemLink } from './styles'
+import { useEffect, useState, useCallback } from 'react';
+import { HeaderBarContainer, Menu, MenuItem, ItemLink } from './styles';
 import LogoAndName from '../LogoAndName';
+
+const HOME_URL = '/';
+const PROJECTS_URL = '/projects';
+const ABOUT_URL = '/about';
+const CONTACT_URL = '/contact';
 
 const HeaderBar = () => {
   const [hovered, setHovered] = useState<number | null>(null);
@@ -21,42 +25,58 @@ const HeaderBar = () => {
     };
   }, []);
 
+  const handleMouseEnter = useCallback((index: number) => {
+    setHovered(index);
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    setHovered(null);
+  }, []);
+
   return (
     <HeaderBarContainer style={{ opacity, pointerEvents: opacity === 0 ? 'none' : 'auto' }}>
       <LogoAndName />
       <Menu>
-        <MenuItem isHovered={hovered !== null && hovered !== 0}
-        onMouseEnter={() => setHovered(0)}
-        onMouseLeave={() => setHovered(null)}>
-          <ItemLink href={'/'} >
-            INÍCIO
-          </ItemLink>
+        <MenuItem
+          isHovered={hovered !== null && hovered !== 0}
+          onMouseEnter={() => handleMouseEnter(0)}
+          onMouseLeave={handleMouseLeave}
+          aria-haspopup="true"
+          aria-expanded={hovered === 0}
+        >
+          <ItemLink href={HOME_URL}>INÍCIO</ItemLink>
         </MenuItem>
-        <MenuItem isHovered={hovered !== null && hovered !== 1}
-        onMouseEnter={() => setHovered(1)}
-        onMouseLeave={() => setHovered(null)}>
-          <ItemLink href={'/projects'}>
-            PROJETOS
-          </ItemLink>
+        <MenuItem
+          isHovered={hovered !== null && hovered !== 1}
+          onMouseEnter={() => handleMouseEnter(1)}
+          onMouseLeave={handleMouseLeave}
+          aria-haspopup="true"
+          aria-expanded={hovered === 1}
+        >
+          <ItemLink href={PROJECTS_URL}>PROJETOS</ItemLink>
         </MenuItem>
-        <MenuItem isHovered={hovered !== null && hovered !== 2}
-        onMouseEnter={() => setHovered(2)}
-        onMouseLeave={() => setHovered(null)}>
-          <ItemLink href={'/about'}>
-            SOBRE
-          </ItemLink>
+        <MenuItem
+          isHovered={hovered !== null && hovered !== 2}
+          onMouseEnter={() => handleMouseEnter(2)}
+          onMouseLeave={handleMouseLeave}
+          aria-haspopup="true"
+          aria-expanded={hovered === 2}
+        >
+          <ItemLink href={ABOUT_URL}>SOBRE</ItemLink>
         </MenuItem>
-        <MenuItem isHovered={hovered !== null && hovered !== 3}
-        onMouseEnter={() => setHovered(3)}
-        onMouseLeave={() => setHovered(null)}>
-          <ItemLink href={'/contact'}>
-            CONTATO
-          </ItemLink>
+        <MenuItem
+          isHovered={hovered !== null && hovered !== 3}
+          onMouseEnter={() => handleMouseEnter(3)}
+          onMouseLeave={handleMouseLeave}
+          aria-haspopup="true"
+          aria-expanded={hovered === 3}
+        >
+          <ItemLink href={CONTACT_URL}>CONTATO</ItemLink>
         </MenuItem>
       </Menu>
     </HeaderBarContainer>
-  )
-}
+  );
+};
 
-export default HeaderBar
+export default HeaderBar;
 
