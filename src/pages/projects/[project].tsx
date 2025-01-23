@@ -41,6 +41,7 @@ const ProjectPage = () => {
       alt={projectData?.name as string}
       width={2560}
       height={300}
+      priority
       />
       <S.Infos>
         <S.FichaTecnica>

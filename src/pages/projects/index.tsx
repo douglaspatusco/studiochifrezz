@@ -33,10 +33,10 @@ const Projects = () => {
                 <Link href={`/projects/${project.slug}`}>
                   <Picture
                   title={project.name}
-                  src={`/images/${project.slug}.webp`}
+                  src={`/images/projects-cards/${project.slug}.png`}
                   alt={project.name}
-                  width={100}
-                  height={100}
+                  width={1000}
+                  height={1000}
                   />
                 </Link>
               </Card>
@@ -54,10 +54,10 @@ const Projects = () => {
                 <Link href={`/projects/${project.slug}`}>
                   <Picture
                   title={project.name}
-                  src={`/images/${project.slug}.webp`}
+                  src={`/images/projects-cards/${project.slug}.png`}
                   alt={project.name}
-                  width={100}
-                  height={100}
+                  width={1000}
+                  height={1000}
                   />
                 </Link>
               </Card>
