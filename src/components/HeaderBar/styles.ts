@@ -2,7 +2,7 @@ import { colors } from '@/styles/GlobalStyles'
 import Link from 'next/link'
 import styled from 'styled-components'
 
-export const Bar = styled.header`
+export const HeaderBarContainer = styled.header`
   position: fixed;
   top: 0;
 

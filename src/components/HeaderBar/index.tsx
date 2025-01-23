@@ -1,13 +1,28 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { Bar, Menu, MenuItem,  ItemLink } from './styles'
+import { HeaderBarContainer, Menu, MenuItem,  ItemLink } from './styles'
 import LogoAndName from '../LogoAndName';
 
 const HeaderBar = () => {
-  const [hovered, setHovered] = useState<number | null>(null)
+  const [hovered, setHovered] = useState<number | null>(null);
+  const [opacity, setOpacity] = useState<number>(1);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const maxScroll = 200; // Ajuste conforme necessário
+      const newOpacity = Math.max(0, 1 - scrollTop / maxScroll);
+      setOpacity(newOpacity);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <Bar>
+    <HeaderBarContainer style={{ opacity, pointerEvents: opacity === 0 ? 'none' : 'auto' }}>
       <LogoAndName />
       <Menu>
         <MenuItem isHovered={hovered !== null && hovered !== 0}
@@ -39,8 +54,9 @@ const HeaderBar = () => {
           </ItemLink>
         </MenuItem>
       </Menu>
-    </Bar>
+    </HeaderBarContainer>
   )
 }
 
 export default HeaderBar
+
