@@ -34,9 +34,7 @@ const HeaderBar = () => {
   }, [])
 
   return (
-    <HeaderBarContainer
-      style={{ opacity, pointerEvents: opacity === 0 ? 'none' : 'auto' }}
-    >
+    <HeaderBarContainer opacity={opacity}>
       <LogoAndName />
       <Menu>
         <MenuItem
