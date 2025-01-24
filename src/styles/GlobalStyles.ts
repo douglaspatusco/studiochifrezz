@@ -2,6 +2,7 @@ import styled, { createGlobalStyle } from 'styled-components'
 
 export const colors = {
   cinzaChumbo: '#333333',
+  cinzaClaro: '#b3b3b3',
   roxoEscuro: '#6767a8',
   roxoPastel: '#9a9ad1',
   roxoAcinzentado: '#b0b0d3',

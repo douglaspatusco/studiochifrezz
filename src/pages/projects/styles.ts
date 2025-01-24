@@ -40,6 +40,7 @@ export const Card = styled.li`
   &:hover {
     transition: 0.5s;
     transform: scale(1.025);
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.25);
   }
 `
 
@@ -150,5 +151,26 @@ export const Description = styled.div`
   p {
     font-size: 1.25em;
     letter-spacing: 1px;
+  }
+`
+
+export const NavigationButtons = styled.div`
+  display: flex;
+  gap: 2em;
+
+  button {
+    padding: 1em;
+    border-radius: 0.5em;
+    background-color: ${colors.branco};
+    color: ${colors.cinzaChumbo};
+    font-size: 1.25em;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.5s;
+
+    &:hover {
+      background-color: ${colors.roxoEscuro};
+      color: ${colors.branco};
+    }
   }
 `
