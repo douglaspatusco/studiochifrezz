@@ -2,7 +2,10 @@ import { colors } from '@/styles/GlobalStyles'
 import Link from 'next/link'
 import styled from 'styled-components'
 
-export const HeaderBarContainer = styled.header`
+export const HeaderBarContainer = styled.header<{ opacity: number }>`
+  opacity: ${({ opacity }) => opacity};
+  pointer-events: ${({ opacity }) => (opacity === 0 ? 'none' : 'auto')};
+
   position: fixed;
   top: 0;
 
@@ -32,7 +35,6 @@ export const MenuItem = styled.li<{ isHovered: boolean }>`
 
   &:hover {
     transform: scale(1.1);
-    opacity: 1;
   }
 `
 
