@@ -1,37 +1,37 @@
-import React, { useEffect, useState } from 'react';
-import Head from 'next/head';
-import Image from 'next/image';
-import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react'
+import Head from 'next/head'
+import Image from 'next/image'
+import { useRouter } from 'next/router'
 
-import useFetchProjects from '@/hooks/useFetchProjects';
-import ProjectNavigation from '@/components/ProjectNavigation'; // Ajuste o caminho conforme necessário
+import useFetchProjects from '@/hooks/useFetchProjects'
+import ProjectNavigation from '@/components/ProjectNavigation'
 
-import * as S from './styles';
+import * as S from './styles'
 
 const ProjectPage = () => {
-  const { query } = useRouter();
-  const [projectName, setProjectName] = useState<string | null>(null);
-  const imagePath = `/images/projects-banners/banner-${query.project}.png`;
-  const { data } = useFetchProjects();
+  const { query } = useRouter()
+  const { data } = useFetchProjects()
 
-  // Obtém o slug do projeto atual
-  const projectSlug = query.project as string;
+  const [projectName, setProjectName] = useState<string | null>(null)
+  const imagePath = `/images/projects-banners/banner-${query.project}.png`
 
-  // Filtra os dados do projeto com base no slug atual
-  const projectData = data?.find((project) => project.slug === projectSlug);
+  const projectSlug = query.project as string
+
+  const projectData = data?.find((project) =>
+    project.slug === projectSlug)
 
   // Aguarda o carregamento do valor vindo de [query.project]
   useEffect(() => {
     if (query.project) {
-      setProjectName(query.project as string);
+      setProjectName(query.project as string)
     }
-  }, [query.project]);
+  }, [query.project])
 
   if (!projectName || !data || !projectData) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>
   }
 
-  const technicalSheet = projectData.technicalSheet;
+  const technicalSheet = projectData.technicalSheet
 
   const roles = [
     { key: 'creators', label: 'Criadora' },
@@ -71,29 +71,33 @@ const ProjectPage = () => {
             <p>{projectData.sinopse}</p>
           </S.Description>
         </S.Infos>
-        <S.CreditsContainer>
-          <h1>Créditos</h1>
-          <S.Credits>
-            <S.Role>
-              {roles.map((role) =>
-                technicalSheet?.[role.key] ? (
-                  <h3 key={role.key}>{role.label}</h3>
-                ) : null
-              )}
-            </S.Role>
-            <S.Person>
-              {roles.map((role) =>
-                technicalSheet?.[role.key] ? (
-                  <h3 key={role.key}>{technicalSheet[role.key]}</h3>
-                ) : null
-              )}
-            </S.Person>
-          </S.Credits>
-        </S.CreditsContainer>
+        {/* Verifica se o projeto possui uma ficha técnica, se sim, renderiza os créditos */}
+        {technicalSheet && Object.keys(technicalSheet).length > 0 && (
+          <S.CreditsContainer>
+            <h1>Créditos</h1>
+            <S.Credits>
+              <S.Role>
+                {roles.map((role) =>
+                  technicalSheet?.[role.key] ? (
+                    <h3 key={role.key}>{role.label}</h3>
+                  ) : null
+                )}
+              </S.Role>
+              <S.Person>
+                {roles.map((role) =>
+                  technicalSheet?.[role.key] ? (
+                    <h3 key={role.key}>{technicalSheet[role.key]}</h3>
+                  ) : null
+                )}
+              </S.Person>
+            </S.Credits>
+          </S.CreditsContainer>
+        )}
         <ProjectNavigation currentSlug={projectSlug} projects={data} />
       </S.ContainerProduct>
     </>
-  );
-};
+  )
+}
 
-export default ProjectPage;
+export default ProjectPage
+
