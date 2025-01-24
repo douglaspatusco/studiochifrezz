@@ -1,40 +1,40 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 
 interface UseFetchProjectsProps {
-  data: Project[];
-  loading: boolean;
-  error: string | null;
+  data: Project[]
+  loading: boolean
+  error: string | null
 }
 
 const useFetchProjects = (): UseFetchProjectsProps => {
-  const [data, setData] = useState<Project[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+  const [data, setData] = useState<Project[]>([])
+  const [loading, setLoading] = useState<boolean>(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/api/apiProjects');
+        const response = await fetch('/api/apiProjects')
         if (!response.ok) {
-          throw new Error('Failed to fetch data');
+          throw new Error('Failed to fetch data')
         }
-        const result = await response.json();
-        setData(result);
+        const result = await response.json()
+        setData(result)
       } catch (err: unknown) {
         if (err instanceof Error) {
-          setError(err.message);
+          setError(err.message)
         } else {
-          setError(String(err));
+          setError(String(err))
         }
       } finally {
-        setLoading(false);
+        setLoading(false)
       }
-    };
+    }
 
-    fetchData();
-  }, []);
+    fetchData()
+  }, [])
 
-  return { data, loading, error };
-};
+  return { data, loading, error }
+}
 
-export default useFetchProjects;
+export default useFetchProjects

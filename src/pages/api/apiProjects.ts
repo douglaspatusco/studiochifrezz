@@ -1,16 +1,17 @@
-import { NextApiRequest, NextApiResponse } from "next"
+import { NextApiRequest, NextApiResponse } from 'next'
 
 const projects: Project[] = [
   {
     slug: 'kale',
     name: 'Kale do Museu Assustador',
-    sinopse: 'Kale assume a direção do museu assustador enquanto seus avós viajam, mas para provar que está à altura dessa missão ele precisa controlar o caos diário gerado por sua irmã mais nova e pelas assombrações que os dois precisam derrotar juntos, acompanhados por seu amigo Mano e ocasionalmente, o faxineiro Seu Neto.',
+    sinopse:
+      'Kale assume a direção do museu assustador enquanto seus avós viajam, mas para provar que está à altura dessa missão ele precisa controlar o caos diário gerado por sua irmã mais nova e pelas assombrações que os dois precisam derrotar juntos, acompanhados por seu amigo Mano e ocasionalmente, o faxineiro Seu Neto.',
     status: 'Em produção',
     description: {
       productionType: 'Animação Seriada',
       gender: 'Comédia e sobrenatural',
       targetAudience: '6 a 12 anos',
-      duration: '52 x 11"',
+      duration: '52 x 11"'
     },
     achievments: [
       'Vencedor da mentoria para mulheres diretoras do Animation” Ventana Sur 2023',
@@ -24,19 +25,20 @@ const projects: Project[] = [
       soundtrack: 'Felipe dos Santos',
       characterConcept: 'Juan Cunha e Lena Franzz',
       storyboard: 'Daniela Smith-Fisher',
-      consulting: 'Débora Guimarães',
+      consulting: 'Débora Guimarães'
     }
   },
   {
     slug: 'hornzz',
     name: 'Hornzz',
-    sinopse: 'Como cada escolha reflete em nossas vidas? Através da narrativa surrealista de Hornzz, acompanhamos as escolhas e desafios da menina Lu, viajando por experiências únicas em cenários lúdicos. ',
+    sinopse:
+      'Como cada escolha reflete em nossas vidas? Através da narrativa surrealista de Hornzz, acompanhamos as escolhas e desafios da menina Lu, viajando por experiências únicas em cenários lúdicos. ',
     status: 'Lançado em 2019',
     description: {
       productionType: 'Curta Metragem',
       gender: 'Fantasia',
       targetAudience: 'Livre',
-      duration: '5 min',
+      duration: '5 min'
     },
     achievments: [
       'Licenciado por 2 anos na MOSTRA SESC de 2019 a 2021',
@@ -70,43 +72,45 @@ const projects: Project[] = [
   {
     slug: 'roommate',
     name: 'Roommate',
-    sinopse: 'Duas amigas perto dos trinta anos moram juntas em um apartamento pequeno no centro da cidade. Com dificuldades de entender se está na hora de  se acomodar ou de viver intensamente antes que seja tarde, as duas amigas de longa data enfrentam problemas no amor e no trabalho. Roommate é uma história de comédia para adultos, com pitadas de drama.',
+    sinopse:
+      'Duas amigas perto dos trinta anos moram juntas em um apartamento pequeno no centro da cidade. Com dificuldades de entender se está na hora de  se acomodar ou de viver intensamente antes que seja tarde, as duas amigas de longa data enfrentam problemas no amor e no trabalho. Roommate é uma história de comédia para adultos, com pitadas de drama.',
     status: 'Em produção',
     description: {
       productionType: 'Animação Seriada',
       gender: 'Comédia e drama',
       targetAudience: '+18',
-      duration: '13 x 11"',
+      duration: '13 x 11"'
     },
-    technicalSheet : {
+    technicalSheet: {
       creators: 'Lena Franzz',
       directors: 'Lena Franzz e Priscila Vilas Boas',
       production: 'Priscila Vilas Boas e Luiza Ferraz',
       artDirection: 'Marina Vasconcelos',
       soundtrack: 'Felipe dos Santos',
       characterConcept: 'João Neto',
-      storyboard: 'Daniela Smith-Fisher',
+      storyboard: 'Daniela Smith-Fisher'
     }
   },
   {
     slug: 'quartzzo',
     name: 'Quartzzo',
-    sinopse: 'Depois da morte do seu amor em uma tragédia de chuvas, Amélia, uma mulher de 30 anos, visita novamente o Parque da Pedra do Amor, para ressignificar suas memórias e enfrentar seu trauma. No parque ela tem visões do seu falecido namorado que guia Amélia até o lugar onde a tragédia aconteceu.',
+    sinopse:
+      'Depois da morte do seu amor em uma tragédia de chuvas, Amélia, uma mulher de 30 anos, visita novamente o Parque da Pedra do Amor, para ressignificar suas memórias e enfrentar seu trauma. No parque ela tem visões do seu falecido namorado que guia Amélia até o lugar onde a tragédia aconteceu.',
     status: 'Em produção',
     description: {
       productionType: 'Curta Metragem',
       gender: 'Drama e Fantasia',
       targetAudience: '+14',
-      duration: '8 min',
+      duration: '8 min'
     },
-    technicalSheet : {
+    technicalSheet: {
       creators: 'Lena Franzz',
       directors: 'Lena Franzz',
       production: 'Priscila Vilas Boas e Luiza Ferraz',
       artDirection: 'Marina Vasconcelos',
       soundtrack: 'Felipe dos Santos',
       characterConcept: 'Lena Franzz',
-      storyboard: 'Felipe dos Santos',
+      storyboard: 'Felipe dos Santos'
     }
   },
   {
@@ -118,16 +122,16 @@ const projects: Project[] = [
       productionType: 'Curta Metragem',
       gender: '?????????',
       targetAudience: '?????????',
-      duration: '?????????',
+      duration: '?????????'
     },
-    technicalSheet : {
+    technicalSheet: {
       creators: '?????????',
       directors: '?????????',
       production: '?????????',
       artDirection: '?????????',
       soundtrack: '?????????',
       characterConcept: '?????????',
-      storyboard: '?????????',
+      storyboard: '?????????'
     }
   }
 ]

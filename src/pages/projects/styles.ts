@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import Image from "next/image";
-import { colors } from "@/styles/GlobalStyles";
+import styled from 'styled-components'
+import Image from 'next/image'
+import { colors } from '@/styles/GlobalStyles'
 
 // [index.tsx]
 
@@ -38,10 +38,10 @@ export const Card = styled.li`
   border-radius: 0.5em;
 
   &:hover {
-    transition: .5s;
+    transition: 0.5s;
     transform: scale(1.025);
   }
-  `
+`
 
 export const Picture = styled(Image)`
   width: 16em;
@@ -50,7 +50,7 @@ export const Picture = styled(Image)`
   object-fit: cover;
 
   &:hover {
-    transition: .5s;
+    transition: 0.5s;
     transform: scale(1.05);
   }
 `

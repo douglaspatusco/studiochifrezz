@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "format": "prettier --write ."
   },
   "dependencies": {
@@ -17,17 +17,25 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@types/node": "^20",
+    "@eslint/js": "^9.18.0",
+    "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/styled-components": "^5.1.34",
+    "@typescript-eslint/eslint-plugin": "^8.21.0",
+    "@typescript-eslint/parser": "^8.21.0",
     "babel-plugin-styled-components": "^2.1.4",
-    "eslint": "^9",
+    "eslint": "^9.18.0",
     "eslint-config-next": "15.1.5",
-    "prettier": "3.4.2",
-    "typescript": "^5"
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-react": "^7.37.4",
+    "globals": "^15.14.0",
+    "prettier": "^3.4.2",
+    "typescript": "^5",
+    "typescript-eslint": "^8.21.0"
   },
   "engines": {
     "node": "20.x"
-}
+  }
 }

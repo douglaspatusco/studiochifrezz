@@ -7,11 +7,10 @@ export const List = styled.ul`
   gap: 2em;
 
   max-width: max-content;
-
 `
 
 export const Item = styled.li<{ isHovered: boolean }>`
-  transition: .3s;
+  transition: 0.3s;
   opacity: ${({ isHovered }) => (isHovered ? 0.5 : 1)};
 
   &:hover {

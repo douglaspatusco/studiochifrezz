@@ -1,5 +1,5 @@
-import { colors } from "@/styles/GlobalStyles";
-import styled from "styled-components";
+import { colors } from '@/styles/GlobalStyles'
+import styled from 'styled-components'
 
 export const Footer = styled.footer`
   display: flex;
@@ -25,4 +25,3 @@ export const Footer = styled.footer`
     height: 2em;
   }
 `
-

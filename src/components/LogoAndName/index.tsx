@@ -1,8 +1,8 @@
+import React from 'react'
 import StudioChifrezz from '@/components/StudioChifrezz'
 import Image from 'next/image'
 
 import { Container } from './styles'
-
 
 const LogoAndName = () => {
   return (

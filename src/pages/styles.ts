@@ -6,7 +6,7 @@ export const Content = styled.main`
   justify-content: center;
   min-height: 100vh;
   padding-top: 7.25em;
-  background-color:${colors.branco};
+  background-color: ${colors.branco};
 `
 
 export const Container = styled.div`
@@ -20,14 +20,14 @@ export const Video = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 80vh;
   overflow: hidden;
   z-index: 0; /* Para ficar abaixo do conteúdo */
 
-  iframe {
+  video {
     position: absolute;
-    top: 50%;
+    top: 14em;
     left: 50%;
     width: 100vw;
     height: 56.25vw; /* Proporção 16:9 */

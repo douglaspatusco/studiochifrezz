@@ -6,7 +6,7 @@ export const colors = {
   roxoPastel: '#9a9ad1',
   roxoAcinzentado: '#b0b0d3',
   roxoClaro: '#ccccff',
-  branco: '#ffffff',
+  branco: '#ffffff'
 }
 
 const GlobalStyles = createGlobalStyle`
@@ -45,8 +45,6 @@ export const WordWithLargeFirstLetter = styled.span`
   &::first-letter {
     font-size: 1.25em;
   }
-`;
-
-
+`
 
 export default GlobalStyles
