@@ -79,12 +79,20 @@ const ProjectPage = () => {
           <S.Credits>
             <S.Role>
               {roles.map(role =>
-                technicalSheet?.[role.key] ? <h3 key={role.key}>{role.label}</h3> : null
+                technicalSheet?.[role.key]
+                ? <h3 key={role.key}>
+                    {role.label}
+                  </h3>
+                : null
               )}
             </S.Role>
             <S.Person>
               {roles.map(role =>
-                technicalSheet?.[role.key] ? <h3 key={role.key}>{technicalSheet[role.key]}</h3> : null
+                technicalSheet?.[role.key]
+                ? <h3 key={role.key}>
+                    {technicalSheet[role.key]}
+                  </h3>
+                : null
               )}
             </S.Person>
           </S.Credits>
