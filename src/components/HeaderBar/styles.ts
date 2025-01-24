@@ -28,7 +28,7 @@ export const MenuItem = styled.li<{ isHovered: boolean }>`
   font-size: 18px;
   font-weight: bold;
   transition: 0.3s;
-  opacity: ${({ isHovered }) => (isHovered ? 0.5 : 1)};
+  opacity: ${({ isHovered }) => (isHovered ? 0.5 : 1)}; /* Está bugando a página */
 
   &:hover {
     transform: scale(1.1);
