@@ -72,12 +72,14 @@ export const ContainerProduct = styled.section`
 
 export const Infos = styled.div`
   display: flex;
+  align-items: center;
   justify-content: space-around;
   gap: 4em;
   width: 100%;
+  padding: 0 4em;
   margin: 4em 0;
 `
-export const FichaTecnica = styled.div`
+export const CreditsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -86,6 +88,23 @@ export const FichaTecnica = styled.div`
 `
 
 export const TechnicalSheet = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 0.5em;
+  width: fit-content;
+
+  h1 {
+    font-size: 4em;
+  }
+
+  h2 {
+    font-size: 2em;
+    letter-spacing: 4px;
+  }
+`
+
+export const Credits = styled.div`
   display: flex;
   gap: 2em;
   min-width: max-content;

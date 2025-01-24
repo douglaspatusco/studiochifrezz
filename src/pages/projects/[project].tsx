@@ -44,9 +44,24 @@ const ProjectPage = () => {
       priority
       />
       <S.Infos>
-        <S.FichaTecnica>
-          <h1>Ficha Técnica</h1>
-          <S.TechnicalSheet>
+        <S.TechnicalSheet>
+          <h1>{projectData?.name}</h1>
+          <div>
+            <h2>{projectData?.description.gender}</h2>
+            <h2>{projectData?.description.duration}</h2>
+            <h2>{projectData?.description.targetAudience}</h2>
+            <h2>{projectData?.status}</h2>
+          </div>
+        </S.TechnicalSheet>
+        <S.Description>
+          <p>
+            {projectData?.sinopse}
+          </p>
+        </S.Description>
+      </S.Infos>
+        <S.CreditsContainer>
+          <h1>Créditos</h1>
+          <S.Credits>
             <S.Role>
               { projectData?.technicalSheet?.creators ? <h3>Criado por</h3> : null}
               { projectData?.technicalSheet?.directors ? <h3>Direção</h3> : null}
@@ -60,22 +75,24 @@ const ProjectPage = () => {
             <S.Person>
               <h3>{projectData?.technicalSheet?.creators}</h3>
               <h3>{projectData?.technicalSheet?.directors}</h3>
-              <h3>{projectData?.technicalSheet?.production}</h3>
+              {Array.isArray(projectData?.technicalSheet?.production) ? (
+                projectData?.technicalSheet?.production.map((creator, index) => (
+                  <>
+                    <h3 key={index}>{creator}</h3>
+                  <br />
+                  </>
+                ))
+              ) : (
+                <h3>{projectData?.technicalSheet?.production}</h3>
+              )}
               <h3>{projectData?.technicalSheet?.artDirection}</h3>
               <h3>{projectData?.technicalSheet?.soundtrack}</h3>
               <h3>{projectData?.technicalSheet?.characterConcept}</h3>
               <h3>{projectData?.technicalSheet?.storyboard}</h3>
               <h3>{projectData?.technicalSheet?.consulting}</h3>
             </S.Person>
-          </S.TechnicalSheet>
-        </S.FichaTecnica>
-        <S.Description>
-          <h1>{projectData?.name}</h1>
-          <p>
-            {projectData?.sinopse}
-          </p>
-        </S.Description>
-      </S.Infos>
+          </S.Credits>
+        </S.CreditsContainer>
       </S.ContainerProduct>
     </>
   )

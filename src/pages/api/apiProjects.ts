@@ -18,7 +18,7 @@ const projects: Project[] = [
     ],
     technicalSheet: {
       creators: 'Lena Franzz',
-      directors: 'Lena Franzz e Priscila Vilas Boas',
+      directors: ['Lena Franzz', 'Priscila Vilas Boas'],
       production: 'Priscila Vilas Boas e Luiza Ferraz',
       artDirection: 'Marina Vasconcelos',
       soundtrack: 'Felipe dos Santos',
