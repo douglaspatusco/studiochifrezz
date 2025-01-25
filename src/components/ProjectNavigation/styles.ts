@@ -11,13 +11,15 @@ export const NavigationWrapper = styled.div`
 `;
 
 export const NavLink = styled(Link)`
+  font-size: 1.5em;
   text-decoration: none;
-  color: ${colors.cinzaChumbo};
   padding: 0.5rem 1rem;
+  color: ${colors.branco};
+  background-color: ${colors.roxoPastel};
   border: 1px solid ${colors.cinzaClaro};
   border-radius: 5px;
 
   &:hover {
-    background-color: #f4f4f4;
+    background-color: ${colors.roxoEscuro};
   }
 `;
