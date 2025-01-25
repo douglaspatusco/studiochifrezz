@@ -41,6 +41,7 @@ export const Form = styled.form`
   justify-content: space-around;
   height: auto;
   gap: 1em;
+  text-align: center;
 `
 
 export const TextArea = styled.textarea`
