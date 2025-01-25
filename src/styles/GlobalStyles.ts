@@ -10,6 +10,15 @@ export const colors = {
   branco: '#ffffff'
 }
 
+export const screenSizes = {
+  mobile: '320px',
+  tablet: '768px',
+  laptop: '1024px',
+  desktop: '1280px',
+  desktopL: '1440px',
+  ultrawide: '2560px'
+}
+
 const GlobalStyles = createGlobalStyle`
   @font-face {
     font-family: 'Candara';
