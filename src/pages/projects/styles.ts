@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import Image from 'next/image'
-import { colors } from '@/styles/GlobalStyles'
+import { colors, screenSizes } from '@/styles/GlobalStyles'
 
 // [index.tsx]
 
@@ -62,6 +62,7 @@ export const ContainerProduct = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: ${screenSizes.ultrawide};
   width: 100%;
   height: 100%;
 

@@ -1,4 +1,4 @@
-import { colors } from '@/styles/GlobalStyles'
+import { colors, screenSizes } from '@/styles/GlobalStyles'
 import Link from 'next/link'
 import styled from 'styled-components'
 
@@ -10,6 +10,7 @@ export const HeaderBarContainer = styled.header`
   justify-content: space-between;
   align-items: center;
 
+  max-width: 100%;
   width: 100%;
   height: auto;
   padding: 0.5em 4em;
