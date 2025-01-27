@@ -1,6 +1,8 @@
 import Head from "next/head"
+import AOS from 'aos';
 
 import { AboutContainer, Member, MemberReverse, StudioDescription, Us } from "./styles"
+import { useEffect } from "react";
 
 interface StaffMember {
   name: string;
@@ -28,6 +30,14 @@ const staff: StaffMember[] = [
 ]
 
 const About = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Duração da animação em milissegundos
+      once: false,     // Animação ocorre apenas uma vez
+      mirror: true,   // Animação ocorre quando o elemento entra no viewport
+    });
+  }, []);
+
   return (
     <>
       <Head>
@@ -35,12 +45,14 @@ const About = () => {
       </Head>
       <AboutContainer>
         <StudioDescription>
-          O Studio Chifrezz é um estúdio de animação brasileiro liderado por mulheres. Fundado em 2021 no Rio de Janeiro, nossa missão é dar vida a histórias autorais que inspirem o público através de suas animações em diversos formatos, como Séries de TV e Curtas Metragens.
+          <h2>
+            O Studio Chifrezz é um estúdio de animação brasileiro liderado por mulheres. Fundado em 2021 no Rio de Janeiro, nossa missão é dar vida a histórias autorais que inspirem o público através de suas animações em diversos formatos, como Séries de TV e Curtas Metragens.
+          </h2>
         </StudioDescription>
         <Us>
           {staff.map((member, index) =>
             index % 2 === 0 ? (
-              <Member key={member.name}>
+              <Member key={member.name} data-aos="zoom-in-right">
                 <img src={member.avatar} alt={member.name} />
                 <div>
                   <h2>{member.name}</h2>
@@ -48,7 +60,7 @@ const About = () => {
                 </div>
               </Member>
             ) : (
-              <MemberReverse key={member.name}>
+              <MemberReverse key={member.name} data-aos="zoom-in-left">
                 <img src={member.avatar} alt={member.name} />
                 <div>
                   <h2>{member.name}</h2>

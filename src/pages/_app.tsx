@@ -1,5 +1,5 @@
-import React from 'react'
 import type { AppProps } from 'next/app'
+import 'aos/dist/aos.css';
 
 import GlobalStyles from '@/styles/GlobalStyles'
 import { Content } from './styles'
