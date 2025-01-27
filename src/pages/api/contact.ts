@@ -20,7 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       port: 465, // Porta SSL
       secure: true, // Conexão segura
       auth: {
-        user: 'info@studiochifrezz.com',
+        user: 'info@studiochifrezz.com', // Adicionar user e pass em variáveis de ambiente
         pass: 'Qu@rtzz0!',
       },
     })
