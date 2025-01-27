@@ -8,13 +8,22 @@ export const AboutContainer = styled.div`
   gap: 8em;
   max-width: ${screenSizes.desktopL};
   width: ${screenSizes.laptop};
+  height: 200vh;
   padding: 4em 0;
 `
 
-export const StudioDescription = styled.h2`
+export const StudioDescription = styled.div`
+  display: flex;
+  align-items: center;
   width: 800px;
-  font-weight: 400;
-  text-align: justify;
+  height: 100%;
+
+  h2 {
+    font-weight: 400;
+    text-align: justify;
+    line-height: 1.5;
+  }
+
 `
 
 export const Us = styled.div`
