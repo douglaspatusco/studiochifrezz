@@ -25,6 +25,9 @@ const ProjectPage = () => {
   const { data } = useFetchProjects();
 
   const [projectName, setProjectName] = useState<string | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   const imagePath = `/images/projects-banners/banner-${query.project}.png`;
 
   const projectSlug = query.project as string;
@@ -55,6 +58,16 @@ const ProjectPage = () => {
   ];
 
   const images = imageData[projectSlug] || [];
+
+  const handleImageClick = (image: string) => {
+    setSelectedImage(image);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedImage(null);
+  };
 
   return (
     <>
@@ -110,6 +123,7 @@ const ProjectPage = () => {
             <S.ImageWrapper
               key={index}
               data-aos={index % 2 === 0 ? 'zoom-in-left' : 'zoom-in-right'}
+              onClick={() => handleImageClick(image)}
             >
               <Image
                 src={image}
@@ -120,6 +134,19 @@ const ProjectPage = () => {
             </S.ImageWrapper>
           ))}
         </S.Images>
+        {isModalOpen && selectedImage && (
+          <S.Modal onClick={closeModal}>
+            <S.ModalContent onClick={(e) => e.stopPropagation()}>
+              <Image
+                src={selectedImage}
+                alt="Imagem em destaque"
+                width={1200}
+                height={800}
+              />
+              <button onClick={closeModal}>X</button>
+            </S.ModalContent>
+          </S.Modal>
+        )}
         <ProjectNavigation currentSlug={projectSlug} projects={data} />
       </S.ContainerProduct>
     </>

@@ -195,6 +195,12 @@ export const Images = styled.div`
     height: auto;
     border-radius: 0.5em;
     object-fit: cover;
+    cursor: pointer;
+    transition: .3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 `
 
@@ -203,3 +209,43 @@ export const ImageWrapper = styled.div`
   justify-content: center;
   max-width: calc(50% - 4em);
 `
+
+export const Modal = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+`;
+
+export const ModalContent = styled.div`
+  position: relative;
+  background: ${colors.branco};
+  padding: 1.25em;
+  border-radius: 0.5em;
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 0.25em 0.375em rgba(0, 0, 0, 0.1);
+
+  img {
+    width: 100%;
+    border-radius: 0.5em;
+  }
+
+  button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 0.25em;
+    border: none;
+    font-size: 1.25em;
+    color: #000;
+    background: transparent;
+    cursor: pointer;
+  }
+`;
