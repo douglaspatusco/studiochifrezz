@@ -1,37 +1,47 @@
-import React, { useEffect, useState } from 'react'
-import Head from 'next/head'
-import Image from 'next/image'
-import { useRouter } from 'next/router'
+import React, { useEffect, useState } from 'react';
+import Head from 'next/head';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
 
-import useFetchProjects from '@/hooks/useFetchProjects'
-import ProjectNavigation from '@/components/ProjectNavigation'
+import useFetchProjects from '@/hooks/useFetchProjects';
+import ProjectNavigation from '@/components/ProjectNavigation';
 
-import * as S from './styles'
+import * as S from './styles';
+
+import AOS from 'aos';
+
+import { imageData } from '@/data/images';
 
 const ProjectPage = () => {
-  const { query } = useRouter()
-  const { data } = useFetchProjects()
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+      mirror: true,
+    });
+  }, []);
 
-  const [projectName, setProjectName] = useState<string | null>(null)
-  const imagePath = `/images/projects-banners/banner-${query.project}.png`
+  const { query } = useRouter();
+  const { data } = useFetchProjects();
 
-  const projectSlug = query.project as string
+  const [projectName, setProjectName] = useState<string | null>(null);
+  const imagePath = `/images/projects-banners/banner-${query.project}.png`;
 
-  const projectData = data?.find((project) =>
-    project.slug === projectSlug)
+  const projectSlug = query.project as string;
 
-  // Aguarda o carregamento do valor vindo de [query.project]
+  const projectData = data?.find((project) => project.slug === projectSlug);
+
   useEffect(() => {
     if (query.project) {
-      setProjectName(query.project as string)
+      setProjectName(query.project as string);
     }
-  }, [query.project])
+  }, [query.project]);
 
   if (!projectName || !data || !projectData) {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
 
-  const technicalSheet = projectData.technicalSheet
+  const technicalSheet = projectData.technicalSheet;
 
   const roles = [
     { key: 'creators', label: 'Criadora' },
@@ -43,6 +53,8 @@ const ProjectPage = () => {
     { key: 'storyboard', label: 'Storyboard' },
     { key: 'consulting', label: 'Consultoria' },
   ];
+
+  const images = imageData[projectSlug] || [];
 
   return (
     <>
@@ -62,6 +74,7 @@ const ProjectPage = () => {
             <h1>{projectData.name}</h1>
             <div>
               <h2>{projectData.description.gender}</h2>
+              <h2>{projectData.description.productionType}</h2>
               <h2>{projectData.description.duration}</h2>
               <h2>{projectData.description.targetAudience}</h2>
               <h2>{projectData.status}</h2>
@@ -71,7 +84,6 @@ const ProjectPage = () => {
             <p>{projectData.sinopse}</p>
           </S.Description>
         </S.Infos>
-        {/* Verifica se o projeto possui uma ficha técnica, se sim, renderiza os créditos */}
         {technicalSheet && Object.keys(technicalSheet).length > 0 && (
           <S.CreditsContainer>
             <h1>Créditos</h1>
@@ -93,11 +105,25 @@ const ProjectPage = () => {
             </S.Credits>
           </S.CreditsContainer>
         )}
+        <S.Images>
+          {images.map((image, index) => (
+            <S.ImageWrapper
+              key={index}
+              data-aos={index % 2 === 0 ? 'zoom-in-left' : 'zoom-in-right'}
+            >
+              <Image
+                src={image}
+                alt={`Imagem ${index + 1} do projeto ${projectData.name}`}
+                width={2560}
+                height={1080}
+              />
+            </S.ImageWrapper>
+          ))}
+        </S.Images>
         <ProjectNavigation currentSlug={projectSlug} projects={data} />
       </S.ContainerProduct>
     </>
-  )
-}
+  );
+};
 
-export default ProjectPage
-
+export default ProjectPage;

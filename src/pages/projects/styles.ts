@@ -56,7 +56,7 @@ export const Picture = styled(Image)`
   }
 `
 
-// [project.tsx]
+// [project.tsx] ---------------------------------------------------
 
 export const ContainerProduct = styled.section`
   display: flex;
@@ -92,9 +92,10 @@ export const CreditsContainer = styled.div`
 export const TechnicalSheet = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 2em;
   padding: 0.5em;
   width: fit-content;
+  font-family: 'Austral Slab';
 
   h1 {
     font-size: 4em;
@@ -120,6 +121,7 @@ export const Role = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  gap: 0.25em;
 
   h3 {
     font-size: 1.25em;
@@ -131,6 +133,7 @@ export const Person = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 0.25em;
 
   h3 {
     font-size: 1.25em;
@@ -152,6 +155,7 @@ export const Description = styled.div`
   p {
     font-size: 1.25em;
     letter-spacing: 1px;
+    line-height: 1.5em;
   }
 `
 
@@ -174,4 +178,28 @@ export const NavigationButtons = styled.div`
       color: ${colors.branco};
     }
   }
+`
+
+export const Images = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4em;
+  width: 100%;
+  max-width: ${screenSizes.ultrawide};
+  padding: 8em 16em;
+
+  img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 0.5em;
+    object-fit: cover;
+  }
+`
+
+export const ImageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  max-width: calc(50% - 4em);
 `

@@ -27,6 +27,13 @@ const GlobalStyles = createGlobalStyle`
     font-style: normal;
   }
 
+  @font-face {
+    font-family: 'Austral Slab';
+    src: url('/fonts/austral_slab/Austral-Slab_Blur-Regular.otf'), format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
   html, body {
     overflow-x: hidden;
     font-family: 'Candara', sans-serif;
