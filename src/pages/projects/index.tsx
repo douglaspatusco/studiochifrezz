@@ -1,30 +1,21 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import Head from 'next/head'
-import Link from 'next/link'
 
 import useFetchProjects from '@/hooks/useFetchProjects'
+import ProjectSection from '@/components/ProjectSection'
 
-import { WordWithLargeFirstLetter } from '@/styles/GlobalStyles'
-import {
-  Card,
-  Picture,
-  ProjectsList,
-  ProjectsContainer
-} from '../../styles/projects.styles'
+import { ProjectsContainer } from '@/styles/projects.styles'
 
 const Projects = () => {
-  const { data, loading, error } = useFetchProjects()
+  const { data = [], loading, error } = useFetchProjects()
+
+  const categorizedProjects = useMemo(() => ({
+    AnimacaoSeriada: data.filter((project) => project.description.productionType === 'Animação Seriada'),
+    CurtaMetragem: data.filter((project) => project.description.productionType === 'Curta Metragem'),
+  }), [data])
 
   if (loading) return <p>Loading...</p>
-  if (error) return <p>Error: {error}</p>
-
-  // Projetos divididos em duas listas com base no status
-  const AnimacaoSeriada = data.filter(
-    (project) => project.description.productionType === 'Animação Seriada'
-  )
-  const CurtaMetragem = data.filter(
-    (project) => project.description.productionType === 'Curta Metragem'
-  )
+  if (error) return <p>Erro ao carregar projetos. Por favor, tente novamente.</p>
 
   return (
     <>
@@ -32,52 +23,8 @@ const Projects = () => {
         <title>Projects | Studio Chifrezz</title>
       </Head>
       <ProjectsContainer>
-        <div>
-          <div>
-            <WordWithLargeFirstLetter>
-              ANIMAÇÃO&nbsp;&nbsp;
-            </WordWithLargeFirstLetter>
-            <WordWithLargeFirstLetter>SERIADA</WordWithLargeFirstLetter>
-          </div>
-          <ProjectsList>
-            {AnimacaoSeriada.map((project) => (
-              <Card key={project.slug}>
-                <Link href={`/projects/${project.slug}`}>
-                  <Picture
-                    title={project.name}
-                    src={`/images/projects-cards/card-${project.slug}.png`}
-                    alt={project.name}
-                    width={1000}
-                    height={1000}
-                  />
-                </Link>
-              </Card>
-            ))}
-          </ProjectsList>
-        </div>
-        <div>
-          <div>
-            <WordWithLargeFirstLetter>
-              CURTAS&nbsp;&nbsp;
-            </WordWithLargeFirstLetter>
-            <WordWithLargeFirstLetter>METRAGENS</WordWithLargeFirstLetter>
-          </div>
-          <ProjectsList>
-            {CurtaMetragem.map((project) => (
-              <Card key={project.slug}>
-                <Link href={`/projects/${project.slug}`}>
-                  <Picture
-                    title={project.name}
-                    src={`/images/projects-cards/card-${project.slug}.png`}
-                    alt={project.name}
-                    width={1000}
-                    height={1000}
-                  />
-                </Link>
-              </Card>
-            ))}
-          </ProjectsList>
-        </div>
+        <ProjectSection title="ANIMAÇÃO SERIADA" projects={categorizedProjects.AnimacaoSeriada} />
+        <ProjectSection title="CURTAS METRAGENS" projects={categorizedProjects.CurtaMetragem} />
       </ProjectsContainer>
     </>
   )
