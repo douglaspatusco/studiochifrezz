@@ -197,7 +197,7 @@ export const Gallery = styled.div`
     border-radius: 0.5em;
     object-fit: cover;
     cursor: pointer;
-    transition: .3s;
+    transition: 0.3s;
 
     &:hover {
       transform: scale(1.1);
@@ -266,7 +266,8 @@ export const ArrowButton = styled.button`
 
   &.left {
     left: -10%;
-    top: 50%;  }
+    top: 50%;
+  }
 
   &.right {
     right: -10%;
@@ -286,7 +287,7 @@ export const ArrowButton = styled.button`
   }
 `
 
-export const Support =  styled.div`
+export const Support = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

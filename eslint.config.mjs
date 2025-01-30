@@ -26,18 +26,18 @@ export default [
     },
     plugins: {
       prettier: ['prettier'] // Adiciona o plugin do Prettier
-    },
+    }
   },
   {
-    ...pluginJs.configs.recommended, // Regras recomendadas do ESLint para JS
+    ...pluginJs.configs.recommended // Regras recomendadas do ESLint para JS
   },
   {
-    ...tseslint.configs.recommended, // Regras recomendadas do TypeScript
+    ...tseslint.configs.recommended // Regras recomendadas do TypeScript
   },
   {
-    ...pluginReact.configs.recommended, // Regras recomendadas do React
+    ...pluginReact.configs.recommended // Regras recomendadas do React
   },
   {
-    ...prettier, // Desativa regras conflitantes com Prettier
+    ...prettier // Desativa regras conflitantes com Prettier
   }
 ]

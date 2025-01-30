@@ -8,12 +8,16 @@ const Contact = () => {
     name: '',
     email: '',
     subject: '',
-    message: '',
-  });
+    message: ''
+  })
 
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [status, setStatus] = useState<
+    'idle' | 'loading' | 'success' | 'error'
+  >('idle')
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { id, value } = e.target
     setFormData((prev) => ({ ...prev, [id]: value }))
   }
@@ -26,7 +30,7 @@ const Contact = () => {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(formData)
       })
 
       if (response.ok) {
@@ -39,7 +43,7 @@ const Contact = () => {
       console.error('Erro ao enviar o formulário:', error)
       setStatus('error')
     }
-  };
+  }
 
   return (
     <>
@@ -59,24 +63,55 @@ const Contact = () => {
         <S.Form onSubmit={handleSubmit}>
           <>
             <label htmlFor="name" />
-            <S.Input id="name" type="text" placeholder="Nome" value={formData.name} onChange={handleChange} />
+            <S.Input
+              id="name"
+              type="text"
+              placeholder="Nome"
+              value={formData.name}
+              onChange={handleChange}
+            />
           </>
           <>
             <label htmlFor="email" />
-            <S.Input id="email" type="text" placeholder="Email" value={formData.email} onChange={handleChange} />
+            <S.Input
+              id="email"
+              type="text"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
+            />
           </>
           <>
             <label htmlFor="subject" />
-            <S.Input id="subject" type="text" placeholder="Assunto" value={formData.subject} onChange={handleChange} />
+            <S.Input
+              id="subject"
+              type="text"
+              placeholder="Assunto"
+              value={formData.subject}
+              onChange={handleChange}
+            />
           </>
           <>
             <label htmlFor="message" />
-            <S.TextArea id="message" placeholder="Mensagem" value={formData.message} onChange={handleChange} />
+            <S.TextArea
+              id="message"
+              placeholder="Mensagem"
+              value={formData.message}
+              onChange={handleChange}
+            />
           </>
           <S.Button type="submit">ENVIAR</S.Button>
           {status === 'loading' && <p>Enviando...</p>}
-          {status === 'success' && <p>Email enviado com sucesso!<br />Entraremos em contato em breve.</p>}
-          {status === 'error' && <p>Erro ao enviar o email. Tente novamente.</p>}
+          {status === 'success' && (
+            <p>
+              Email enviado com sucesso!
+              <br />
+              Entraremos em contato em breve.
+            </p>
+          )}
+          {status === 'error' && (
+            <p>Erro ao enviar o email. Tente novamente.</p>
+          )}
         </S.Form>
       </S.Container>
     </>

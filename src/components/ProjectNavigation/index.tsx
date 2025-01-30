@@ -1,16 +1,21 @@
-import * as S from './styles';
+import * as S from './styles'
 
 interface ProjectNavigationProps {
-  currentSlug: string;
-  projects: { slug: string; name: string }[];
+  currentSlug: string
+  projects: { slug: string; name: string }[]
 }
 
-const ProjectNavigation = ({ currentSlug, projects, }: ProjectNavigationProps) => {
-  const currentIndex = projects.findIndex((project) => project.slug === currentSlug);
+const ProjectNavigation = ({
+  currentSlug,
+  projects
+}: ProjectNavigationProps) => {
+  const currentIndex = projects.findIndex(
+    (project) => project.slug === currentSlug
+  )
 
   // Determinar o projeto anterior e o próximo
-  const previousProject = projects[currentIndex - 1] || null;
-  const nextProject = projects[currentIndex + 1] || null;
+  const previousProject = projects[currentIndex - 1] || null
+  const nextProject = projects[currentIndex + 1] || null
 
   return (
     <S.NavigationWrapper>
@@ -29,7 +34,7 @@ const ProjectNavigation = ({ currentSlug, projects, }: ProjectNavigationProps) =
         <span />
       )}
     </S.NavigationWrapper>
-  );
-};
+  )
+}
 
-export default ProjectNavigation;
+export default ProjectNavigation
