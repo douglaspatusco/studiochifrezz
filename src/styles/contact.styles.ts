@@ -42,6 +42,10 @@ export const Form = styled.form`
   height: auto;
   gap: 1em;
   text-align: center;
+
+  label {
+    display: none;
+  }
 `
 
 export const TextArea = styled.textarea`
