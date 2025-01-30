@@ -222,7 +222,7 @@ export const Modal = styled.div`
   align-items: center;
   background: rgba(0, 0, 0, 0.8);
   z-index: 1000;
-`;
+`
 
 export const ModalContent = styled.div`
   position: relative;
@@ -240,7 +240,7 @@ export const ModalContent = styled.div`
     object-fit: cover;
   }
 
-  button {
+  button.closeButton {
     position: absolute;
     top: 0;
     right: 0;
@@ -251,7 +251,40 @@ export const ModalContent = styled.div`
     background: transparent;
     cursor: pointer;
   }
-`;
+`
+
+export const ArrowButton = styled.button`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+  z-index: 1001;
+  fill: ${colors.roxoClaro};
+
+  &.left {
+    left: -10%;
+    top: 50%;  }
+
+  &.right {
+    right: -10%;
+    top: 50%;
+  }
+
+  svg {
+    width: 100px;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(1);
+    }
+  }
+`
 
 export const Support =  styled.div`
   display: flex;
