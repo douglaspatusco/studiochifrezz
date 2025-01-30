@@ -40,7 +40,7 @@ const Projects = () => {
                 <Link href={`/projects/${project.slug}`}>
                   <Picture
                     title={project.name}
-                    src={`/images/projects-cards/${project.slug}.png`}
+                    src={`/images/projects-cards/card-${project.slug}.png`}
                     alt={project.name}
                     width={1000}
                     height={1000}
@@ -63,7 +63,7 @@ const Projects = () => {
                 <Link href={`/projects/${project.slug}`}>
                   <Picture
                     title={project.name}
-                    src={`/images/projects-cards/${project.slug}.png`}
+                    src={`/images/projects-cards/card-${project.slug}.png`}
                     alt={project.name}
                     width={1000}
                     height={1000}
