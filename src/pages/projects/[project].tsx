@@ -118,7 +118,7 @@ const ProjectPage = () => {
             </S.Credits>
           </S.CreditsContainer>
         )}
-        <S.Images>
+        <S.Gallery>
           {images.map((image, index) => (
             <S.ImageWrapper
               key={index}
@@ -133,7 +133,7 @@ const ProjectPage = () => {
               />
             </S.ImageWrapper>
           ))}
-        </S.Images>
+        </S.Gallery>
         {isModalOpen && selectedImage && (
           <S.Modal onClick={closeModal}>
             <S.ModalContent onClick={(e) => e.stopPropagation()}>
@@ -147,6 +147,19 @@ const ProjectPage = () => {
             </S.ModalContent>
           </S.Modal>
         )}
+        <S.Support>
+          {projectName === 'kale' && (
+            <>
+              <h3>Apoios:</h3>
+              <Image
+                src={`/images/apoios.PNG`}
+                alt='Apoio'
+                width={2400}
+                height={250}
+              />
+            </>
+          )}
+        </S.Support>
         <ProjectNavigation currentSlug={projectSlug} projects={data} />
       </S.ContainerProduct>
     </>

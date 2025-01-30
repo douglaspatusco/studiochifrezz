@@ -9,6 +9,7 @@ export const ProjectsContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 4em;
+  padding: 4em 0;
 
   > div {
     display: flex;
@@ -180,7 +181,7 @@ export const NavigationButtons = styled.div`
   }
 `
 
-export const Images = styled.div`
+export const Gallery = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -249,3 +250,16 @@ export const ModalContent = styled.div`
     cursor: pointer;
   }
 `;
+
+export const Support =  styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em 8em;
+
+  img {
+
+    width: 100%;
+    height: auto;
+  }
+`
