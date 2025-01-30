@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 import useFetchProjects from '@/hooks/useFetchProjects'
 
-import { Card, Picture, ProjectsList, ProjectsContainer } from './styles'
+import { Card, Picture, ProjectsList, ProjectsContainer } from '../../styles/projects.styles'
 import { WordWithLargeFirstLetter } from '@/styles/GlobalStyles'
 
 const Projects = () => {

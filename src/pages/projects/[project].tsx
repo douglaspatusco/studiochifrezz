@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 import useFetchProjects from '@/hooks/useFetchProjects'
 import ProjectNavigation from '@/components/ProjectNavigation'
 
-import * as S from './styles'
+import * as S from '../../styles/projects.styles'
 
 const ProjectPage = () => {
   const { query } = useRouter()

@@ -1,8 +1,9 @@
+import { useEffect } from "react";
 import Head from "next/head"
+
 import AOS from 'aos';
 
-import { AboutContainer, Member, MemberReverse, StudioDescription, Us } from "./styles"
-import { useEffect } from "react";
+import { AboutContainer, Member, MemberReverse, StudioDescription, Us } from "../../styles/about.styles"
 
 interface StaffMember {
   name: string;

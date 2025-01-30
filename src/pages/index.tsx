@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 
-import { Container, Video } from './styles'
+import { Container, Video } from '../styles/styles'
 
 export const Home = () => {
   const srcVideo = '/videos/hornzz-teaser-1920X600.mp4#t=13'

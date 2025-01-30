@@ -1,6 +1,7 @@
-import Head from 'next/head';
-import { useState } from 'react';
-import * as S from './styles';
+import Head from 'next/head'
+import { useState } from 'react'
+
+import * as S from '../../styles/contact.styles'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,33 +11,33 @@ const Contact = () => {
     message: '',
   });
 
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { id, value } = e.target;
-    setFormData((prev) => ({ ...prev, [id]: value }));
-  };
+    const { id, value } = e.target
+    setFormData((prev) => ({ ...prev, [id]: value }))
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('loading');
+    e.preventDefault()
+    setStatus('loading')
 
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
-      });
+      })
 
       if (response.ok) {
-        setStatus('success');
-        setFormData({ name: '', email: '', subject: '', message: '' });
+        setStatus('success')
+        setFormData({ name: '', email: '', subject: '', message: '' })
       } else {
-        setStatus('error');
+        setStatus('error')
       }
     } catch (error) {
-      console.error('Erro ao enviar o formulário:', error);
-      setStatus('error');
+      console.error('Erro ao enviar o formulário:', error)
+      setStatus('error')
     }
   };
 
@@ -79,7 +80,7 @@ const Contact = () => {
         </S.Form>
       </S.Container>
     </>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact
