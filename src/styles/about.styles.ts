@@ -5,22 +5,21 @@ export const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8em;
   max-width: ${screenSizes.desktopL};
   width: ${screenSizes.laptop};
-  height: 200vh;
-  padding: 4em 0;
+  height: auto;
+  padding-bottom: 4em;
 `
 
 export const StudioDescription = styled.div`
   display: flex;
   align-items: center;
   width: 800px;
-  height: 100%;
+  height: 80vh;
 
   h2 {
     font-weight: 400;
-    text-align: justify;
+    text-align: center;
     line-height: 1.5;
   }
 `
