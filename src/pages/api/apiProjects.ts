@@ -6,7 +6,7 @@ const projects: Project[] = [
     name: 'Kale do Museu Assustador',
     sinopse:
       'Kale assume a direção do museu assustador enquanto seus avós viajam, mas para provar que está à altura dessa missão ele precisa controlar o caos diário gerado por sua irmã mais nova e pelas assombrações que os dois precisam derrotar juntos, acompanhados por seu amigo Mano e ocasionalmente, o faxineiro Seu Neto.',
-    status: 'Em produção',
+    status: 'Em desenvolvimento',
     description: {
       productionType: 'Animação Seriada',
       gender: 'Comédia e sobrenatural',
@@ -74,7 +74,7 @@ const projects: Project[] = [
     name: 'Roommate',
     sinopse:
       'Duas amigas perto dos trinta anos moram juntas em um apartamento pequeno no centro da cidade. Com dificuldades de entender se está na hora de  se acomodar ou de viver intensamente antes que seja tarde, as duas amigas de longa data enfrentam problemas no amor e no trabalho. Roommate é uma história de comédia para adultos, com pitadas de drama.',
-    status: 'Em produção',
+    status: 'Em desenvolvimento',
     description: {
       productionType: 'Animação Seriada',
       gender: 'Comédia e drama',

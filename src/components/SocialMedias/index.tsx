@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Item, List } from './styles'
-import { SocialMediaIconInstagram, SocialMediaIconLinkedIn, SocialMediaIconYouTube } from '../SocialMediaIcon'
+import { SocialMediaIconInstagram, SocialMediaIconLinkedIn, SocialMediaIconVimeo, SocialMediaIconYouTube } from '../SocialMediaIcon'
 
 const SocialMedias = () => {
   const [socialMediaHovered, setSocialMediaHovered] = useState<number | null>(
@@ -46,6 +46,19 @@ const SocialMedias = () => {
           rel="noreferrer"
         >
           <SocialMediaIconLinkedIn />
+        </a>
+      </Item>
+      <Item
+        isHovered={socialMediaHovered !== null && socialMediaHovered !== 3}
+        onMouseEnter={() => setSocialMediaHovered(3)}
+        onMouseLeave={() => setSocialMediaHovered(null)}
+      >
+        <a
+          href="https://vimeo.com/studiochifrezz"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <SocialMediaIconVimeo />
         </a>
       </Item>
     </List>
