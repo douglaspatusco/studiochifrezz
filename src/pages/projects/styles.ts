@@ -9,6 +9,7 @@ export const ProjectsContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 4em;
+  padding: 4em 0;
 
   > div {
     display: flex;
@@ -56,7 +57,7 @@ export const Picture = styled(Image)`
   }
 `
 
-// [project.tsx]
+// [project.tsx] ---------------------------------------------------
 
 export const ContainerProduct = styled.section`
   display: flex;
@@ -92,9 +93,10 @@ export const CreditsContainer = styled.div`
 export const TechnicalSheet = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 2em;
   padding: 0.5em;
   width: fit-content;
+  font-family: 'Austral Slab';
 
   h1 {
     font-size: 4em;
@@ -120,6 +122,7 @@ export const Role = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  gap: 0.25em;
 
   h3 {
     font-size: 1.25em;
@@ -131,6 +134,7 @@ export const Person = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 0.25em;
 
   h3 {
     font-size: 1.25em;
@@ -152,6 +156,7 @@ export const Description = styled.div`
   p {
     font-size: 1.25em;
     letter-spacing: 1px;
+    line-height: 1.5em;
   }
 `
 
@@ -173,5 +178,88 @@ export const NavigationButtons = styled.div`
       background-color: ${colors.roxoEscuro};
       color: ${colors.branco};
     }
+  }
+`
+
+export const Gallery = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4em;
+  width: 100%;
+  max-width: ${screenSizes.ultrawide};
+  padding: 8em 16em;
+
+  img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 0.5em;
+    object-fit: cover;
+    cursor: pointer;
+    transition: .3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+`
+
+export const ImageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  max-width: calc(50% - 4em);
+`
+
+export const Modal = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+`;
+
+export const ModalContent = styled.div`
+  position: relative;
+  background: ${colors.branco};
+  padding: 1.25em;
+  border-radius: 0.5em;
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 0.25em 0.375em rgba(0, 0, 0, 0.1);
+
+  img {
+    width: 100%;
+    border-radius: 0.5em;
+  }
+
+  button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 0.25em;
+    border: none;
+    font-size: 1.25em;
+    color: #000;
+    background: transparent;
+    cursor: pointer;
+  }
+`;
+
+export const Support =  styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em 8em;
+
+  img {
+
+    width: 100%;
+    height: auto;
   }
 `
