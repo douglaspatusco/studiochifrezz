@@ -1,5 +1,5 @@
-import { screenSizes } from "@/styles/GlobalStyles";
-import styled from "styled-components";
+import { screenSizes } from '@/styles/GlobalStyles'
+import styled from 'styled-components'
 
 export const AboutContainer = styled.div`
   display: flex;
@@ -23,7 +23,6 @@ export const StudioDescription = styled.div`
     text-align: justify;
     line-height: 1.5;
   }
-
 `
 
 export const Us = styled.div`

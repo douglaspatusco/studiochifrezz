@@ -11,15 +11,15 @@ declare interface Project {
   }
   achievments?: string[]
   technicalSheet?: {
-    creators: string | string[],
-    directors: string | string[],
-    production: string | string[],
-    artDirection: string | string[],
-    soundtrack: string | string[],
-    characterConcept: string | string[],
-    storyboard: string | string[],
-    consulting?: string | string[],
-    propsArtist?: string | string[],
-    animatic?: string | string[],
+    creators: string | string[]
+    directors: string | string[]
+    production: string | string[]
+    artDirection: string | string[]
+    soundtrack: string | string[]
+    characterConcept: string | string[]
+    storyboard: string | string[]
+    consulting?: string | string[]
+    propsArtist?: string | string[]
+    animatic?: string | string[]
   }
 }

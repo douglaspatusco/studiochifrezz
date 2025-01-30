@@ -1,13 +1,16 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import nodemailer from 'nodemailer'
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', ['POST'])
     return res.status(405).end(`Method ${req.method} Not Allowed`)
   }
 
-  const { name, email, subject, message } = req.body;
+  const { name, email, subject, message } = req.body
 
   if (!name || !email || !subject || !message) {
     return res.status(400).json({ error: 'Todos os campos são obrigatórios.' })
@@ -21,8 +24,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       secure: true, // Conexão segura
       auth: {
         user: 'info@studiochifrezz.com', // Adicionar user e pass em variáveis de ambiente
-        pass: 'Qu@rtzz0!',
-      },
+        pass: 'Qu@rtzz0!'
+      }
     })
 
     // Verificar conexão SMTP antes de enviar o e-mail
@@ -33,14 +36,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       from: `"Studio Chifrezz" <info@studiochifrezz.com>`,
       to: 'info@studiochifrezz.com',
       subject: `Assunto: ${subject}`,
-      text:
-      `Nome: ${name}\n
+      text: `Nome: ${name}\n
       Email: ${email}\n\n
       Mensagem:
-      ${message}`,
+      ${message}`
     })
 
-    console.log('Email enviado:', info.messageId);
+    console.log('Email enviado:', info.messageId)
     res.status(200).json({ message: 'Email enviado com sucesso!' })
   } catch (error: any) {
     console.error('Erro ao enviar o email:', error.message || error)
@@ -48,14 +50,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // Tratar erros específicos de autenticação
     if (error.code === 'EAUTH') {
       res.status(500).json({
-        error: 'Falha na autenticação SMTP. Verifique o e-mail e a senha.',
-      });
+        error: 'Falha na autenticação SMTP. Verifique o e-mail e a senha.'
+      })
     } else if (error.code === 'ETIMEDOUT') {
       res.status(500).json({
-        error: 'Tempo de conexão esgotado. Verifique sua rede e as configurações do servidor SMTP.',
-      });
+        error:
+          'Tempo de conexão esgotado. Verifique sua rede e as configurações do servidor SMTP.'
+      })
     } else {
-      res.status(500).json({ error: 'Erro ao enviar o email. Verifique o console.' })
+      res
+        .status(500)
+        .json({ error: 'Erro ao enviar o email. Verifique o console.' })
     }
   }
 }

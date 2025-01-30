@@ -1,8 +1,7 @@
 # Studio Chifrezz
 
- Studio Chifrezz is a Brazilian animation studio led by women.
- This project is a website that presents information about the studio, its projects and team.
-
+Studio Chifrezz is a Brazilian animation studio led by women.
+This project is a website that presents information about the studio, its projects and team.
 
 ### Technologies used
 
@@ -51,4 +50,3 @@ npm run dev
 
 The MIT License (MIT)
 Copyright ©️ 2025 - Studio Chifrezz
-

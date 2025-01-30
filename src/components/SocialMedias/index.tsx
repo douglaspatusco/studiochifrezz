@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
 import { Item, List } from './styles'
-import { SocialMediaIconInstagram, SocialMediaIconLinkedIn, SocialMediaIconVimeo, SocialMediaIconYouTube } from '../SocialMediaIcon'
+import {
+  SocialMediaIconInstagram,
+  SocialMediaIconLinkedIn,
+  SocialMediaIconVimeo,
+  SocialMediaIconYouTube
+} from '../SocialMediaIcon'
 
 const SocialMedias = () => {
   const [socialMediaHovered, setSocialMediaHovered] = useState<number | null>(
