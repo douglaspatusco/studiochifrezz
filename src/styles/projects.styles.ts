@@ -235,7 +235,9 @@ export const ModalContent = styled.div`
 
   img {
     width: 100%;
+    height: 100%;
     border-radius: 0.5em;
+    object-fit: cover;
   }
 
   button {
@@ -258,7 +260,6 @@ export const Support =  styled.div`
   padding: 1em 8em;
 
   img {
-
     width: 100%;
     height: auto;
   }
