@@ -19,12 +19,12 @@ export default async function handler(
   try {
     // Configuração do transporte para o GoDaddy
     const transporter = nodemailer.createTransport({
-      host: 'smtpout.secureserver.net', // Host do GoDaddy
-      port: 465, // Porta SSL
-      secure: true, // Conexão segura
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT),
+      secure: true,
       auth: {
-        user: 'info@studiochifrezz.com', // Adicionar user e pass em variáveis de ambiente
-        pass: 'Qu@rtzz0!'
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS
       }
     })
 
