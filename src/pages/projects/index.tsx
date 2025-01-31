@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import Head from 'next/head'
 
 import useFetchProjects from '@/hooks/useFetchProjects'
-import ProjectSection from '@/components/ProjectSection'
+import ProjectSection from '@/components/Project/ProjectSection'
 
 import { ProjectsContainer } from '@/styles/projects.styles'
 
