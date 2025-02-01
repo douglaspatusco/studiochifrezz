@@ -171,15 +171,14 @@ export const ModalContent = styled.div`
   background: ${colors.branco};
   padding: 1.25em;
   border-radius: 0.5em;
-  max-width: 90%;
-  max-height: 90%;
+  width: 90%;
+  height: auto;
   box-shadow: 0 0.25em 0.375em rgba(0, 0, 0, 0.1);
 
   img {
     width: 100%;
-    height: 100%;
     border-radius: 0.5em;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   button.closeButton {
@@ -207,12 +206,12 @@ export const ArrowButton = styled.button`
   fill: ${colors.roxoClaro};
 
   &.left {
-    left: -10%;
+    left: -5%;
     top: 50%;
   }
 
   &.right {
-    right: -10%;
+    right: -5%;
     top: 50%;
   }
 
