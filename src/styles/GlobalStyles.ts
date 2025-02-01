@@ -22,7 +22,7 @@ export const screenSizes = {
 const GlobalStyles = createGlobalStyle`
   @font-face {
     font-family: 'Candara';
-    src: url('/fonts/Candara.ttf'), format('truetype');
+    src: url('/fonts/Candara.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
