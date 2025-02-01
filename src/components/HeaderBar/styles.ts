@@ -24,13 +24,13 @@ export const Menu = styled.ul`
   gap: 2em;
 `
 
-export const MenuItem = styled.li<{ isHovered: boolean }>`
+export const MenuItem = styled.li<{ $isHovered: boolean }>`
   color: ${colors.branco};
   font-size: 18px;
   font-weight: bold;
   transition: 0.3s;
-  opacity: ${({ isHovered }) =>
-    isHovered ? 0.5 : 1}; /* Está bugando a página */
+  opacity: ${({ $isHovered }) =>
+    $isHovered ? 0.5 : 1};
 
   &:hover {
     transform: scale(1.1);
