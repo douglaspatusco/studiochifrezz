@@ -14,7 +14,7 @@ const HeaderBar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY
-      const maxScroll = 200 // Ajuste conforme necessário
+      const maxScroll = 200
       const newOpacity = Math.max(0, 1 - scrollTop / maxScroll)
       setOpacity(newOpacity)
     }
@@ -40,7 +40,7 @@ const HeaderBar = () => {
       <LogoAndName />
       <Menu>
         <MenuItem
-          isHovered={hovered !== null && hovered !== 0}
+          $isHovered={hovered !== null && hovered !== 0}
           onMouseEnter={() => handleMouseEnter(0)}
           onMouseLeave={handleMouseLeave}
           aria-haspopup="true"
@@ -49,7 +49,7 @@ const HeaderBar = () => {
           <ItemLink href={HOME_URL}>INÍCIO</ItemLink>
         </MenuItem>
         <MenuItem
-          isHovered={hovered !== null && hovered !== 1}
+          $isHovered={hovered !== null && hovered !== 1}
           onMouseEnter={() => handleMouseEnter(1)}
           onMouseLeave={handleMouseLeave}
           aria-haspopup="true"
@@ -58,7 +58,7 @@ const HeaderBar = () => {
           <ItemLink href={PROJECTS_URL}>PROJETOS</ItemLink>
         </MenuItem>
         <MenuItem
-          isHovered={hovered !== null && hovered !== 2}
+          $isHovered={hovered !== null && hovered !== 2}
           onMouseEnter={() => handleMouseEnter(2)}
           onMouseLeave={handleMouseLeave}
           aria-haspopup="true"
@@ -67,7 +67,7 @@ const HeaderBar = () => {
           <ItemLink href={ABOUT_URL}>SOBRE</ItemLink>
         </MenuItem>
         <MenuItem
-          isHovered={hovered !== null && hovered !== 3}
+          $isHovered={hovered !== null && hovered !== 3}
           onMouseEnter={() => handleMouseEnter(3)}
           onMouseLeave={handleMouseLeave}
           aria-haspopup="true"
