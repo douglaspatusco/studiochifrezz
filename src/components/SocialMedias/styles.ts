@@ -9,9 +9,9 @@ export const List = styled.ul`
   max-width: max-content;
 `
 
-export const Item = styled.li<{ isHovered: boolean }>`
+export const Item = styled.li<{ $isHovered: boolean }>`
   transition: 0.3s;
-  opacity: ${({ isHovered }) => (isHovered ? 0.5 : 1)};
+  opacity: ${({ $isHovered }) => ($isHovered ? 0.5 : 1)};
 
   &:hover {
     transform: scale(1.1);

@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { Item, List } from './styles'
 import {
   SocialMediaIconInstagram,
   SocialMediaIconLinkedIn,
   SocialMediaIconVimeo,
   SocialMediaIconYouTube
-} from '../SocialMediaIcon'
+} from '../SocialMediaIcons'
+
+import { Item, List } from './styles'
 
 const SocialMedias = () => {
   const [socialMediaHovered, setSocialMediaHovered] = useState<number | null>(
@@ -13,9 +14,9 @@ const SocialMedias = () => {
   )
 
   return (
-    <List>
+    <List aria-label={'social-medias'}>
       <Item
-        isHovered={socialMediaHovered !== null && socialMediaHovered !== 0}
+        $isHovered={socialMediaHovered !== null && socialMediaHovered !== 0}
         onMouseEnter={() => setSocialMediaHovered(0)}
         onMouseLeave={() => setSocialMediaHovered(null)}
       >
@@ -28,7 +29,7 @@ const SocialMedias = () => {
         </a>
       </Item>
       <Item
-        isHovered={socialMediaHovered !== null && socialMediaHovered !== 1}
+        $isHovered={socialMediaHovered !== null && socialMediaHovered !== 1}
         onMouseEnter={() => setSocialMediaHovered(1)}
         onMouseLeave={() => setSocialMediaHovered(null)}
       >
@@ -41,7 +42,7 @@ const SocialMedias = () => {
         </a>
       </Item>
       <Item
-        isHovered={socialMediaHovered !== null && socialMediaHovered !== 2}
+        $isHovered={socialMediaHovered !== null && socialMediaHovered !== 2}
         onMouseEnter={() => setSocialMediaHovered(2)}
         onMouseLeave={() => setSocialMediaHovered(null)}
       >
@@ -54,7 +55,7 @@ const SocialMedias = () => {
         </a>
       </Item>
       <Item
-        isHovered={socialMediaHovered !== null && socialMediaHovered !== 3}
+        $isHovered={socialMediaHovered !== null && socialMediaHovered !== 3}
         onMouseEnter={() => setSocialMediaHovered(3)}
         onMouseLeave={() => setSocialMediaHovered(null)}
       >

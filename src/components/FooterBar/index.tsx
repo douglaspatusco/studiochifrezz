@@ -15,7 +15,7 @@ const FooterBar = () => {
       />
       <SocialMedias />
       <p>
-        Copyright &copy;2025 - Todos os Direitos Reservados à Studio Chifrezz
+        Copyright &copy; 2025 - Todos os Direitos Reservados à Studio Chifrezz
       </p>
     </Footer>
   )
