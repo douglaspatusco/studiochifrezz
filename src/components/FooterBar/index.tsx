@@ -1,10 +1,14 @@
 import React from 'react'
 import Image from 'next/image'
+import { useTranslation } from 'react-i18next'
 
 import SocialMedias from '../SocialMedias'
+
 import { Footer } from './styles'
 
 const FooterBar = () => {
+  const { t } = useTranslation()
+
   return (
     <Footer>
       <Image
@@ -15,7 +19,7 @@ const FooterBar = () => {
       />
       <SocialMedias />
       <p>
-        Copyright &copy; 2025 - Todos os Direitos Reservados à Studio Chifrezz
+        Copyright &copy; 2025 - {t("copy")} Studio Chifrezz
       </p>
     </Footer>
   )

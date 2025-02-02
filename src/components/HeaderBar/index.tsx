@@ -1,8 +1,10 @@
 import { useCallback, useEffect, useState } from 'react'
 import LogoAndName from '../LogoAndName'
-import { HeaderBarContainer, ItemLink, Menu, MenuItem } from './styles'
+
 import SwitchLanguage from '../SwitchLanguage'
 import { useTranslation } from 'react-i18next'
+
+import { HeaderBarContainer, ItemLink, Menu, MenuItem } from './styles'
 
 const HOME_URL = '/'
 const PROJECTS_URL = '/projects'
