@@ -1,4 +1,4 @@
-import { colors, screenSizes } from '@/styles/GlobalStyles'
+import { colors } from '@/styles/GlobalStyles'
 import Link from 'next/link'
 import styled from 'styled-components'
 
