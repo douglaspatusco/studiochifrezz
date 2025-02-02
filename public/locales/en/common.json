@@ -1,9 +1,28 @@
 {
   "hello": "Hello, welcome!",
   "toggle_language": "Switch language",
-  "home": "HOME",
-  "projects": "PROJECTS",
-  "about": "ABOUT",
-  "contact": "CONTACT",
-  "copy": "All Rights Reserved to"
+
+  "home": "home",
+  "projects": "projects",
+  "about": "about",
+  "contact": "contact",
+
+  "copy": "All Rights Reserved to",
+
+  "form-questions": "Do you have any questions?",
+  "form-talkToUs": "Talk to us!",
+  "form-name": "Name",
+  "form-email": "Email",
+  "form-subject": "Subject",
+  "form-message": "Message",
+  "form-send": "send",
+  "form-sending": "Sending",
+  "form-send-success-1": "Email sent successfully!",
+  "form-send-success-2": "We will contact you shortly.",
+  "form-send-error": "Error sending email. Please try again.",
+
+  "yup-error-name": "Name is required",
+  "yup-error-email": "Email is required",
+  "yup-error-subject": "Enter a subject for the message",
+  "yup-error-message": "Write a message"
 }

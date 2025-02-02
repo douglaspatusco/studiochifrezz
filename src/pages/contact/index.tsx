@@ -1,21 +1,27 @@
 import Head from 'next/head'
-import * as S from '../../styles/contact.styles'
 import { ContactForm } from '../../components/ContactForm'
 
+import { useTranslation } from 'react-i18next'
+
+import capitalizeFirstLetter from '@/services/capitalizaFirstLetter'
+
+import * as S from '../../styles/contact.styles'
+import { Title } from '@/components/CapitalizeFirstLetter'
+
 const Contact = () => {
+  const { t } = useTranslation()
+
   return (
     <>
       <Head>
-        <title>Studio Chifrezz | Contato</title>
+        <title>Studio Chifrezz | {t(capitalizeFirstLetter("contact"))}</title>
       </Head>
       <S.Container>
         <S.TalkWithUs>
-          <h1>
-            <span>C</span>ONTATO
-          </h1>
+          <Title text={t("contact")} />
           <div>
-            <p>Ficou com alguma dúvida?</p>
-            <p>Fale com a gente!</p>
+            <p>{t("form-questions")}</p>
+            <p>{t("form-talkToUs")}</p>
           </div>
         </S.TalkWithUs>
         <ContactForm />
