@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useState } from 'react'
 import LogoAndName from '../LogoAndName'
 import { HeaderBarContainer, ItemLink, Menu, MenuItem } from './styles'
+import SwitchLanguage from '../SwitchLanguage'
+import { useTranslation } from 'react-i18next'
 
 const HOME_URL = '/'
 const PROJECTS_URL = '/projects'
@@ -10,6 +12,8 @@ const CONTACT_URL = '/contact'
 const HeaderBar = () => {
   const [hovered, setHovered] = useState<number | null>(null)
   const [opacity, setOpacity] = useState<number>(1)
+  const { t } = useTranslation("common"); // Pega as traduções do arquivo "common.json"
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,6 +41,7 @@ const HeaderBar = () => {
     <HeaderBarContainer
       style={{ opacity, pointerEvents: opacity === 0 ? 'none' : 'auto' }}
     >
+      <SwitchLanguage />
       <LogoAndName />
       <Menu>
         <MenuItem
@@ -46,7 +51,7 @@ const HeaderBar = () => {
           aria-haspopup="true"
           aria-expanded={hovered === 0}
         >
-          <ItemLink href={HOME_URL}>INÍCIO</ItemLink>
+          <ItemLink href={HOME_URL}>{t("home")}</ItemLink>
         </MenuItem>
         <MenuItem
           $isHovered={hovered !== null && hovered !== 1}
@@ -55,7 +60,7 @@ const HeaderBar = () => {
           aria-haspopup="true"
           aria-expanded={hovered === 1}
         >
-          <ItemLink href={PROJECTS_URL}>PROJETOS</ItemLink>
+          <ItemLink href={PROJECTS_URL}>{t("projects")}</ItemLink>
         </MenuItem>
         <MenuItem
           $isHovered={hovered !== null && hovered !== 2}
@@ -64,7 +69,7 @@ const HeaderBar = () => {
           aria-haspopup="true"
           aria-expanded={hovered === 2}
         >
-          <ItemLink href={ABOUT_URL}>SOBRE</ItemLink>
+          <ItemLink href={ABOUT_URL}>{t("about")}</ItemLink>
         </MenuItem>
         <MenuItem
           $isHovered={hovered !== null && hovered !== 3}
@@ -73,7 +78,7 @@ const HeaderBar = () => {
           aria-haspopup="true"
           aria-expanded={hovered === 3}
         >
-          <ItemLink href={CONTACT_URL}>CONTATO</ItemLink>
+          <ItemLink href={CONTACT_URL}>{t("contact")}</ItemLink>
         </MenuItem>
       </Menu>
     </HeaderBarContainer>
