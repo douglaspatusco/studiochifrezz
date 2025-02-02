@@ -53,7 +53,7 @@ const HeaderBar = () => {
           aria-haspopup="true"
           aria-expanded={hovered === 0}
         >
-          <ItemLink href={HOME_URL}>{t("home")}</ItemLink>
+          <ItemLink href={HOME_URL}>{t("home").toUpperCase()}</ItemLink>
         </MenuItem>
         <MenuItem
           $isHovered={hovered !== null && hovered !== 1}
@@ -62,7 +62,7 @@ const HeaderBar = () => {
           aria-haspopup="true"
           aria-expanded={hovered === 1}
         >
-          <ItemLink href={PROJECTS_URL}>{t("projects")}</ItemLink>
+          <ItemLink href={PROJECTS_URL}>{t("projects").toUpperCase()}</ItemLink>
         </MenuItem>
         <MenuItem
           $isHovered={hovered !== null && hovered !== 2}
@@ -71,7 +71,7 @@ const HeaderBar = () => {
           aria-haspopup="true"
           aria-expanded={hovered === 2}
         >
-          <ItemLink href={ABOUT_URL}>{t("about")}</ItemLink>
+          <ItemLink href={ABOUT_URL}>{t("about").toUpperCase()}</ItemLink>
         </MenuItem>
         <MenuItem
           $isHovered={hovered !== null && hovered !== 3}
@@ -80,7 +80,7 @@ const HeaderBar = () => {
           aria-haspopup="true"
           aria-expanded={hovered === 3}
         >
-          <ItemLink href={CONTACT_URL}>{t("contact")}</ItemLink>
+          <ItemLink href={CONTACT_URL}>{t("contact").toUpperCase()}</ItemLink>
         </MenuItem>
       </Menu>
     </HeaderBarContainer>
