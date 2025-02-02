@@ -1,4 +1,7 @@
 import type { AppProps } from 'next/app'
+import { appWithTranslation } from "next-i18next";
+import nextI18NextConfig from '../../next-i18next.config'; // Ajuste o caminho se necessário
+
 
 import HeaderBar from '@/components/HeaderBar'
 import FooterBar from '@/components/FooterBar'
@@ -7,7 +10,7 @@ import GlobalStyles from '@/styles/GlobalStyles'
 import { Content } from '../styles/styles'
 import 'aos/dist/aos.css'
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <GlobalStyles />
@@ -19,3 +22,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </>
   )
 }
+
+export default appWithTranslation(App, nextI18NextConfig);
