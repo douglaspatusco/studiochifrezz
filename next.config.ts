@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 
+import nextI18NextConfig from "./next-i18next.config";
+
 const nextConfig = {
   reactStrictMode: true,
+  i18n: nextI18NextConfig.i18n,
   compiler: {
     styledComponents: true
   },
@@ -29,4 +32,4 @@ const nextConfig = {
   }
 };
 
-export default nextConfig;
+module.exports = nextConfig;
