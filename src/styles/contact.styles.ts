@@ -7,6 +7,7 @@ export const Container = styled.section`
   flex-direction: column;
   justify-content: space-evenly;
   padding: 2em;
+  gap: 4em;
 `
 
 export const TalkWithUs = styled.div`
@@ -14,14 +15,6 @@ export const TalkWithUs = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 1em;
-
-  h1 {
-    font-size: 2em;
-
-    span {
-      font-size: 1.25em;
-    }
-  }
 
   div {
     display: flex;
