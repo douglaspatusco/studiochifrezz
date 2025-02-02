@@ -1,4 +1,8 @@
 {
   "hello": "Hello, welcome!",
-  "toggle_language": "Switch language"
+  "toggle_language": "Switch language",
+  "home": "HOME",
+  "projects": "PROJECTS",
+  "about": "ABOUT",
+  "contact": "CONTACT"
 }
