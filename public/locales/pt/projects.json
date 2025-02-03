@@ -1,0 +1,59 @@
+{
+  "projects": {
+    "kale": {
+      "name": "Kale do Museu Assustador",
+      "sinopse": "Kale assume a direção do museu assustador enquanto seus avós viajam. Para provar que está à altura da missão, ele precisa controlar o caos diário gerado pela sua irmã e pelas assombrações.",
+      "status": "Em desenvolvimento",
+      "description": {
+        "productionType": "Animação Seriada",
+        "gender": "Comédia e Sobrenatural",
+        "targetAudience": "6 a 12 anos",
+        "duration": "52 x 11\""
+      }
+    },
+    "hornzz": {
+      "name": "Hornzz",
+      "sinopse": "Como cada escolha reflete em nossas vidas? Através da narrativa surrealista, acompanhamos as escolhas e desafios da menina Lu em cenários lúdicos.",
+      "status": "Lançado em 2019",
+      "description": {
+        "productionType": "Curta Metragem",
+        "gender": "Fantasia",
+        "targetAudience": "Livre",
+        "duration": "5 min"
+      }
+    },
+      "roommate": {
+      "name": "Roommate",
+      "sinopse": "Duas amigas perto dos trinta anos moram juntas em um apartamento pequeno no centro da cidade. Com dificuldades de entender se está na hora de  se acomodar ou de viver intensamente antes que seja tarde, as duas amigas de longa data enfrentam problemas no amor e no trabalho. Roommate é uma história de comédia para adultos, com pitadas de drama.",
+      "status": "Released in 2019",
+      "description": {
+        "productionType": "Animação Seriada",
+        "gender": "Comédia e Drama",
+        "targetAudience": "+18",
+        "duration": "13 x 11\""
+      }
+    },
+    "quartzzo": {
+      "name": "Quartzzo",
+      "sinopse": "Depois da morte do seu amor em uma tragédia de chuvas, Amélia, uma mulher de 30 anos, visita novamente o Parque da Pedra do Amor, para ressignificar suas memórias e enfrentar seu trauma. No parque ela tem visões do seu falecido namorado que guia Amélia até o lugar onde a tragédia aconteceu.",
+      "status": "Em produção",
+      "description": {
+        "productionType": "Curta Metragem",
+        "gender": "Drama e Fantasia",
+        "targetAudience": "+14",
+        "duration": "8 min"
+      }
+    },
+    "rebu": {
+      "name": "Rebu",
+      "sinopse": "Sinopse",
+      "status": "Status",
+      "description": {
+        "productionType": "Tipo de produção",
+        "gender": "Drama e Fantasia",
+        "targetAudience": "+14",
+        "duration": "8 min"
+      }
+    }
+  }
+}

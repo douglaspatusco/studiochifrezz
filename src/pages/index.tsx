@@ -3,13 +3,13 @@ import Head from 'next/head'
 
 import { GetStaticProps } from "next"
 import { useTranslation } from "next-i18next"
-import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
 import { Container, Video } from '../styles/styles'
+import { loadTranslations } from '@/services/loadTranslations'
 
 export const Home = () => {
   const srcVideo = '/videos/hornzz-teaser-1920X600.mp4'
-  const { t } = useTranslation("common"); // Pegamos as traduções do arquivo "common.json"
+  const { t } = useTranslation("common")
 
   return (
     <>
@@ -45,9 +45,6 @@ export default Home
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
-    props: {
-      ...(await serverSideTranslations(locale ?? "pt", ["common"])),
-    },
-  };
-};
-
+    props: await loadTranslations(locale ?? "pt", ["common", "projects"]),
+  }
+}

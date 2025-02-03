@@ -32,6 +32,43 @@
   "about-luiza": "É Produtora e tem um diploma de bacharelado em Produção Cultural da Universidade Federal Fluminense do Rio de Janeiro - e técnico em gerenciamento cultural da Universidade Federal Sul-Rio-Grandense / Rio Grande do Sul. Luiza trabalha na Baluarte Cultura desde 2017 como produtora executiva do Estúdio Escola de Animação. Também assina a produção de linha em três episódios animados da série infantil 'O Brasil de Tuhu' também produzida pela Baluarte Cultura.",
   "about-priscila": "Nossa Gerente de projeto de animação, atualmente baseada na França. Com experiência de mais de 6 anos na área, tendo supervisionado uma variedade de produções de diferentes países. Ao longo de sua carreira, ela coordenou mais de 20 projetos, com destaques para: Patrulha Canina: Um Filme Superpoderoso (2023), Irmão do Jorel (4a temporada - INTERNATIONAL EMMY AWARD NOMINEE), Johnny Test New Series (1a e 2a temporada) e o Diário de Mika (3a temporada - INTERNATIONAL EMMY AWARD NOMINEE).",
 
-  "animation-series": "ANIMAÇÃO SERIADA",
-  "short-films": "CURTAS METRAGENS"
+  "animation-series": "animação seriada",
+  "short-films": "curtas metragens",
+
+  "kale": "Kale do Museu Assustador",
+  "kale-description": "Kale assume a direção do museu assustador enquanto seus avós viajam, mas para provar que está à altura dessa missão ele precisa controlar o caos diário gerado por sua irmã mais nova e pelas assombrações que os dois precisam derrotar juntos, acompanhados por seu amigo Mano e ocasionalmente, o faxineiro Seu Neto.",
+  "kale-gender": "Comédia e sobrenatural",
+  "kale-production-type": "Animação Seriada",
+
+  "hornzz": "Hornzz",
+  "hornzz-description": "Como cada escolha reflete em nossas vidas? Através da narrativa surrealista de Hornzz, acompanhamos as escolhas e desafios da menina Lu, viajando por experiências únicas em cenários lúdicos.",
+  "hornzz-gender": "Fantasia",
+  "hornzz-production-type": "Curta Metragem",
+
+  "roommate": "Roommate",
+  "roommate-description": "Duas amigas perto dos trinta anos moram juntas em um apartamento pequeno no centro da cidade. Com dificuldades de entender se está na hora de se acomodar ou de viver intensamente antes que seja tarde, as duas amigas de longa data enfrentam problemas no amor e no trabalho. Roommate é uma história de comédia para adultos, com pitadas de drama.",
+  "roommate-gender": "Comédia e drama",
+
+  "quartzzo": "Quartzzo",
+  "quartzzo-description": "Depois da morte do seu amor em uma tragédia de chuvas, Amélia, uma mulher de 30 anos, visita novamente o Parque da Pedra do Amor, para ressignificar suas memórias e enfrentar seu trauma. No parque ela tem visões do seu falecido namorado que guia Amélia até o lugar onde a tragédia aconteceu.",
+  "quartzzo-gender": "Drama e Fantasia",
+
+  "years": "years",
+  "free": "free",
+
+  "in-development": "Em desenvolvimento",
+  "in-production": "Em produção",
+  "release-in": "Lançado em",
+
+  "credits": "créditos",
+  "creator": "Criadora",
+  "direction": "Direção",
+  "production": "Produção",
+  "art-direction": "Direção de Arte",
+  "soundtrack": "Trilha Sonora",
+  "character-concept": "Conceito de Personagem",
+  "storyboard": "Storyboard",
+  "consulting": "Consultoria",
+
+  "supports": "Apoio"
 }
