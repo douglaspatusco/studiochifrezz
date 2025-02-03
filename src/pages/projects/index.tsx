@@ -4,10 +4,13 @@ import Head from 'next/head'
 import useFetchProjects from '@/hooks/useFetchProjects'
 import ProjectSection from '@/components/Project/ProjectSection'
 
+import { useTranslation } from 'react-i18next'
+
 import { ProjectsContainer } from '@/styles/projects.styles'
 
 const Projects = () => {
   const { data = [], loading, error } = useFetchProjects()
+  const { t } = useTranslation()
 
   const categorizedProjects = useMemo(() => ({
     AnimacaoSeriada: data.filter((project) => project.description.productionType === 'Animação Seriada'),
@@ -23,8 +26,8 @@ const Projects = () => {
         <title>Projects | Studio Chifrezz</title>
       </Head>
       <ProjectsContainer>
-        <ProjectSection title="ANIMAÇÃO SERIADA" projects={categorizedProjects.AnimacaoSeriada} />
-        <ProjectSection title="CURTAS METRAGENS" projects={categorizedProjects.CurtaMetragem} />
+        <ProjectSection title={t("animation-series")} projects={categorizedProjects.AnimacaoSeriada} />
+        <ProjectSection title={t("short-films")} projects={categorizedProjects.CurtaMetragem} />
       </ProjectsContainer>
     </>
   )
