@@ -36,13 +36,20 @@ export const Member = styled.div`
   gap: 2em;
   text-align: justify;
 
-  img {
+a {
+    display: inline-block;
     min-width: 16em;
     border-radius: 50%;
     transition: transform 0.2s;
 
     &:hover {
       transform: scale(1.1);
+    }
+
+    img {
+      border-radius: 50%;
+      width: 100%;
+      height: auto;
     }
   }
 
