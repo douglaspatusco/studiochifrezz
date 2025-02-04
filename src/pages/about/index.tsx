@@ -12,6 +12,8 @@ import {
   StudioDescription,
   Us
 } from '../../styles/about.styles'
+import { GetServerSideProps } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 interface StaffMember {
   name: string
@@ -94,3 +96,11 @@ const About = () => {
 }
 
 export default About
+
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? "pt", ["common", "projects"])),
+    },
+  }
+}

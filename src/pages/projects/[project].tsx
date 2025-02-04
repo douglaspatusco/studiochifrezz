@@ -13,6 +13,7 @@ import ProjectCredits from '@/components/Project/ProjectCredits'
 
 import * as ProjectStyle from '@/styles/project.styles'
 import AOS from 'aos'
+
 const ProjectPage = () => {
   const { t } = useTranslation("projects")
   const { query } = useRouter()

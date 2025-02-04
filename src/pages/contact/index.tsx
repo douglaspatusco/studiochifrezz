@@ -7,6 +7,8 @@ import capitalizeFirstLetter from '@/services/capitalizaFirstLetter'
 
 import * as S from '../../styles/contact.styles'
 import { Title } from '@/components/CapitalizeFirstLetter'
+import { GetServerSideProps } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 const Contact = () => {
   const { t } = useTranslation()
@@ -31,3 +33,11 @@ const Contact = () => {
 }
 
 export default Contact
+
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? "pt", ["common", "projects"])),
+    },
+  }
+}

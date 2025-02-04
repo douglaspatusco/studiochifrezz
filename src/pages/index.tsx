@@ -1,11 +1,11 @@
 import React from 'react'
 import Head from 'next/head'
 
-import { GetStaticProps } from "next"
+import { GetServerSideProps } from "next"
 import { useTranslation } from "next-i18next"
 
 import { Container, Video } from '../styles/styles'
-import { loadTranslations } from '@/services/loadTranslations'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 export const Home = () => {
   const srcVideo = '/videos/hornzz-teaser-1920X600.mp4'
@@ -41,10 +41,12 @@ export const Home = () => {
   )
 }
 
-export default Home
-
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
-    props: await loadTranslations(locale ?? "pt", ["common", "projects"]),
+    props: {
+      ...(await serverSideTranslations(locale ?? "pt", ["common", "projects"])),
+    },
   }
 }
+
+  export default Home

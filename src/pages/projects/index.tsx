@@ -7,6 +7,8 @@ import ProjectSection from '@/components/Project/ProjectSection'
 import { useTranslation } from 'react-i18next'
 
 import { ProjectsContainer } from '@/styles/projects.styles'
+import { GetServerSideProps } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 const Projects = () => {
   const { data = [], loading, error } = useFetchProjects()
@@ -34,3 +36,11 @@ const Projects = () => {
 }
 
 export default Projects
+
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? "pt", ["common", "projects"])),
+    },
+  }
+}
