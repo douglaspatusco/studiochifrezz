@@ -8,7 +8,7 @@ import { Container, Video } from '../styles/styles'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 export const Home = () => {
-  const srcVideo = '/videos/hornzz-teaser-1920X600.mp4'
+  const srcVideo = '/videos/banner-studiochifrezz-1920X600.mp4'
   const { t } = useTranslation("common")
 
   return (
