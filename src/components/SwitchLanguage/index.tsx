@@ -1,31 +1,37 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
+
 import { SwitchLanguageContainer, Switch, Slider } from "./styles"
 
 const SwitchLanguage = () => {
   const router = useRouter()
+  const [isEnglish, setIsEnglish] = useState(false)
 
-  const getInitialLanguage = () => {
-    if (typeof window !== "undefined") {
-      return localStorage.getItem("language") === "en"
-    }
-    return false
-  }
-
-  const [isEnglish, setIsEnglish] = useState(getInitialLanguage)
-
+  // Carrega o idioma do localStorage após a montagem do componente
   useEffect(() => {
-    const storedLanguage = localStorage.getItem("language");
-    const newLocale = isEnglish ? "en" : "pt";
-
-    if (storedLanguage !== newLocale) {
-      localStorage.setItem("language", newLocale);
-      router.push(router.pathname, router.asPath, { locale: newLocale });
+    if (typeof window !== "undefined") {
+      const storedLanguage = localStorage.getItem("language") === "en"
+      setIsEnglish(storedLanguage)
     }
-  }, [isEnglish, router]);
+  }, [])
+
+  // Atualiza o idioma no localStorage e no Next.js quando mudar o estado
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const newLocale = isEnglish ? "en" : "pt"
+      const storedLanguage = localStorage.getItem("language")
+
+      if (storedLanguage !== newLocale) {
+        localStorage.setItem("language", newLocale)
+        if (router.locale !== newLocale) {
+          router.replace(router.pathname, router.asPath, { locale: newLocale })
+        }
+      }
+    }
+  }, [isEnglish])
 
   const handleToggle = () => {
-    setIsEnglish((prev) => !prev);
+    setIsEnglish((prev) => !prev)
   }
 
   return (
