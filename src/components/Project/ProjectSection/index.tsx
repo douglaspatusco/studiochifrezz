@@ -21,7 +21,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ title, projects }) => (
     <div>
       {title.split(' ').map((word, index) => (
         <WordWithLargeFirstLetter key={index}>
-          {word}&nbsp;&nbsp;
+          {word.toUpperCase()}&nbsp;&nbsp;
         </WordWithLargeFirstLetter>
       ))}
     </div>
