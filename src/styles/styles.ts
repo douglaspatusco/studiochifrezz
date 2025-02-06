@@ -32,6 +32,12 @@ export const Video = styled.div`
     width: 100vw;
     height: 56.25vw; /* Proporção 16:9 */
     transform: translate(-50%, -50%);
-    pointer-events: none; /* Desabilita a interação do player */
+    pointer-events: none;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    pointer-events: none;
   }
 `

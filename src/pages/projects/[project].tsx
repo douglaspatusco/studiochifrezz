@@ -124,7 +124,7 @@ export default ProjectPage
 import { loadTranslations } from '@/services/loadTranslations'
 import { GetStaticProps } from 'next'
 
-export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
       ...(await loadTranslations(locale ?? "pt", ["projects"])),

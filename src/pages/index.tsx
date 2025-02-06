@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 
 import { GetServerSideProps } from "next"
@@ -6,10 +6,17 @@ import { useTranslation } from "next-i18next"
 
 import { Container, Video } from '../styles/styles'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import Image from 'next/image'
 
 export const Home = () => {
   const srcVideo = '/videos/banner-studiochifrezz-1920X600.mp4'
   const { t } = useTranslation("common")
+
+  const [videoLoaded, setVideoLoaded] = useState(false)
+
+  useEffect(() => {
+    setTimeout(() => setVideoLoaded(true), 2000) // Carrega após 2s (ajuste conforme necessário)
+  }, [])
 
   return (
     <>
@@ -21,7 +28,14 @@ export const Home = () => {
       </Head>
       <Container>
         <Video>
-          <video
+          {!videoLoaded ? (
+        <Image
+        src="/images/banner-home-static.png"
+        alt="Background"
+        width={1920}
+        height={600} />
+      ) : (
+        <video
             loop
             muted
             autoPlay
@@ -32,6 +46,7 @@ export const Home = () => {
             <source src={srcVideo} type="video/mp4" />
             Seu navegador não suporta o formato de vídeo.
           </video>
+      )}
         </Video>
         <div style={{paddingTop: "20em"}}>
           <h1>{t("hello")}</h1>

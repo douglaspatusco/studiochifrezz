@@ -1,0 +1,59 @@
+{
+  "projects": {
+    "kale": {
+      "name": "Kale's Museum of Spookiness",
+      "sinopse": "Kale takes over the running of the spooky museum while his grandparents are away. To prove he's up to the task, he must control the daily chaos caused by his sister and the ghosts.",
+      "status": "In development",
+      "description": {
+        "productionType": "Animated Series",
+        "gender": "Comedy and supernatural",
+        "targetAudience": "6 to 12 years",
+        "duration": "52 x 11\""
+      }
+    },
+    "hornzz": {
+      "name": "Hornzz",
+      "sinopse": "How does each choice reflect on our lives? Through the surrealist narrative, we follow the choices and challenges of the girl Lu in playful scenarios.",
+      "status": "Released in 2019",
+      "description": {
+        "productionType": "Short Film",
+        "gender": "Fantasy",
+        "targetAudience": "All",
+        "duration": "5 min"
+      }
+    },
+    "roommate": {
+      "name": "Roommate",
+      "sinopse": "Two friends in their early thirties live together in a small apartment in the city center. Struggling to decide whether it's time to settle down or live life to the fullest before it's too late, the two longtime friends face problems in love and at work. Roommate is a comedy story for adults, with a hint of drama.",
+      "status": "In development",
+      "description": {
+        "productionType": "Animated Series",
+        "gender": "Comedy and Drama",
+        "targetAudience": "+18",
+        "duration": "13 x 11\""
+      }
+    },
+    "quartzzo": {
+      "name": "Quartzzo",
+      "sinopse": "After the death of her lover in a flood, Amélia, a 30-year-old woman, visits Pedra do Amor Park again to reframe her memories and face her trauma. In the park, she has visions of her deceased boyfriend who guides Amélia to the place where the tragedy occurred.",
+      "status": "In production",
+      "description": {
+        "productionType": "Short Film",
+        "gender": "Drama and Fantasy",
+        "targetAudience": "+14",
+        "duration": "8 min"
+      }
+    },
+    "rebu": {
+      "name": "Rebu",
+      "sinopse": "Sinopse",
+      "status": "Status",
+      "description": {
+        "productionType": "Production type",
+        "gender": "Gender",
+        "targetAudience": "+14",
+        "duration": "8 min"
+      }
+    }
+  }
+}

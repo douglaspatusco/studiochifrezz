@@ -1,17 +1,36 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
-
 import { SwitchLanguageContainer, Switch, Slider } from "./styles"
 
 const SwitchLanguage = () => {
   const router = useRouter()
   const [isEnglish, setIsEnglish] = useState(false)
+  const [translations, setTranslations] = useState<{ [key: string]: string } | null>(null)
+
+  // Função para carregar as traduções
+  const loadTranslations = async (locale: string) => {
+    const cachedData = localStorage.getItem(`translations_${locale}`)
+
+    if (cachedData) {
+      setTranslations(JSON.parse(cachedData))
+    } else {
+      try {
+        const response = await fetch(`/locales/${locale}.json`)
+        const data = await response.json()
+        localStorage.setItem(`translations_${locale}`, JSON.stringify(data))
+        setTranslations(data)
+      } catch (error) {
+        console.error("Erro ao carregar traduções:", error)
+      }
+    }
+  }
 
   // Carrega o idioma do localStorage após a montagem do componente
   useEffect(() => {
     if (typeof window !== "undefined") {
       const storedLanguage = localStorage.getItem("language") === "en"
       setIsEnglish(storedLanguage)
+      loadTranslations(storedLanguage ? "en" : "pt")
     }
   }, [])
 
@@ -19,14 +38,13 @@ const SwitchLanguage = () => {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const newLocale = isEnglish ? "en" : "pt"
-      const storedLanguage = localStorage.getItem("language")
+      localStorage.setItem("language", newLocale)
 
-      if (storedLanguage !== newLocale) {
-        localStorage.setItem("language", newLocale)
-        if (router.locale !== newLocale) {
-          router.replace(router.pathname, router.asPath, { locale: newLocale })
-        }
+      if (router.locale !== newLocale) {
+        router.replace(router.pathname, router.asPath, { locale: newLocale })
       }
+
+      loadTranslations(newLocale)
     }
   }, [isEnglish])
 
