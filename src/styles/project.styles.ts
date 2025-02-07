@@ -177,6 +177,7 @@ export const ModalContent = styled.div`
 
   img {
     width: 100%;
+    height: auto;
     border-radius: 0.5em;
     object-fit: contain;
   }

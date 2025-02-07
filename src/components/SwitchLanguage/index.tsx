@@ -4,39 +4,28 @@ import { SwitchLanguageContainer, Switch, Slider } from "./styles"
 
 const SwitchLanguage = () => {
   const router = useRouter()
-  const [isEnglish, setIsEnglish] = useState(false)
+
+  // Define um estado inicial fixo para evitar erro de hidratação
+  const [isEnglish, setIsEnglish] = useState(router.locale === "en")
   const [translations, setTranslations] = useState<{ [key: string]: string } | null>(null)
+  const [isClient, setIsClient] = useState(false) // Garante que só muda no cliente
 
-  // Função para carregar as traduções
-  const loadTranslations = async (locale: string) => {
-    const cachedData = localStorage.getItem(`translations_${locale}`)
-
-    if (cachedData) {
-      setTranslations(JSON.parse(cachedData))
-    } else {
-      try {
-        const response = await fetch(`/locales/${locale}.json`)
-        const data = await response.json()
-        localStorage.setItem(`translations_${locale}`, JSON.stringify(data))
-        setTranslations(data)
-      } catch (error) {
-        console.error("Erro ao carregar traduções:", error)
-      }
-    }
-  }
-
-  // Carrega o idioma do localStorage após a montagem do componente
+  // Após o carregamento do cliente, ajusta o idioma corretamente
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const storedLanguage = localStorage.getItem("language") === "en"
-      setIsEnglish(storedLanguage)
-      loadTranslations(storedLanguage ? "en" : "pt")
+    setIsClient(true)
+
+    const storedLanguage = localStorage.getItem("language")
+    if (storedLanguage) {
+      setIsEnglish(storedLanguage === "en")
+      loadTranslations(storedLanguage)
+    } else {
+      // Se não houver idioma salvo, usar o do Next.js
+      loadTranslations(router.locale || "pt")
     }
   }, [])
 
-  // Atualiza o idioma no localStorage e no Next.js quando mudar o estado
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (isClient) {
       const newLocale = isEnglish ? "en" : "pt"
       localStorage.setItem("language", newLocale)
 
@@ -46,7 +35,23 @@ const SwitchLanguage = () => {
 
       loadTranslations(newLocale)
     }
-  }, [isEnglish])
+  }, [isEnglish, isClient])
+
+  const loadTranslations = async (locale: string) => {
+    try {
+      const cachedData = localStorage.getItem(`translations_${locale}`)
+      if (cachedData) {
+        setTranslations(JSON.parse(cachedData))
+      } else {
+        const response = await fetch(`/locales/${locale}.json`)
+        const data = await response.json()
+        localStorage.setItem(`translations_${locale}`, JSON.stringify(data))
+        setTranslations(data)
+      }
+    } catch (error) {
+      console.error("Erro ao carregar traduções:", error)
+    }
+  }
 
   const handleToggle = () => {
     setIsEnglish((prev) => !prev)
