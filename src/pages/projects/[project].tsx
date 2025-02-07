@@ -2,7 +2,11 @@ import React, { useEffect } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
+
+import { GetServerSideProps, GetStaticProps } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+
 import useFetchProjects from '@/hooks/useFetchProjects'
 import useModal from '@/hooks/useModal'
 import { imageData } from '@/data/images'
@@ -15,7 +19,7 @@ import * as ProjectStyle from '@/styles/project.styles'
 import AOS from 'aos'
 
 const ProjectPage = () => {
-  const { t } = useTranslation("projects")
+  const { t } = useTranslation(["projects", "common"])
   const { query } = useRouter()
   const projectSlug = (query.project as string) || ""
   const { data } = useFetchProjects()
@@ -104,7 +108,7 @@ const ProjectPage = () => {
         <ProjectModal {...modalProps} />
         {projectSlug === 'kale' && (
           <ProjectStyle.Support>
-            <h3>Apoios:</h3>
+            <h3>{t("supports", {ns: "common"})}:</h3>
             <Image
               src={`/images/apoios.PNG`}
               alt="Apoio"
@@ -121,31 +125,10 @@ const ProjectPage = () => {
 
 export default ProjectPage
 
-import { loadTranslations } from '@/services/loadTranslations'
-import { GetStaticProps } from 'next'
-
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
     props: {
-      ...(await loadTranslations(locale ?? "pt", ["projects"])),
+      ...(await serverSideTranslations(locale ?? "pt", ["common", "projects"])),
     },
-  }
-}
-
-// Implementação do getStaticPaths com dados da API
-export async function getStaticPaths() {
-  const locales = ["pt", "en"] // Adicione os idiomas suportados
-  const projectSlugs = Object.keys(imageData)
-
-  const paths = locales.flatMap((locale) =>
-    projectSlugs.map((slug) => ({
-      params: { project: slug },
-      locale, // Inclui o idioma no path
-    }))
-  )
-
-  return {
-    paths,
-    fallback: false
   }
 }

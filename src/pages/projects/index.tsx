@@ -1,14 +1,14 @@
 import React, { useMemo } from 'react'
 import Head from 'next/head'
 
+import { GetServerSideProps } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next'
+
 import useFetchProjects from '@/hooks/useFetchProjects'
 import ProjectSection from '@/components/Project/ProjectSection'
 
-import { useTranslation } from 'react-i18next'
-
 import { ProjectsContainer } from '@/styles/projects.styles'
-import { GetServerSideProps } from 'next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 const Projects = () => {
   const { data = [], loading, error } = useFetchProjects()

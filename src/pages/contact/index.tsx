@@ -1,14 +1,15 @@
 import Head from 'next/head'
 import { ContactForm } from '../../components/ContactForm'
 
-import { useTranslation } from 'react-i18next'
-
-import capitalizeFirstLetter from '@/services/capitalizaFirstLetter'
-
-import * as S from '../../styles/contact.styles'
-import { Title } from '@/components/CapitalizeFirstLetter'
 import { GetServerSideProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+
+import { useTranslation } from 'next-i18next'
+
+import capitalizeFirstLetter from '@/services/capitalizaFirstLetter'
+import { Title } from '@/components/CapitalizeFirstLetter'
+
+import * as S from '../../styles/contact.styles'
 
 const Contact = () => {
   const { t } = useTranslation()
