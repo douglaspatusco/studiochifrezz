@@ -19,7 +19,7 @@ import * as ProjectStyle from '@/styles/project.styles'
 import AOS from 'aos'
 
 const ProjectPage = () => {
-  const { t } = useTranslation("projects")
+  const { t } = useTranslation(["projects", "common"])
   const { query } = useRouter()
   const projectSlug = (query.project as string) || ""
   const { data } = useFetchProjects()
@@ -108,7 +108,7 @@ const ProjectPage = () => {
         <ProjectModal {...modalProps} />
         {projectSlug === 'kale' && (
           <ProjectStyle.Support>
-            <h3>Apoios:</h3>
+            <h3>{t("supports", {ns: "common"})}:</h3>
             <Image
               src={`/images/apoios.PNG`}
               alt="Apoio"
