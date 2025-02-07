@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { useCallback, useMemo, useState } from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 import useScrollOpacity from '@/hooks/useScrollOpacity'
 import LogoAndName from '../LogoAndName'
 import SwitchLanguage from '../SwitchLanguage'

@@ -1,6 +1,9 @@
 import { useEffect } from 'react'
 import Head from 'next/head'
 
+import { GetServerSideProps } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+
 import { useTranslation } from 'react-i18next'
 
 import AOS from 'aos'
@@ -12,8 +15,6 @@ import {
   StudioDescription,
   Us
 } from '../../styles/about.styles'
-import { GetServerSideProps } from 'next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 interface StaffMember {
   name: string

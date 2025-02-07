@@ -1,13 +1,13 @@
 import React from 'react'
 import Image from 'next/image'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 
 import SocialMedias from '../SocialMedias'
 
 import { Footer } from './styles'
 
 const FooterBar = () => {
-  const { t } = useTranslation()
+  const { t } = useTranslation("common")
 
   return (
     <Footer>
