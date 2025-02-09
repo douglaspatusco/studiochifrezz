@@ -1,9 +1,11 @@
 import React from 'react'
+import Head from 'next/head'
+
 import Document, {
   DocumentContext,
   DocumentInitialProps,
   Html,
-  Head,
+  Head as Header,
   Main,
   NextScript
 } from 'next/document'
@@ -41,7 +43,23 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <link
+            rel="preload"
+            href="/fonts/Candara.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/austral_slab/Austral-Slab_Blur-Regular.otf"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+        </Head>
+        <Header />
         <body>
           <Main />
           <NextScript />

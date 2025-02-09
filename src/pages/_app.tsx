@@ -7,7 +7,7 @@ import HeaderBar from '@/components/HeaderBar'
 import FooterBar from '@/components/FooterBar'
 
 import GlobalStyles from '@/styles/GlobalStyles'
-import { Content } from '../styles/styles'
+import { Content } from '../styles/home.styles'
 import 'aos/dist/aos.css'
 
 function App({ Component, pageProps }: AppProps) {

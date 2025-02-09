@@ -26,18 +26,19 @@ export const Video = styled.div`
   z-index: 0; /* Para ficar abaixo do conteúdo */
 
   video {
-    position: absolute;
-    top: 14em;
-    left: 50%;
     width: 100vw;
-    height: 56.25vw; /* Proporção 16:9 */
-    transform: translate(-50%, -50%);
+    height: auto;
     pointer-events: none;
   }
 
   img {
     width: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     pointer-events: none;
+
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 `
