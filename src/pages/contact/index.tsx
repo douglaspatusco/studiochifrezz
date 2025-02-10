@@ -17,11 +17,10 @@ const Contact = () => {
   return (
     <>
       <Head>
-        <title>Studio Chifrezz | {t(capitalizeFirstLetter("contact"))}</title>
+        <title>{`Studio Chifrezz | ${t(capitalizeFirstLetter("contact"))}`}</title>
       </Head>
       <S.Container>
         <S.TalkWithUs>
-          <Title text={t("contact")} />
           <div>
             <p>{t("form-questions")}</p>
             <p>{t("form-talkToUs")}</p>
