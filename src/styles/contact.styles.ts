@@ -5,9 +5,9 @@ export const Container = styled.section`
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: space-evenly;
-  padding: 2em;
+  padding: 7.5em 0;
   gap: 4em;
+  height: 100vh;
 `
 
 export const TalkWithUs = styled.div`
