@@ -7,6 +7,7 @@ import { useTranslation } from 'next-i18next'
 
 import useFetchProjects from '@/hooks/useFetchProjects'
 import ProjectSection from '@/components/Project/ProjectSection'
+import Loading from '@/components/Loading'
 
 import { ProjectsContainer } from '@/styles/projects.styles'
 
@@ -19,7 +20,8 @@ const Projects = () => {
     CurtaMetragem: data.filter((project) => project.description.productionType === 'Curta Metragem'),
   }), [data])
 
-  if (loading) return <p>Loading...</p>
+  if (loading) return <Loading />
+
   if (error) return <p>Erro ao carregar projetos. Por favor, tente novamente.</p>
 
   return (
