@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react'
+import { GetServerSideProps } from 'next'
+import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
-import { useTranslation } from 'next-i18next'
+import React, { useEffect } from 'react'
 
-import { GetServerSideProps, GetStaticProps } from 'next'
+import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import useFetchProjects from '@/hooks/useFetchProjects'
@@ -17,6 +17,7 @@ import ProjectCredits from '@/components/Project/ProjectCredits'
 
 import * as ProjectStyle from '@/styles/project.styles'
 import AOS from 'aos'
+import Loading from '@/components/Loading'
 
 const ProjectPage = () => {
   const { t } = useTranslation(["projects", "common"])
@@ -34,7 +35,7 @@ const ProjectPage = () => {
 
   // Encontra os dados do projeto vindo da API
   const projectData = data.find((project) => project.slug === projectSlug)
-  if (!projectData) return <div>Loading...</div>
+  if (!projectData) return <Loading />
 
   // Função para traduzir os dados do projeto, usando os dados da API como fallback
   const translateProject = (project: Project) => {
