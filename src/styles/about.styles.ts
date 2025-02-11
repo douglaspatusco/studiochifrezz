@@ -14,13 +14,56 @@ export const AboutContainer = styled.div`
 export const StudioDescription = styled.div`
   display: flex;
   align-items: center;
-  width: 800px;
-  height: 80vh;
+  width: 100vw;
+  height: 100vh;
+  padding: 0 20em;
+  position: relative;
 
   h2 {
     font-weight: 400;
     text-align: center;
     line-height: 1.5;
+  }
+
+  div.chars {
+    padding: 1em;
+
+    img {
+      width: auto;
+      height: 12em;
+
+      &.image1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-left: 2em;
+        padding-top: 2em;
+      }
+
+      &.image2 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding-right: 2em;
+        padding-top: 2em;
+      }
+
+      &.image3 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding-left: 2em;
+        padding-bottom: 2em;
+      }
+
+      &.image4 {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding-right: 2em;
+        padding-bottom: 2em;
+      }
+    }
   }
 `
 
