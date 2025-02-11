@@ -12,8 +12,10 @@ import {
   AboutContainer,
   Member,
   MemberReverse,
-  StudioDescription,
-  Us
+  DescriptionContainer,
+  Us,
+  CharsContainer,
+  CharsImages
 } from '../../styles/about.styles'
 
 interface StaffMember {
@@ -61,17 +63,17 @@ const About = () => {
         <title>Sobre Nós | Studio Chifrezz</title>
       </Head>
       <AboutContainer>
-        <StudioDescription>
+        <DescriptionContainer>
           <h2>
             {t("about-description")}
           </h2>
-          <div className='chars'>
-            <img src="/images/about-image1.png" alt="Image 1" className='image1' />
-            <img src="/images/about-image2.png" alt="Image 2" className='image2' />
-            <img src="/images/about-image3.png" alt="Image 3" className='image3' />
-            <img src="/images/about-image4.png" alt="Image 4" className='image4' />
-          </div>
-        </StudioDescription>
+          <CharsContainer>
+            <CharsImages src="/images/about-image1.png" alt="Image 1" position="top-left" />
+            <CharsImages src="/images/about-image2.png" alt="Image 2" position="top-right" />
+            <CharsImages src="/images/about-image3.png" alt="Image 3" position="bottom-left" />
+            <CharsImages src="/images/about-image4.png" alt="Image 4" position="bottom-right" />
+          </CharsContainer>
+        </DescriptionContainer>
         <Us>
           {staff.map((member, index) =>
             index % 2 === 0 ? (

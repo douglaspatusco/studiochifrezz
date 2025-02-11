@@ -11,59 +11,37 @@ export const AboutContainer = styled.div`
   padding-bottom: 4em;
 `
 
-export const StudioDescription = styled.div`
+export const CharsContainer = styled.div`
+`
+
+export const CharsImages = styled.img<{position: string}>`
+  width: auto;
+  height: 12em;
+  position: absolute;
+
+  ${({ position }) =>
+    position === "top-left" && "top: 0; left: 0; padding-left: 2em; padding-top: 2em;"}
+  ${({ position }) =>
+    position === "top-right" && "top: 0; right: 0; padding-right: 2em; padding-top: 2em;"}
+  ${({ position }) =>
+    position === "bottom-left" && "bottom: 0; left: 0; padding-left: 2em; padding-bottom: 2em;"}
+  ${({ position }) =>
+    position === "bottom-right" && "bottom: 0; right: 0; padding-right: 2em; padding-bottom: 2em;"}
+`
+
+export const DescriptionContainer = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100vw;
-  height: 100vh;
-  padding: 0 20em;
+  height: 80vh;
   position: relative;
 
   h2 {
     font-weight: 400;
     text-align: center;
     line-height: 1.5;
-  }
-
-  div.chars {
-    padding: 1em;
-
-    img {
-      width: auto;
-      height: 12em;
-
-      &.image1 {
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding-left: 2em;
-        padding-top: 2em;
-      }
-
-      &.image2 {
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding-right: 2em;
-        padding-top: 2em;
-      }
-
-      &.image3 {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        padding-left: 2em;
-        padding-bottom: 2em;
-      }
-
-      &.image4 {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        padding-right: 2em;
-        padding-bottom: 2em;
-      }
-    }
+    width: 640px;
   }
 `
 
