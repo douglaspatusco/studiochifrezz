@@ -65,6 +65,12 @@ const About = () => {
           <h2>
             {t("about-description")}
           </h2>
+          <div className='chars'>
+            <img src="/images/about-image1.png" alt="Image 1" className='image1' />
+            <img src="/images/about-image2.png" alt="Image 2" className='image2' />
+            <img src="/images/about-image3.png" alt="Image 3" className='image3' />
+            <img src="/images/about-image4.png" alt="Image 4" className='image4' />
+          </div>
         </StudioDescription>
         <Us>
           {staff.map((member, index) =>
