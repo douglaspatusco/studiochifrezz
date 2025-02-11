@@ -10,9 +10,8 @@ export const HeaderBarContainer = styled.header`
   justify-content: space-between;
   align-items: center;
 
-  max-width: 100%;
   width: 100%;
-  height: auto;
+  height: 20vh;
   padding: 0.5em 4em;
 
   background-color: ${colors.roxoEscuro};
