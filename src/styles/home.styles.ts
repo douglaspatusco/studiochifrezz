@@ -4,8 +4,7 @@ import styled from 'styled-components'
 export const Content = styled.main`
   display: flex;
   justify-content: center;
-  min-height: 100vh;
-  padding-top: 7.25em;
+  padding-top: 20vh;
   background-color: ${colors.branco};
 `
 
