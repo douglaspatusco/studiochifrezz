@@ -27,6 +27,37 @@ const ProjectPage = () => {
   const images = imageData[projectSlug] || []
   const modalProps = useModal(images)
 
+  const supports = [
+    {
+      src: "/images/apoios/apoio_01_VS.png",
+      alt: "Ventana Sur"
+    },
+        {
+      src: "/images/apoios/apoio_02_VS.png",
+      alt: "Ventana Sur"
+    },
+    {
+      src: "/images/apoios/apoio_03_incaa.png",
+      alt: "Instituto Nacional de Cine Y Artes Audiovisuales"
+    },
+    {
+      src: "/images/apoios/apoio_04_quirino.png",
+      alt: "Premios Quirino"
+    },
+    {
+      src: "/images/apoios/apoio_05_OEI.png",
+      alt: "Organización de Estados Uberoamericanos"
+    },
+    {
+      src: "/images/apoios/apoio_06_annecy.png",
+      alt: "Annecy"
+    },
+    {
+      src: "/images/apoios/apoio_07_paradiso.png",
+      alt: "Paradiso"
+    },
+  ]
+
   useEffect(() => {
     AOS.init({ duration: 1000, once: false, mirror: true })
   }, [])
@@ -109,13 +140,12 @@ const ProjectPage = () => {
         <ProjectModal {...modalProps} />
         {projectSlug === 'kale' && (
           <ProjectStyle.Support>
-            <h3>{t("supports", {ns: "common"})}:</h3>
-            <Image
-              src={`/images/apoios.PNG`}
-              alt="Apoio"
-              width={2400}
-              height={250}
-            />
+            <h1>{t("supports", {ns: "common"})}:</h1>
+            <ProjectStyle.SupportsImages>
+              {supports.map((supports) => (
+                <img src={supports.src} alt={supports.alt} />
+              ) )}
+            </ProjectStyle.SupportsImages>
           </ProjectStyle.Support>
         )}
         <ProjectNavigation currentSlug={projectSlug} projects={data} />
