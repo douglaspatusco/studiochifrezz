@@ -13,6 +13,12 @@ export const ContainerProduct = styled.section`
     color: ${colors.cinzaChumbo};
     font-size: 2em;
   }
+
+  @media screen and (max-width: ${screenSizes.laptop}) {
+    img {
+      height: auto;
+    }
+  }
 `
 
 export const Infos = styled.div`
@@ -131,7 +137,7 @@ export const Gallery = styled.div`
   gap: 4em;
   width: 100%;
   max-width: ${screenSizes.ultrawide};
-  padding: 8em 16em;
+  padding: 8em 4em;
 
   img {
     max-width: 90%;
@@ -150,7 +156,9 @@ export const Gallery = styled.div`
 export const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
-  max-width: calc(50% - 4em);
+
+  flex: 1 1 calc(50% - 2em);
+  max-width: calc(50% - 2em);
 `
 
 export const Modal = styled.div`
@@ -227,6 +235,18 @@ export const ArrowButton = styled.button`
       transform: scale(1);
     }
   }
+
+  @media screen and (max-width: ${screenSizes.laptop}) {
+    &.left {
+      left: -8%;
+      top: 50%;
+    }
+
+    &.right {
+      right: -8%;
+      top: 50%;
+    }
+  }
 `
 
 export const Support = styled.div`
@@ -234,9 +254,25 @@ export const Support = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 1em 8em;
+`
+
+export const SupportsImages = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 
   img {
-    width: 100%;
+    max-width: 25%;
     height: auto;
+    object-fit: cover;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(0.9);
+    }
   }
 `
