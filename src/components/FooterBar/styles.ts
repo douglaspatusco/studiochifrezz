@@ -6,9 +6,9 @@ export const Footer = styled.footer`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.5em;
+  gap: 1em;
 
-  height: auto;
+  height: 20vh;
   padding: 1em;
 
   background-color: ${colors.roxoEscuro};
