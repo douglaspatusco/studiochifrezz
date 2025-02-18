@@ -1,170 +1,93 @@
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState, useCallback } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import Modal from "../Modal"
 
-import { CarouselContainer, CarouselTrack, ImageWrapper, NavigationButton } from './styles'
+import { images } from "../../data/eventsPics"
 
-interface EventPics {
-  src: string
-  eventName: string
-}
+import { CarouselContainer, CarouselTrack, ImageWrapper, NavigationButton } from "./styles"
 
-const images: EventPics[] = [
-  {
-    src: "/images/festivals/annecy2023/annecy2023-1.jpg",
-    eventName: "Annecy 2023"
-  },
-  {
-    src: "/images/festivals/annecy2023/annecy2023-2.jpeg",
-    eventName: "Annecy 2023"
-  },
-  {
-    src: "/images/festivals/annecy2023/annecy2023-3.jpeg",
-    eventName: "Annecy 2023"
-  },
-  {
-    src: "/images/festivals/annecy2024/annecy2024-1.png",
-    eventName: "Annecy 2024"
-  },
-  {
-    src: "/images/festivals/annecy2024/annecy2024-2.png",
-    eventName: "Annecy 2024"
-  },
-  {
-    src: "/images/festivals/decola2023/decola2023-1.jpeg",
-    eventName: "Decola 2023"
-  },
-  {
-    src: "/images/festivals/decola2023/decola2023-2.jpeg",
-    eventName: "Decola 2023"
-  },
-  {
-    src: "/images/festivals/max2023/max2023-1.jpeg",
-    eventName: "Max 2023"
-  },
-  {
-    src: "/images/festivals/max2023/max2023-2.jpeg",
-    eventName: "Max 2023"
-  },
-  {
-    src: "/images/festivals/max2023/max2023-3.jpeg",
-    eventName: "Max 2023"
-  },
-  {
-    src: "/images/festivals/max2023/max2023-4.jpeg",
-    eventName: "Max 2023"
-  },
-  {
-    src: "/images/festivals/quirino2023/quirino2023-1.jpeg",
-    eventName: "Prêmios Quirino 2023"
-  },
-  {
-    src: "/images/festivals/quirino2023/quirino2023-2.jpeg",
-    eventName: "Prêmios Quirino 2023"
-  },
-  {
-    src: "/images/festivals/quirino2023/quirino2023-3.jpeg",
-    eventName: "Prêmios Quirino 2023"
-  },
-  {
-    src: "/images/festivals/quirino2023/quirino2023-4.jpeg",
-    eventName: "Prêmios Quirino 2023"
-  },
-  {
-    src: "/images/festivals/ventanasur2023/ventanasur2023-1.jpeg",
-    eventName: "Ventana Sur 2023"
-  },
-  {
-    src: "/images/festivals/ventanasur2023/ventanasur2023-2.jpeg",
-    eventName: "Ventana Sur 2023"
-  },
-  {
-    src: "/images/festivals/ventanasur2023/ventanasur2023-3.jpeg",
-    eventName: "Ventana Sur 2023"
-  },
-  {
-    src: "/images/festivals/ventanasur2023/ventanasur2023-4.jpeg",
-    eventName: "Ventana Sur 2023"
-  },
-  {
-    src: "/images/festivals/ventanasur2023/ventanasur2023-5.jpeg",
-    eventName: "Ventana Sur 2023"
-  },
-  {
-    src: "/images/festivals/ventanasur2023/ventanasur2023-6.jpeg",
-    eventName: "Ventana Sur 2023"
-  }
-]
+const ITEM_WIDTH = 219
+const CLONE_COUNT = 5 // Número de imagens clonadas para criar o efeito de loop
 
 const Carousel = () => {
-  const [x, setX] = useState(0)
+  const [x, setX] = useState(-ITEM_WIDTH * CLONE_COUNT) // Começa deslocado para evitar flash no início
   const carouselRef = useRef<HTMLDivElement>(null)
-  const [width, setWidth] = useState(0)
-
+  const [isTransitioning, setIsTransitioning] = useState(true)
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const [currentImageIndex, setCurrentImageIndex] = useState<number | null>(null)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
-  useEffect(() => {
-    if (carouselRef.current) {
-      setWidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth);
+  const extendedImages = [
+    ...images.slice(-CLONE_COUNT), // Clona as últimas imagens para o início
+    ...images,
+    ...images.slice(0, CLONE_COUNT), // Clona as primeiras imagens para o final
+  ];
+
+  const handleTransitionEnd = () => {
+    if (currentImageIndex < 0) {
+      setIsTransitioning(false)
+      setCurrentImageIndex(images.length - 1)
+      setX(-ITEM_WIDTH * (images.length - 1 + CLONE_COUNT))
+    } else if (currentImageIndex >= images.length) {
+      setIsTransitioning(false)
+      setCurrentImageIndex(0)
+      setX(-ITEM_WIDTH * CLONE_COUNT)
     }
+  }
+
+  const handlePrev = useCallback(() => {
+    setIsTransitioning(true)
+    setCurrentImageIndex((prev) => prev - 1)
+    setX((prev) => prev + ITEM_WIDTH)
   }, [])
 
-  const handlePrev = () => {
-    setX((prev) => Math.min(prev + 219, 0))
-  }
+  const handleNext = useCallback(() => {
+    setIsTransitioning(true)
+    setCurrentImageIndex((prev) => prev + 1)
+    setX((prev) => prev - ITEM_WIDTH)
+  }, [])
 
-  const handleNext = () => {
-    setX((prev) => Math.max(prev - 219, - width))
-  }
-
-  const openModal = (index: number) => {
-    setCurrentImageIndex(index)
+  const openModal = useCallback((index) => {
+    const correctedIndex = (index - CLONE_COUNT + images.length) % images.length
+    setCurrentImageIndex(correctedIndex)
     setIsModalOpen(true)
-  }
+  }, [])
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setIsModalOpen(false)
-    setCurrentImageIndex(null)
-  }
-
-  const handlePrevious = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex !== null && prevIndex > 0 ? prevIndex - 1 : prevIndex
-    )
-  }
-
-  const handleNextImage = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex !== null && prevIndex < images.length - 1 ? prevIndex + 1 : prevIndex
-    )
-  }
+  }, [])
 
   return (
     <>
       <CarouselContainer>
-        <NavigationButton className="prev" onClick={handlePrev}>
+        <NavigationButton className="prev" onClick={handlePrev} aria-label="Imagem anterior">
           <ChevronLeft />
         </NavigationButton>
-        <NavigationButton className="next" onClick={handleNext}>
+        <NavigationButton className="next" onClick={handleNext} aria-label="Próxima imagem">
           <ChevronRight />
         </NavigationButton>
-        <CarouselTrack ref={carouselRef} drag="x" dragConstraints={{ left: -width, right: 0 }} animate={{ x }}>
-          {images.map((image, index) => (
+        <CarouselTrack
+          ref={carouselRef}
+          style={{
+            transform: `translateX(${x}px)`,
+            transition: isTransitioning ? "transform 0.3s ease-in-out" : "none",
+          }}
+          onTransitionEnd={handleTransitionEnd}
+        >
+          {extendedImages.map((image, index) => (
             <ImageWrapper key={index} onClick={() => openModal(index)}>
-              <img src={image.src} alt={`Imagem ${index}`} draggable="false" />
+              <img src={image.src} alt={`Imagem ${index + 1}`} draggable="false" />
             </ImageWrapper>
           ))}
         </CarouselTrack>
       </CarouselContainer>
-      {isModalOpen && currentImageIndex !== null && (
+      {isModalOpen && (
         <Modal
-        isOpen={isModalOpen}
-        closeModal={closeModal}
-        handlePrevious={currentImageIndex > 0 ? handlePrevious : undefined}
-        handleNext={currentImageIndex < images.length - 1 ? handleNextImage : undefined}
+          isOpen={isModalOpen}
+          closeModal={closeModal}
+          handlePrevious={currentImageIndex > 0 ? handlePrev : undefined}
+          handleNext={currentImageIndex < images.length - 1 ? handleNext : undefined}
         >
-          <img src={images[currentImageIndex].src} alt={`Imagem ${currentImageIndex}`} />
+          <img src={images[currentImageIndex].src} alt={`Imagem ${currentImageIndex + 1}`} />
         </Modal>
       )}
     </>

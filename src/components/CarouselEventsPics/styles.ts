@@ -5,13 +5,18 @@ import { styled } from "styled-components"
 export const CarouselContainer = styled.div`
   position: relative;
   width: 100%;
-  max-width: 900px;
+  max-width: 1360px;
   margin: auto;
   overflow: hidden;
+
+  @media screen and (max-width: ${screenSizes.desktopL}) {
+  max-width: 900px;
+}
 
   @media screen and (max-width: ${screenSizes.laptop}) {
     max-width: 640px;
   }
+
 `
 
 export const CarouselTrack = styled(motion.div)`
