@@ -12,7 +12,7 @@ import useModal from '@/hooks/useModal'
 import { imageData } from '@/data/images'
 
 import ProjectNavigation from '@/components/Project/ProjectNavigation'
-import ProjectModal from '@/components/Project/ProjectModal'
+import Modal from '@/components/Modal'
 import ProjectCredits from '@/components/Project/ProjectCredits'
 
 import * as ProjectStyle from '@/styles/project.styles'
@@ -137,7 +137,19 @@ const ProjectPage = () => {
             </ProjectStyle.ImageWrapper>
           ))}
         </ProjectStyle.Gallery>
-        <ProjectModal {...modalProps} />
+        <Modal
+        isOpen={modalProps.modal.isOpen}
+        closeModal={modalProps.closeModal}
+        handlePrevious={modalProps.handlePreviousImage}
+        handleNext={modalProps.handleNextImage}
+        >
+          <Image
+          src={modalProps.modal.image}
+          alt={`Imagem ${modalProps.modal.index + 1} do projeto ${translatedProject.name}`}
+          width={2560}
+          height={1080}
+          />
+        </Modal>
         {projectSlug === 'kale' && (
           <ProjectStyle.Support>
             <h1>{t("supports", {ns: "common"})}:</h1>
