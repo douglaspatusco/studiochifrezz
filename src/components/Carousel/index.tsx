@@ -46,12 +46,14 @@ const Carousel = () => {
       {isModalOpen && images[currentImageIndex] ? (
         <Modal isOpen={isModalOpen}
   closeModal={() => {
-    closeModal();
-    setIsPaused(false);
+    closeModal()
+    setIsPaused(false)
   }}
   handlePrevious={handlePrev}
   handleNext={handleNext}>
-          <img src={images[currentImageIndex]?.src} alt={`Imagem ${currentImageIndex + 1}`} />
+          <img
+          src={images[currentImageIndex]?.src}
+          alt={`Imagem ${currentImageIndex + 1}`} />
         </Modal>
       ) : null}
     </>
