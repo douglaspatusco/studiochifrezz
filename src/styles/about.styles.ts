@@ -31,8 +31,10 @@ export const CharsImages = styled.img<{position: string}>`
 
 export const DescriptionContainer = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 2em;
   width: 100vw;
   height: 80vh;
   position: relative;
@@ -45,10 +47,25 @@ export const DescriptionContainer = styled.div`
   }
 `
 
+export const EventsImagesContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 2em;
+
+  img {
+    width: 10em;
+    height: auto;
+  }
+`
+
 export const Us = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4em;
+
+  @media screen and (max-width: ${screenSizes.laptop}) {
+    padding: 0 4em;
+  }
 `
 
 export const Member = styled.div`
