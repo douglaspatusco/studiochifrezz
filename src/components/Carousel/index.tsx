@@ -37,7 +37,7 @@ const Carousel = () => {
           onTransitionEnd={handleTransitionEnd}
         >
           {extendedImages.map((image, index) => (
-            <ImageWrapper key={index} onClick={() => openModal(index)}>
+            <ImageWrapper key={index} onClick={() => openModal(index % images.length)}>
               <img src={image?.src} alt={`Imagem ${index + 1}`} draggable="false" />
             </ImageWrapper>
           ))}
