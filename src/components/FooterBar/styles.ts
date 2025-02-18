@@ -7,12 +7,8 @@ export const Footer = styled.footer`
   justify-content: center;
   align-items: center;
   gap: 1em;
-
-  height: 20vh;
   padding: 1em;
-
   background-color: ${colors.roxoEscuro};
-
   color: #fff;
 
   img {

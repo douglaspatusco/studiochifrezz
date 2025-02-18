@@ -3,11 +3,9 @@ import { ContactForm } from '../../components/ContactForm'
 
 import { GetServerSideProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-
 import { useTranslation } from 'next-i18next'
 
 import capitalizeFirstLetter from '@/services/capitalizaFirstLetter'
-import { Title } from '@/components/CapitalizeFirstLetter'
 
 import * as S from '../../styles/contact.styles'
 

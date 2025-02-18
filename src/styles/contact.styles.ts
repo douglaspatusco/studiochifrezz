@@ -1,4 +1,4 @@
-import { colors } from '@/styles/GlobalStyles'
+import { colors, screenSizes } from '@/styles/GlobalStyles'
 import { styled } from 'styled-components'
 
 export const Container = styled.section`
@@ -20,10 +20,16 @@ export const TalkWithUs = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1em;
 
     p {
       font-size: 1.5em;
     }
+  }
+
+  @media screen and (max-width: ${screenSizes.laptop}) {
+    width: 75%;
+    text-align: center;
   }
 `
 
