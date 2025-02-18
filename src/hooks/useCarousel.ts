@@ -12,7 +12,7 @@ const useCarousel = (images: { src: string }[]) => {
   const handleNext = useCallback(() => {
     if (!isTransitioning) {
       setIsTransitioning(true)
-      setX((prev) => prev - 100)
+      setX((prev) => prev - 228)
       setCurrentImageIndex((prev) => (prev + 1) % images.length)
     }
   }, [isTransitioning, images.length])
@@ -20,7 +20,7 @@ const useCarousel = (images: { src: string }[]) => {
   const handlePrev = useCallback(() => {
     if (!isTransitioning) {
       setIsTransitioning(true)
-      setX((prev) => prev + 100)
+      setX((prev) => prev + 228)
       setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length)
     }
   }, [isTransitioning, images.length])

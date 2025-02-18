@@ -44,13 +44,15 @@ const Carousel = () => {
         </CarouselTrack>
       </CarouselContainer>
       {isModalOpen && images[currentImageIndex] ? (
-        <Modal isOpen={isModalOpen}
-  closeModal={() => {
-    closeModal()
-    setIsPaused(false)
-  }}
-  handlePrevious={handlePrev}
-  handleNext={handleNext}>
+        <Modal
+          isOpen={isModalOpen}
+          closeModal={() => {
+            closeModal()
+            setIsPaused(false)
+          }}
+          handlePrevious={handlePrev}
+          handleNext={handleNext}
+        >
           <img
           src={images[currentImageIndex]?.src}
           alt={`Imagem ${currentImageIndex + 1}`} />
