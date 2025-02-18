@@ -9,6 +9,11 @@ export const AboutContainer = styled.div`
   width: ${screenSizes.laptop};
   height: auto;
   padding-bottom: 4em;
+
+  @media screen and (max-width: ${screenSizes.desktopL}) {
+    gap: 4em;
+  }
+
 `
 
 export const CharsContainer = styled.div`
