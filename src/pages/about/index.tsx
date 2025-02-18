@@ -14,15 +14,20 @@ import {
   MemberReverse,
   DescriptionContainer,
   Us,
-  CharsContainer,
-  CharsImages
+  EventsImagesContainer
 } from '../../styles/about.styles'
+import Carousel from '@/components/CarouselEventsPics'
 
 interface StaffMember {
   name: string
   avatar: string
   description: string
   linkedin: string
+}
+
+interface EventPics {
+  src: string
+  eventName: string
 }
 
 const About = () => {
@@ -49,6 +54,93 @@ const About = () => {
     }
   ]
 
+  const eventsPics: EventPics[] = [
+    {
+      src: "/images/festivals/annecy2023/annecy2023-1.jpg",
+      eventName: "Annecy 2023"
+    },
+        {
+      src: "/images/festivals/annecy2023/annecy2023-2.jpeg",
+      eventName: "Annecy 2023"
+    },
+    {
+      src: "/images/festivals/annecy2023/annecy2023-3.jpeg",
+      eventName: "Annecy 2023"
+    },
+    {
+      src: "/images/festivals/annecy2024/annecy2024-1.png",
+      eventName: "Annecy 2024"
+    },
+    {
+      src: "/images/festivals/annecy2024/annecy2024-2.png",
+      eventName: "Annecy 2024"
+    },
+    {
+      src: "/images/festivals/decola2023/decola2023-1.jpeg",
+      eventName: "Decola 2023"
+    },
+    {
+      src: "/images/festivals/decola2023/decola2023-2.jpeg",
+      eventName: "Decola 2023"
+    },
+    {
+      src: "/images/festivals/max2023/max2023-1.jpeg",
+      eventName: "Max 2023"
+    },
+    {
+      src: "/images/festivals/max2023/max2023-2.jpeg",
+      eventName: "Max 2023"
+    },
+    {
+      src: "/images/festivals/max2023/max2023-3.jpeg",
+      eventName: "Max 2023"
+    },
+    {
+      src: "/images/festivals/max2023/max2023-4.jpeg",
+      eventName: "Max 2023"
+    },
+    {
+      src: "/images/festivals/quirino2023/quirino2023-1.jpeg",
+      eventName: "Prêmios Quirino 2023"
+    },
+    {
+      src: "/images/festivals/quirino2023/quirino2023-2.jpeg",
+      eventName: "Prêmios Quirino 2023"
+    },
+    {
+      src: "/images/festivals/quirino2023/quirino2023-3.jpeg",
+      eventName: "Prêmios Quirino 2023"
+    },
+    {
+      src: "/images/festivals/quirino2023/quirino2023-4.jpeg",
+      eventName: "Prêmios Quirino 2023"
+    },
+    {
+      src: "/images/festivals/ventanasur2023/ventanasur2023-1.jpeg",
+      eventName: "Ventana Sur 2023"
+    },
+    {
+      src: "/images/festivals/ventanasur2023/ventanasur2023-2.jpeg",
+      eventName: "Ventana Sur 2023"
+    },
+    {
+      src: "/images/festivals/ventanasur2023/ventanasur2023-3.jpeg",
+      eventName: "Ventana Sur 2023"
+    },
+    {
+      src: "/images/festivals/ventanasur2023/ventanasur2023-4.jpeg",
+      eventName: "Ventana Sur 2023"
+    },
+    {
+      src: "/images/festivals/ventanasur2023/ventanasur2023-5.jpeg",
+      eventName: "Ventana Sur 2023"
+    },
+    {
+      src: "/images/festivals/ventanasur2023/ventanasur2023-6.jpeg",
+      eventName: "Ventana Sur 2023"
+    },
+  ]
+
   useEffect(() => {
     AOS.init({
       duration: 1000, // Duração da animação em milissegundos
@@ -67,12 +159,9 @@ const About = () => {
           <h2>
             {t("about-description")}
           </h2>
-          <CharsContainer>
-            <CharsImages src="/images/about-image1.png" alt="Image 1" position="top-left" />
-            <CharsImages src="/images/about-image2.png" alt="Image 2" position="top-right" />
-            <CharsImages src="/images/about-image3.png" alt="Image 3" position="bottom-left" />
-            <CharsImages src="/images/about-image4.png" alt="Image 4" position="bottom-right" />
-          </CharsContainer>
+          <EventsImagesContainer>
+            <Carousel />
+          </EventsImagesContainer>
         </DescriptionContainer>
         <Us>
           {staff.map((member, index) =>

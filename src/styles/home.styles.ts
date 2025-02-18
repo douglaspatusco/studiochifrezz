@@ -20,7 +20,6 @@ export const Video = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 80vh;
   overflow: hidden;
   z-index: 0; /* Para ficar abaixo do conteúdo */
 
