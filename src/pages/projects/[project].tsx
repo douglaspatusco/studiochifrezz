@@ -12,7 +12,7 @@ import useModal from '@/hooks/useModal'
 import { imageData } from '@/data/images'
 
 import ProjectNavigation from '@/components/Project/ProjectNavigation'
-import ProjectModal from '@/components/Project/ProjectModal'
+import Modal from '@/components/Modal'
 import ProjectCredits from '@/components/Project/ProjectCredits'
 
 import * as ProjectStyle from '@/styles/project.styles'
@@ -29,31 +29,31 @@ const ProjectPage = () => {
 
   const supports = [
     {
-      src: "/images/apoios/apoio_01_VS.png",
+      src: "/images/supports/01_VS.png",
       alt: "Ventana Sur"
     },
         {
-      src: "/images/apoios/apoio_02_VS.png",
+      src: "/images/supports/02_VS.png",
       alt: "Ventana Sur"
     },
     {
-      src: "/images/apoios/apoio_03_incaa.png",
+      src: "/images/supports/03_incaa.png",
       alt: "Instituto Nacional de Cine Y Artes Audiovisuales"
     },
     {
-      src: "/images/apoios/apoio_04_quirino.png",
+      src: "/images/supports/04_quirino.png",
       alt: "Premios Quirino"
     },
     {
-      src: "/images/apoios/apoio_05_OEI.png",
+      src: "/images/supports/05_OEI.png",
       alt: "Organización de Estados Uberoamericanos"
     },
     {
-      src: "/images/apoios/apoio_06_annecy.png",
+      src: "/images/supports/06_annecy.png",
       alt: "Annecy"
     },
     {
-      src: "/images/apoios/apoio_07_paradiso.png",
+      src: "/images/supports/07_paradiso.png",
       alt: "Paradiso"
     },
   ]
@@ -137,7 +137,19 @@ const ProjectPage = () => {
             </ProjectStyle.ImageWrapper>
           ))}
         </ProjectStyle.Gallery>
-        <ProjectModal {...modalProps} />
+        <Modal
+        isOpen={modalProps.modal.isOpen}
+        closeModal={modalProps.closeModal}
+        handlePrevious={modalProps.handlePreviousImage}
+        handleNext={modalProps.handleNextImage}
+        >
+          <Image
+          src={modalProps.modal.image}
+          alt={`Imagem ${modalProps.modal.index + 1} do projeto ${translatedProject.name}`}
+          width={2560}
+          height={1080}
+          />
+        </Modal>
         {projectSlug === 'kale' && (
           <ProjectStyle.Support>
             <h1>{t("supports", {ns: "common"})}:</h1>
