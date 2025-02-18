@@ -6,7 +6,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import { useTranslation } from 'next-i18next'
 
-import Carousel from '@/components/CarouselEventsPics'
+import Carousel from '@/components/Carousel'
 
 import AOS from 'aos'
 
