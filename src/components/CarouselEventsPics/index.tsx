@@ -25,12 +25,10 @@ const Carousel = () => {
 
   const handleTransitionEnd = () => {
     if (currentImageIndex >= images.length) {
-      // Se passar do último item real, reseta para o primeiro item real sem transição
       setIsTransitioning(false)
       setCurrentImageIndex(0)
       setX(-ITEM_WIDTH * CLONE_COUNT)
     } else if (currentImageIndex < 0) {
-      // Se for antes do primeiro item real, reseta para o último item real sem transição
       setIsTransitioning(false)
       setCurrentImageIndex(images.length - 1)
       setX(-ITEM_WIDTH * (images.length - 1 + CLONE_COUNT))
@@ -51,27 +49,27 @@ const Carousel = () => {
     setX((prev) => prev + ITEM_WIDTH)
   }, [])
 
-useEffect(() => {
-  if (isPaused || isModalOpen) return // Se estiver pausado ou modal aberta, interrompe o autoplay
+  useEffect(() => {
+    if (isPaused || isModalOpen) return
 
-  const interval = setInterval(() => {
-    handleNext()
-  }, 4000) // Tempo de troca das imagens
+    const interval = setInterval(() => {
+      handleNext()
+    }, 4000)
 
-  return () => clearInterval(interval)
-}, [handleNext, isPaused, isModalOpen]) // Agora observa `isModalOpen`
+    return () => clearInterval(interval)
+  }, [handleNext, isPaused, isModalOpen])
 
-const openModal = useCallback((index) => {
-  const correctedIndex = (index - CLONE_COUNT + images.length) % images.length
-  setCurrentImageIndex(correctedIndex)
-  setIsModalOpen(true)
-  setIsPaused(true) // 🔴 Isso garante que o autoplay pare
-}, [])
+  const openModal = useCallback((index) => {
+    const correctedIndex = (index - CLONE_COUNT + images.length) % images.length
+    setCurrentImageIndex(correctedIndex)
+    setIsModalOpen(true)
+    setIsPaused(true)
+  }, [])
 
-const closeModal = useCallback(() => {
-  setIsModalOpen(false)
-  setIsPaused(false) // 🟢 Retoma o autoplay ao fechar a modal
-}, [])
+  const closeModal = useCallback(() => {
+    setIsModalOpen(false)
+    setIsPaused(false)
+  }, [])
 
   return (
     <>
@@ -92,21 +90,21 @@ const closeModal = useCallback(() => {
         >
           {extendedImages.map((image, index) => (
             <ImageWrapper key={index} onClick={() => openModal(index)}>
-              <img src={image.src} alt={`Imagem ${index + 1}`} draggable="false" />
+              <img src={image?.src} alt={`Imagem ${index + 1}`} draggable="false" />
             </ImageWrapper>
           ))}
         </CarouselTrack>
       </CarouselContainer>
-      {isModalOpen && (
+      {isModalOpen && images[currentImageIndex] ? (
         <Modal
           isOpen={isModalOpen}
           closeModal={closeModal}
-          handlePrevious={handlePrev}
-          handleNext={handleNext}
+          handlePrevious={currentImageIndex > 0 ? handlePrev : () => setCurrentImageIndex(images.length - 1)}
+          handleNext={currentImageIndex < images.length - 1 ? handleNext : () => setCurrentImageIndex(0)}
         >
-          <img src={images[currentImageIndex].src} alt={`Imagem ${currentImageIndex + 1}`} />
+          <img src={images[currentImageIndex]?.src} alt={`Imagem ${currentImageIndex + 1}`} />
         </Modal>
-      )}
+      ) : null}
     </>
   )
 }
