@@ -1,5 +1,5 @@
-import { colors, screenSizes } from "@/styles/GlobalStyles";
-import styled from "styled-components";
+import styled from "styled-components"
+import { colors, screenSizes } from "@/styles/GlobalStyles"
 
 export const ModalContainer = styled.div`
   position: fixed;
@@ -12,16 +12,16 @@ export const ModalContainer = styled.div`
   align-items: center;
   background: rgba(0, 0, 0, 0.8);
   z-index: 1000;
-  overflow: hidden; /* Garante que nada fique fora da tela */
-`;
+  overflow: hidden;
+`
 
 export const ModalContent = styled.div`
   position: relative;
   background: ${colors.branco};
   padding: 1.25em;
   border-radius: 0.5em;
-  width: 90%;
-  height: auto;
+  width: 90vw;
+  height: 80vh;
   box-shadow: 0 0.25em 0.375em rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
@@ -29,7 +29,7 @@ export const ModalContent = styled.div`
 
   img {
     width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 0.5em;
     object-fit: contain;
   }
@@ -57,7 +57,6 @@ export const ModalContent = styled.div`
   }
 
   @media screen and (max-width: ${screenSizes.laptop}) {
-    width: 80vw;
   }
 `
 
@@ -69,15 +68,15 @@ export const ArrowButton = styled.button`
   border: none;
   font-size: 2em;
   cursor: pointer;
-  z-index: 1100; /* Aumentado para garantir que fique acima da imagem */
+  z-index: 1100;
   fill: ${colors.roxoClaro};
 
   &.left {
-    left: -96px; /* Antes estava -5%, pode estar fora da tela */
+    left: -64px;
   }
 
   &.right {
-    right: -96px;
+    right: -64px;
   }
 
   svg {
@@ -102,4 +101,4 @@ export const ArrowButton = styled.button`
       right: -64px;
     }
   }
-`;
+`
