@@ -1,10 +1,10 @@
-import { useContactFormSec } from '../../hooks/useContactFormSec'
+import { useContactFormValidation } from '../../hooks/useContactFormValidation'
 import { useTranslation } from 'next-i18next'
 
 import * as S from '../../styles/contact.styles'
 
 export const ContactForm = () => {
-  const { register, handleSubmit, errors, isSubmitting, status } = useContactFormSec()
+  const { register, handleSubmit, errors, isSubmitting, status } = useContactFormValidation()
   const { t } = useTranslation()
 
   return (
