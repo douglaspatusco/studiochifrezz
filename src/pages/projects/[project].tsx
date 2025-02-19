@@ -9,7 +9,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import useFetchProjects from '@/hooks/useFetchProjects'
 import useModal from '@/hooks/useModal'
-import { imageData } from '@/data/images'
+import { imageData } from '@/data/projectsPics'
 
 import ProjectNavigation from '@/components/Project/ProjectNavigation'
 import Modal from '@/components/Modal'
