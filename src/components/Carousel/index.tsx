@@ -38,7 +38,12 @@ const Carousel = () => {
         >
           {extendedImages.map((image, index) => (
             <ImageWrapper key={index} onClick={() => openModal(index % images.length)}>
-              <img src={image?.src} alt={`Imagem ${index + 1}`} draggable="false" />
+              <img
+              src={image?.src}
+              alt={`Imagem ${index + 1} | ${image.eventName}`}
+              title={image.eventName}
+              draggable="false"
+            />
             </ImageWrapper>
           ))}
         </CarouselTrack>
