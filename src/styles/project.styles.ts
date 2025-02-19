@@ -16,7 +16,6 @@ export const ContainerProduct = styled.section`
 
   @media screen and (max-width: ${screenSizes.laptop}) {
     img {
-      height: auto;
     }
   }
 `
