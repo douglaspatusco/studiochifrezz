@@ -6,6 +6,7 @@ export const SwitchLanguageContainer = styled.div<{ $isEN: boolean }>`
   align-items: center;
   justify-content: center;
   transition: background-color 0.4s;
+  scale: 0.8;
 `
 
 export const Switch = styled.label`
