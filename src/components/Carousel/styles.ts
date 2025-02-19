@@ -6,7 +6,6 @@ export const CarouselContainer = styled.div`
   position: relative;
   width: 100%;
   max-width: 1360px;
-  margin: auto;
   overflow: hidden;
 
   @media screen and (max-width: ${screenSizes.desktopL}) {

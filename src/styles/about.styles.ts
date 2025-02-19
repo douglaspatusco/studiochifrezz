@@ -5,10 +5,10 @@ export const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
   max-width: ${screenSizes.desktopL};
   width: ${screenSizes.laptop};
   height: auto;
-  padding-bottom: 4em;
 
   @media screen and (max-width: ${screenSizes.desktopL}) {
     gap: 4em;
