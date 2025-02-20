@@ -20,42 +20,42 @@ import AOS from 'aos'
 import Loading from '@/components/Loading'
 
 const ProjectPage = () => {
-  const { t } = useTranslation(["projects", "common"])
+  const { t } = useTranslation(['projects', 'common'])
   const { query } = useRouter()
-  const projectSlug = (query.project as string) || ""
+  const projectSlug = (query.project as string) || ''
   const { data } = useFetchProjects()
   const images = imageData[projectSlug] || []
   const modalProps = useModal(images)
 
   const supports = [
     {
-      src: "/images/supports/01_VS.png",
-      alt: "Ventana Sur"
-    },
-        {
-      src: "/images/supports/02_VS.png",
-      alt: "Ventana Sur"
+      src: '/images/supports/01_VS.png',
+      alt: 'Ventana Sur'
     },
     {
-      src: "/images/supports/03_incaa.png",
-      alt: "Instituto Nacional de Cine Y Artes Audiovisuales"
+      src: '/images/supports/02_VS.png',
+      alt: 'Ventana Sur'
     },
     {
-      src: "/images/supports/04_quirino.png",
-      alt: "Premios Quirino"
+      src: '/images/supports/03_incaa.png',
+      alt: 'Instituto Nacional de Cine Y Artes Audiovisuales'
     },
     {
-      src: "/images/supports/05_OEI.png",
-      alt: "Organización de Estados Uberoamericanos"
+      src: '/images/supports/04_quirino.png',
+      alt: 'Premios Quirino'
     },
     {
-      src: "/images/supports/06_annecy.png",
-      alt: "Annecy"
+      src: '/images/supports/05_OEI.png',
+      alt: 'Organización de Estados Uberoamericanos'
     },
     {
-      src: "/images/supports/07_paradiso.png",
-      alt: "Paradiso"
+      src: '/images/supports/06_annecy.png',
+      alt: 'Annecy'
     },
+    {
+      src: '/images/supports/07_paradiso.png',
+      alt: 'Paradiso'
+    }
   ]
 
   useEffect(() => {
@@ -76,10 +76,14 @@ const ProjectPage = () => {
       status: t(`projects.${project.slug}.status`),
       description: {
         ...project.description,
-        productionType: t(`projects.${project.slug}.description.productionType`),
+        productionType: t(
+          `projects.${project.slug}.description.productionType`
+        ),
         gender: t(`projects.${project.slug}.description.gender`),
-        targetAudience: t(`projects.${project.slug}.description.targetAudience`),
-        duration: t(`projects.${project.slug}.description.duration`),
+        targetAudience: t(
+          `projects.${project.slug}.description.targetAudience`
+        ),
+        duration: t(`projects.${project.slug}.description.duration`)
       },
       technicalSheet: project.technicalSheet, // Aplicar a mesma lógica se houver traduções para estes campos
       achievments: project.achievments // Se necessário, aplicar tradução em cada item
@@ -116,11 +120,16 @@ const ProjectPage = () => {
             <p>{translatedProject.sinopse}</p>
           </ProjectStyle.Description>
         </ProjectStyle.Infos>
-        <ProjectCredits technicalSheet={Object.fromEntries(
-          Object.entries(translatedProject.technicalSheet || {}).map(([key, value]) =>
-            [key, Array.isArray(value) ? value.join(', ') : value ?? ""]
-          )
-        )}/>
+        <ProjectCredits
+          technicalSheet={Object.fromEntries(
+            Object.entries(translatedProject.technicalSheet || {}).map(
+              ([key, value]) => [
+                key,
+                Array.isArray(value) ? value.join(', ') : (value ?? '')
+              ]
+            )
+          )}
+        />
         <ProjectStyle.Gallery>
           {images.map((image, index) => (
             <ProjectStyle.ImageWrapper
@@ -138,25 +147,25 @@ const ProjectPage = () => {
           ))}
         </ProjectStyle.Gallery>
         <Modal
-        isOpen={modalProps.modal.isOpen}
-        closeModal={modalProps.closeModal}
-        handlePrevious={modalProps.handlePreviousImage}
-        handleNext={modalProps.handleNextImage}
+          isOpen={modalProps.modal.isOpen}
+          closeModal={modalProps.closeModal}
+          handlePrevious={modalProps.handlePreviousImage}
+          handleNext={modalProps.handleNextImage}
         >
           <Image
-          src={modalProps.modal.image}
-          alt={`Imagem ${modalProps.modal.index + 1} do projeto ${translatedProject.name}`}
-          width={2560}
-          height={1080}
+            src={modalProps.modal.image}
+            alt={`Imagem ${modalProps.modal.index + 1} do projeto ${translatedProject.name}`}
+            width={2560}
+            height={1080}
           />
         </Modal>
         {projectSlug === 'kale' && (
           <ProjectStyle.Support>
-            <h1>{t("supports", {ns: "common"})}:</h1>
+            <h1>{t('supports', { ns: 'common' })}:</h1>
             <ProjectStyle.SupportsImages>
               {supports.map((supports) => (
                 <img src={supports.src} alt={supports.alt} />
-              ) )}
+              ))}
             </ProjectStyle.SupportsImages>
           </ProjectStyle.Support>
         )}
@@ -171,7 +180,7 @@ export default ProjectPage
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "pt", ["common", "projects"])),
-    },
+      ...(await serverSideTranslations(locale ?? 'pt', ['common', 'projects']))
+    }
   }
 }

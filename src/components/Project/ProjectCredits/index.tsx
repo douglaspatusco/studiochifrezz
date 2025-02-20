@@ -22,25 +22,27 @@ const roles: Role[] = [
 ]
 
 const ProjectCredits: React.FC<ProjectCreditsProps> = ({ technicalSheet }) => {
-const { t } = useTranslation()
+  const { t } = useTranslation()
   if (!technicalSheet || Object.keys(technicalSheet).length === 0) return null
 
   return (
     <ProjectStyle.CreditsContainer>
-      <h1>{t("credits")}</h1>
+      <h1>{t('credits')}</h1>
       <ProjectStyle.Credits>
         <ProjectStyle.Role>
-          {roles.map((role) => technicalSheet?.[role.key] &&
-            <h3 key={role.key}>
-              {t(role.label)}
-            </h3>
+          {roles.map(
+            (role) =>
+              technicalSheet?.[role.key] && (
+                <h3 key={role.key}>{t(role.label)}</h3>
+              )
           )}
         </ProjectStyle.Role>
         <ProjectStyle.Person>
-          {roles.map((role) => technicalSheet?.[role.key] &&
-            <h3 key={role.key}>
-              {technicalSheet[role.key]}
-            </h3>
+          {roles.map(
+            (role) =>
+              technicalSheet?.[role.key] && (
+                <h3 key={role.key}>{technicalSheet[role.key]}</h3>
+              )
           )}
         </ProjectStyle.Person>
       </ProjectStyle.Credits>

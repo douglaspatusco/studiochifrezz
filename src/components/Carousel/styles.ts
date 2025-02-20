@@ -1,6 +1,6 @@
-import { screenSizes } from "@/styles/GlobalStyles"
-import { motion } from "framer-motion"
-import { styled } from "styled-components"
+import { screenSizes } from '@/styles/GlobalStyles'
+import { motion } from 'framer-motion'
+import { styled } from 'styled-components'
 
 export const CarouselContainer = styled.div`
   position: relative;
@@ -9,13 +9,12 @@ export const CarouselContainer = styled.div`
   overflow: hidden;
 
   @media screen and (max-width: ${screenSizes.desktopL}) {
-  max-width: 900px;
-}
+    max-width: 900px;
+  }
 
   @media screen and (max-width: ${screenSizes.laptop}) {
     max-width: 640px;
   }
-
 `
 
 export const CarouselTrack = styled(motion.div)`

@@ -1,5 +1,5 @@
 import React, { useEffect, ReactNode } from 'react'
-import { ModalContainer, ArrowButton, ModalContent} from './styles'
+import { ModalContainer, ArrowButton, ModalContent } from './styles'
 
 interface ModalProps {
   isOpen: boolean
@@ -9,7 +9,13 @@ interface ModalProps {
   handleNext?: () => void
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, closeModal, children, handlePrevious, handleNext }) => {
+const Modal: React.FC<ModalProps> = ({
+  isOpen,
+  closeModal,
+  children,
+  handlePrevious,
+  handleNext
+}) => {
   if (!isOpen) return null
 
   useEffect(() => {
@@ -49,7 +55,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, closeModal, children, handlePrevi
             </svg>
           </ArrowButton>
         )}
-        <button className="closeButton" onClick={closeModal}>X</button>
+        <button className="closeButton" onClick={closeModal}>
+          X
+        </button>
       </ModalContent>
     </ModalContainer>
   )

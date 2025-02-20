@@ -10,25 +10,27 @@ export const AboutContainer = styled.div`
   @media screen and (max-width: ${screenSizes.desktopL}) {
     gap: 4em;
   }
-
 `
 
-export const CharsContainer = styled.div`
-`
+export const CharsContainer = styled.div``
 
-export const CharsImages = styled.img<{position: string}>`
+export const CharsImages = styled.img<{ position: string }>`
   width: auto;
   height: 12em;
   position: absolute;
 
   ${({ position }) =>
-    position === "top-left" && "top: 0; left: 0; padding-left: 2em; padding-top: 2em;"}
+    position === 'top-left' &&
+    'top: 0; left: 0; padding-left: 2em; padding-top: 2em;'}
   ${({ position }) =>
-    position === "top-right" && "top: 0; right: 0; padding-right: 2em; padding-top: 2em;"}
+    position === 'top-right' &&
+    'top: 0; right: 0; padding-right: 2em; padding-top: 2em;'}
   ${({ position }) =>
-    position === "bottom-left" && "bottom: 0; left: 0; padding-left: 2em; padding-bottom: 2em;"}
+    position === 'bottom-left' &&
+    'bottom: 0; left: 0; padding-left: 2em; padding-bottom: 2em;'}
   ${({ position }) =>
-    position === "bottom-right" && "bottom: 0; right: 0; padding-right: 2em; padding-bottom: 2em;"}
+    position === 'bottom-right' &&
+    'bottom: 0; right: 0; padding-right: 2em; padding-bottom: 2em;'}
 `
 
 export const DescriptionContainer = styled.div`
@@ -76,7 +78,7 @@ export const Member = styled.div`
   gap: 2em;
   text-align: justify;
 
-a {
+  a {
     display: inline-block;
     min-width: 16em;
     border-radius: 50%;

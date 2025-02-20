@@ -1,7 +1,7 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 interface TitleProps {
-  text: string;
+  text: string
 }
 
 const StyledTitle = styled.h1`

@@ -1,13 +1,13 @@
-import { useState, useEffect } from "react"
-import { SwitchThemeContainer, Switch, Slider } from "./styles"
+import { useState, useEffect } from 'react'
+import { SwitchThemeContainer, Switch, Slider } from './styles'
 
 const SwitchTheme = () => {
   const [isDark, setIsDark] = useState(false)
 
   useEffect(() => {
-    const body = document.querySelector(".container")
+    const body = document.querySelector('.container')
     if (body) {
-      body.classList.toggle("dark", isDark)
+      body.classList.toggle('dark', isDark)
     }
   }, [isDark])
 

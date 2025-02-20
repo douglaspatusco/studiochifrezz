@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { screenSizes, colors } from "./GlobalStyles"
+import styled from 'styled-components'
+import { screenSizes, colors } from './GlobalStyles'
 
 export const ContainerProduct = styled.section`
   display: flex;

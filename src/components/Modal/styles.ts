@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { colors, screenSizes } from "@/styles/GlobalStyles"
+import styled from 'styled-components'
+import { colors, screenSizes } from '@/styles/GlobalStyles'
 
 export const ModalContainer = styled.div`
   position: fixed;

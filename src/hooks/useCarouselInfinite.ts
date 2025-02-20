@@ -2,9 +2,9 @@
 // Ele gerencia a posição do carrossel (x),
 // movimenta as imagens automaticamente e garante um loop infinito sem saltos visíveis.
 
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect, useCallback } from 'react'
 
-const useCarouselInfinite = (images: { src: string, eventName: string }[]) => {
+const useCarouselInfinite = (images: { src: string; eventName: string }[]) => {
   const [x, setX] = useState(0) // Estado para controlar a posição do carrossel (deslocamento em pixels)
   const [isTransitioning, setIsTransitioning] = useState(true) // Controle da transição
   const [isPaused, setIsPaused] = useState(false) // Estado para controlar a pausa do autoplay
@@ -58,12 +58,12 @@ const useCarouselInfinite = (images: { src: string, eventName: string }[]) => {
       }
     }
 
-    document.addEventListener("visibilitychange", handleVisibilityChange)
+    document.addEventListener('visibilitychange', handleVisibilityChange)
     startInterval()
 
     return () => {
       stopInterval()
-      document.removeEventListener("visibilitychange", handleVisibilityChange)
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
     }
   }, [handleNext])
 

@@ -1,9 +1,9 @@
-import { styled } from "styled-components"
+import { styled } from 'styled-components'
 
 export const SwitchThemeContainer = styled.div<{ isDark: boolean }>`
   padding: 2em;
   margin: 0 auto;
-  background-color: ${({ isDark }) => (isDark ? "#202838" : "#ffe082")};
+  background-color: ${({ isDark }) => (isDark ? '#202838' : '#ffe082')};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,7 +28,7 @@ export const Slider = styled.span<{ isDark: boolean }>`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: ${({ isDark }) => (isDark ? "#323E52" : "#ffecb3")};
+  background-color: ${({ isDark }) => (isDark ? '#323E52' : '#ffecb3')};
   transition: 0.4s;
   border-radius: 34px;
 
@@ -43,7 +43,6 @@ export const Slider = styled.span<{ isDark: boolean }>`
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: ${({ isDark }) => (isDark ? "translateX(60px)" : "none")};
+    transform: ${({ isDark }) => (isDark ? 'translateX(60px)' : 'none')};
   }
 `
-

@@ -5,7 +5,11 @@ import { useState } from 'react'
 
 const useModal = (images: string[]) => {
   // Estado para controlar o modal e a imagem atual
-  const [modal, setModal] = useState<{ isOpen: boolean; image: string; index: number }>({
+  const [modal, setModal] = useState<{
+    isOpen: boolean
+    image: string
+    index: number
+  }>({
     isOpen: false, // Controla se o modal está aberto
     image: '', // Armazena a URL da imagem atualmente exibida no modal
     index: 0 // Guarda o índice da imagem atual na lista de imagens

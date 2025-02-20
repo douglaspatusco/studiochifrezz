@@ -17,7 +17,7 @@ const routes = [
 const HeaderBar = () => {
   const [hovered, setHovered] = useState<number | null>(null)
   const opacity = useScrollOpacity(200)
-  const { t } = useTranslation("common")
+  const { t } = useTranslation('common')
 
   const handleMouseEnter = useCallback((index: number) => {
     setHovered(index)
@@ -27,10 +27,15 @@ const HeaderBar = () => {
     setHovered(null)
   }, [])
 
-  const headerStyle = useMemo(() => ({
-    opacity,
-    pointerEvents: (opacity === 0 ? 'none' : 'auto') as React.CSSProperties['pointerEvents']
-  }), [opacity])
+  const headerStyle = useMemo(
+    () => ({
+      opacity,
+      pointerEvents: (opacity === 0
+        ? 'none'
+        : 'auto') as React.CSSProperties['pointerEvents']
+    }),
+    [opacity]
+  )
 
   return (
     <HeaderBarContainer style={headerStyle}>
@@ -47,7 +52,9 @@ const HeaderBar = () => {
             aria-expanded={hovered === index}
           >
             <Link href={route.path} passHref legacyBehavior>
-              <ItemLink href={route.path} aria-label={t(route.key)}>{t(route.key).toUpperCase()}</ItemLink>
+              <ItemLink href={route.path} aria-label={t(route.key)}>
+                {t(route.key).toUpperCase()}
+              </ItemLink>
             </Link>
           </MenuItem>
         ))}

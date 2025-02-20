@@ -1,18 +1,23 @@
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import Modal from "../Modal"
-import useCarousel from "../../hooks/useCarousel"
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+import Modal from '../Modal'
+import useCarousel from '../../hooks/useCarousel'
 
-import { CarouselContainer, CarouselTrack, ImageWrapper, NavigationButton } from "./styles"
+import {
+  CarouselContainer,
+  CarouselTrack,
+  ImageWrapper,
+  NavigationButton
+} from './styles'
 
 interface EventPics {
   src: string
   eventName: string
 }
 interface CarouselProps {
-  images: EventPics[];
-  autoPlay: boolean;
-  autoPlayInterval: number;
-  showModal: boolean;
+  images: EventPics[]
+  autoPlay: boolean
+  autoPlayInterval: number
+  showModal: boolean
 }
 
 const Carousel: React.FC<CarouselProps> = ({ images }) => {
@@ -27,33 +32,47 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
     handleTransitionEnd,
     openModal,
     closeModal,
-    setIsPaused,
+    setIsPaused
   } = useCarousel(images)
 
   return (
     <>
-      <CarouselContainer onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
-        <NavigationButton className="prev" onClick={handlePrev} aria-label="Imagem anterior">
+      <CarouselContainer
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        <NavigationButton
+          className="prev"
+          onClick={handlePrev}
+          aria-label="Imagem anterior"
+        >
           <ChevronLeft />
         </NavigationButton>
-        <NavigationButton className="next" onClick={handleNext} aria-label="Próxima imagem">
+        <NavigationButton
+          className="next"
+          onClick={handleNext}
+          aria-label="Próxima imagem"
+        >
           <ChevronRight />
         </NavigationButton>
         <CarouselTrack
           style={{
             transform: `translateX(${x}px)`,
-            transition: isTransitioning ? "transform 0.3s ease-in-out" : "none",
+            transition: isTransitioning ? 'transform 0.3s ease-in-out' : 'none'
           }}
           onTransitionEnd={handleTransitionEnd}
         >
           {extendedImages.map((image, index) => (
-            <ImageWrapper key={index} onClick={() => openModal(index % images.length)}>
+            <ImageWrapper
+              key={index}
+              onClick={() => openModal(index % images.length)}
+            >
               <img
-              src={image?.src}
-              alt={`Imagem ${index + 1} | ${image.eventName}`}
-              title={image.eventName}
-              draggable="false"
-            />
+                src={image?.src}
+                alt={`Imagem ${index + 1} | ${image.eventName}`}
+                title={image.eventName}
+                draggable="false"
+              />
             </ImageWrapper>
           ))}
         </CarouselTrack>
@@ -69,8 +88,9 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
           handleNext={handleNext}
         >
           <img
-          src={images[currentImageIndex]?.src}
-          alt={`Imagem ${currentImageIndex + 1}`} />
+            src={images[currentImageIndex]?.src}
+            alt={`Imagem ${currentImageIndex + 1}`}
+          />
         </Modal>
       ) : null}
     </>

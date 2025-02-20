@@ -19,7 +19,9 @@ describe('FooterBar', () => {
 
   it('renders Copyright', () => {
     render(<FooterBar />)
-    const copyrightText = screen.getByText(/Copyright © 2025 - Todos os Direitos Reservados à Studio Chifrezz/i)
+    const copyrightText = screen.getByText(
+      /Copyright © 2025 - Todos os Direitos Reservados à Studio Chifrezz/i
+    )
     expect(copyrightText).toBeInTheDocument()
   })
 })

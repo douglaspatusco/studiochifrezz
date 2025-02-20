@@ -1,11 +1,8 @@
-import { LoadingContainer } from "./styles"
+import { LoadingContainer } from './styles'
 
 const Loading = () => (
   <LoadingContainer>
-    <img
-      src="/images/logo-roxo.png"
-      alt="Logotipo Studio Chifrezz"
-    />
+    <img src="/images/logo-roxo.png" alt="Logotipo Studio Chifrezz" />
   </LoadingContainer>
 )
 

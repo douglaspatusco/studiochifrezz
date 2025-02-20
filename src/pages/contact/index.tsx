@@ -15,13 +15,13 @@ const Contact = () => {
   return (
     <>
       <Head>
-        <title>{`Studio Chifrezz | ${t(capitalizeFirstLetter("contact"))}`}</title>
+        <title>{`Studio Chifrezz | ${t(capitalizeFirstLetter('contact'))}`}</title>
       </Head>
       <S.Container>
         <S.TalkWithUs>
           <div>
-            <p>{t("form-questions")}</p>
-            <p>{t("form-talkToUs")}</p>
+            <p>{t('form-questions')}</p>
+            <p>{t('form-talkToUs')}</p>
           </div>
         </S.TalkWithUs>
         <ContactForm />
@@ -35,7 +35,7 @@ export default Contact
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "pt", ["common", "projects"])),
-    },
+      ...(await serverSideTranslations(locale ?? 'pt', ['common', 'projects']))
+    }
   }
 }

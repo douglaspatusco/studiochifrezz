@@ -25,6 +25,6 @@ export const imageData = {
   ],
   quartzzo: [
     '/images/project-gallery-images/quartzzo-image1.png',
-    '/images/project-gallery-images/quartzzo-image2.png',
+    '/images/project-gallery-images/quartzzo-image2.png'
   ]
 }

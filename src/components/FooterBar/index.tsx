@@ -7,7 +7,7 @@ import SocialMedias from '../SocialMedias'
 import { Footer } from './styles'
 
 const FooterBar = () => {
-  const { t } = useTranslation("common")
+  const { t } = useTranslation('common')
 
   return (
     <Footer>
@@ -18,9 +18,7 @@ const FooterBar = () => {
         height={100}
       />
       <SocialMedias />
-      <p>
-        Copyright &copy; 2025 - {t("copy")} Studio Chifrezz
-      </p>
+      <p>Copyright &copy; 2025 - {t('copy')} Studio Chifrezz</p>
     </Footer>
   )
 }

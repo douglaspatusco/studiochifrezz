@@ -21,7 +21,9 @@ export const useContactForm = () => {
   })
 
   // Estado para controlar o status da requisição
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [status, setStatus] = useState<
+    'idle' | 'loading' | 'success' | 'error'
+  >('idle')
 
   // Função para atualizar os campos do formulário dinamicamente
   const handleChange = useCallback(

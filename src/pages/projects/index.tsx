@@ -15,14 +15,22 @@ const Projects = () => {
   const { data = [], loading, error } = useFetchProjects()
   const { t } = useTranslation()
 
-  const categorizedProjects = useMemo(() => ({
-    AnimacaoSeriada: data.filter((project) => project.description.productionType === 'Animação Seriada'),
-    CurtaMetragem: data.filter((project) => project.description.productionType === 'Curta Metragem'),
-  }), [data])
+  const categorizedProjects = useMemo(
+    () => ({
+      AnimacaoSeriada: data.filter(
+        (project) => project.description.productionType === 'Animação Seriada'
+      ),
+      CurtaMetragem: data.filter(
+        (project) => project.description.productionType === 'Curta Metragem'
+      )
+    }),
+    [data]
+  )
 
   if (loading) return <Loading />
 
-  if (error) return <p>Erro ao carregar projetos. Por favor, tente novamente.</p>
+  if (error)
+    return <p>Erro ao carregar projetos. Por favor, tente novamente.</p>
 
   return (
     <>
@@ -30,8 +38,14 @@ const Projects = () => {
         <title>Projects | Studio Chifrezz</title>
       </Head>
       <ProjectsContainer>
-        <ProjectSection title={t("animation-series")} projects={categorizedProjects.AnimacaoSeriada} />
-        <ProjectSection title={t("short-films")} projects={categorizedProjects.CurtaMetragem} />
+        <ProjectSection
+          title={t('animation-series')}
+          projects={categorizedProjects.AnimacaoSeriada}
+        />
+        <ProjectSection
+          title={t('short-films')}
+          projects={categorizedProjects.CurtaMetragem}
+        />
       </ProjectsContainer>
     </>
   )
@@ -42,7 +56,7 @@ export default Projects
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "pt", ["common", "projects"])),
-    },
+      ...(await serverSideTranslations(locale ?? 'pt', ['common', 'projects']))
+    }
   }
 }

@@ -1,5 +1,5 @@
-import { colors } from "@/styles/GlobalStyles"
-import { styled } from "styled-components"
+import { colors } from '@/styles/GlobalStyles'
+import { styled } from 'styled-components'
 
 export const SwitchLanguageContainer = styled.div<{ $isEN: boolean }>`
   display: flex;
@@ -27,7 +27,8 @@ export const Slider = styled.span<{ $isEN: boolean }>`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: ${({ $isEN }) => ($isEN ? `${colors.roxoSombra}` : `${colors.roxoClaro}`)};
+  background-color: ${({ $isEN }) =>
+    $isEN ? `${colors.roxoSombra}` : `${colors.roxoClaro}`};
   transition: 0.4s;
   border-radius: 2em;
 
@@ -36,7 +37,9 @@ export const Slider = styled.span<{ $isEN: boolean }>`
     content: ${({ $isEN }) => ($isEN ? '"🇺🇸"' : '"🇧🇷"')};
     height: 40px;
     width: 40px;
-    transition: transform 0.4s ease, background-color 0.4s ease;
+    transition:
+      transform 0.4s ease,
+      background-color 0.4s ease;
     border-radius: 50%;
     font-size: 25px;
     display: flex;
@@ -44,6 +47,6 @@ export const Slider = styled.span<{ $isEN: boolean }>`
     align-items: center;
     background: white; /* Adiciona um fundo branco para destacar o emoji */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    transform: ${({ $isEN }) => ($isEN ? "translateX(56px)" : "translateX(0)")};
+    transform: ${({ $isEN }) => ($isEN ? 'translateX(56px)' : 'translateX(0)')};
   }
 `

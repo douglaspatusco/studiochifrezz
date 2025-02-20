@@ -30,7 +30,7 @@ export default async function handler(
       secure: true, // Conexão segura (TLS)
       auth: {
         user: process.env.SMTP_USER, // Usuário SMTP
-        pass: process.env.SMTP_PASS  // Senha SMTP
+        pass: process.env.SMTP_PASS // Senha SMTP
       }
     })
 

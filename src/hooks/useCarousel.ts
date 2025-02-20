@@ -3,9 +3,9 @@
 // Além disso, ele implementa um efeito de loop no carrossel
 // e um autoplay automático.
 
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect, useCallback } from 'react'
 
-const useCarousel = (images: { src: string, eventName: string }[]) => {
+const useCarousel = (images: { src: string; eventName: string }[]) => {
   const [x, setX] = useState(0) // Estado para controlar a posição do carrossel (deslocamento em pixels)
   const [isTransitioning, setIsTransitioning] = useState(false) // Estado para evitar múltiplas transições ao mesmo tempo
   const [isModalOpen, setIsModalOpen] = useState(false) // Estado para controlar se o modal está aberto
@@ -69,7 +69,7 @@ const useCarousel = (images: { src: string, eventName: string }[]) => {
     handleTransitionEnd, // Função chamada ao fim da transição
     openModal, // Função para abrir o modal
     closeModal, // Função para fechar o modal
-    setIsPaused, // Função para pausar ou retomar o autoplay
+    setIsPaused // Função para pausar ou retomar o autoplay
   }
 }
 

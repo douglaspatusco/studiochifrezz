@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-import nextI18NextConfig from "./next-i18next.config";
+import nextI18NextConfig from './next-i18next.config'
 
 const nextConfig = {
   reactStrictMode: true,
@@ -23,13 +23,13 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: "/fonts/:path*",
+        source: '/fonts/:path*',
         headers: [
-          { key: "Cache-Control", value: "public, max-age=31536000, immutable" }
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }
         ]
       }
-    ];
+    ]
   }
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

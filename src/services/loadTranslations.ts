@@ -1,7 +1,10 @@
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-export const loadTranslations = async (locale: string, namespaces: string[]) => {
+export const loadTranslations = async (
+  locale: string,
+  namespaces: string[]
+) => {
   return {
-    ...(await serverSideTranslations(locale ?? "pt", namespaces)),
-  };
-};
+    ...(await serverSideTranslations(locale ?? 'pt', namespaces))
+  }
+}
