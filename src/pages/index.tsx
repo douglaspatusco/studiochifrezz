@@ -7,6 +7,9 @@ import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import { Container, Video } from '../styles/home.styles'
+import Carousel from '@/components/Carousel'
+import { awardsImages } from '../data/awardsImages'
+import CarouselInfinite from '@/components/CarouselInfinite'
 
 export const Home = () => {
   const srcVideo = '/videos/banner-studiochifrezz-1920X600.mp4'
@@ -49,6 +52,7 @@ export const Home = () => {
       </Video>
       <Container>
         <h1>{t("hello")}</h1>
+        <CarouselInfinite images={awardsImages} />
       </Container>
     </>
   )

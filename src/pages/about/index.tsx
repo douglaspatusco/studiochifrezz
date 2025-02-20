@@ -7,6 +7,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 
 import Carousel from '@/components/Carousel'
+import { images } from '../../data/eventsPics'
 
 import AOS from 'aos'
 
@@ -67,7 +68,7 @@ const About = () => {
           <h2>
             {t("about-description")}
           </h2>
-          <Carousel />
+          <Carousel images={images} autoPlay={true} autoPlayInterval={5000} showModal={true} />
         </DescriptionContainer>
         <Us>
           {staff.map((member, index) =>
