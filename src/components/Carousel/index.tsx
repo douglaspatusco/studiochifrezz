@@ -1,11 +1,21 @@
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import Modal from "../Modal"
-import { images } from "../../data/eventsPics"
 import useCarousel from "../../hooks/useCarousel"
 
 import { CarouselContainer, CarouselTrack, ImageWrapper, NavigationButton } from "./styles"
 
-const Carousel = () => {
+interface EventPics {
+  src: string
+  eventName: string
+}
+interface CarouselProps {
+  images: EventPics[];
+  autoPlay: boolean;
+  autoPlayInterval: number;
+  showModal: boolean;
+}
+
+const Carousel: React.FC<CarouselProps> = ({ images }) => {
   const {
     x,
     isTransitioning,
