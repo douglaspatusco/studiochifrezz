@@ -3,9 +3,17 @@ import { awardsImages } from '../../data/awardsImages'
 
 import { CarouselContainer, CarouselTrack } from './styles'
 
-const CarouselInfinite = () => {
+interface awardsPics {
+  src: string
+  eventName: string
+}
+interface CarouselInfiniteProps {
+  images: awardsPics[];
+}
+
+const CarouselInfinite: React.FC<CarouselInfiniteProps> = ({ images }) => {
   const { x, extendedImages, handleMouseEnter, handleMouseLeave } =
-    useCarouselInfinite(awardsImages)
+    useCarouselInfinite(images)
 
   return (
     <CarouselContainer>
