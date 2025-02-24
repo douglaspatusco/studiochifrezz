@@ -12,10 +12,10 @@ const FooterBar = () => {
   return (
     <Footer>
       <Image
-        src={'/favicon.ico'}
+        src={'/images/logo-branco.png'}
         alt="Studio Chifrezz Logotype"
-        width={100}
-        height={100}
+        width={96}
+        height={96}
       />
       <SocialMedias />
       <p>Copyright &copy; 2025 - {t('copy')} Studio Chifrezz</p>

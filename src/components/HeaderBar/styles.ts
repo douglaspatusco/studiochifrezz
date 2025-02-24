@@ -21,7 +21,8 @@ export const HeaderBarContainer = styled.header`
 
 export const Menu = styled.ul`
   display: flex;
-  padding: 2em 0;
+  padding: 1em 0;
+  gap: 1em;
 
   @media screen and (max-width: ${screenSizes.tablet}) {
     flex-direction: column;
@@ -74,9 +75,13 @@ export const Navigation = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     gap: 2em;
     height: 100%;
+
+    li {
+      padding: 0.5em;
+    }
   }
 `
 
