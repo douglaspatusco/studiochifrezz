@@ -1,4 +1,4 @@
-import { colors } from '@/styles/GlobalStyles'
+import { colors, screenSizes } from '@/styles/GlobalStyles'
 import { styled } from 'styled-components'
 
 export const SwitchLanguageContainer = styled.div<{ $isEN: boolean }>`
@@ -7,6 +7,20 @@ export const SwitchLanguageContainer = styled.div<{ $isEN: boolean }>`
   justify-content: center;
   transition: background-color 0.4s;
   scale: 0.8;
+
+  &.inMenu {
+    display: none;
+
+    @media screen and (max-width: ${screenSizes.tablet}) {
+      display: flex;
+    }
+  }
+
+  &.outOfMenu {
+    @media screen and (max-width: ${screenSizes.tablet}) {
+      display: none;
+    }
+  }
 `
 
 export const Switch = styled.label`
@@ -28,7 +42,7 @@ export const Slider = styled.span<{ $isEN: boolean }>`
   right: 0;
   bottom: 0;
   background-color: ${({ $isEN }) =>
-    $isEN ? `${colors.roxoSombra}` : `${colors.roxoClaro}`};
+    $isEN ? `${colors.cinzaChumbo}` : `${colors.roxoClaro}`};
   transition: 0.4s;
   border-radius: 2em;
 

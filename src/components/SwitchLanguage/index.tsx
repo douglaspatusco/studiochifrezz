@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { SwitchLanguageContainer, Switch, Slider } from './styles'
 
-const SwitchLanguage = () => {
+const SwitchLanguage = ({ className}: { className?: string}) => {
   const router = useRouter()
 
   // Define um estado inicial fixo para evitar erro de hidratação
@@ -60,7 +60,7 @@ const SwitchLanguage = () => {
   }
 
   return (
-    <SwitchLanguageContainer $isEN={isEnglish}>
+    <SwitchLanguageContainer $isEN={isEnglish} className={className}>
       <Switch>
         <input
           type="checkbox"

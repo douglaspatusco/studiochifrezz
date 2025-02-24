@@ -4,9 +4,14 @@ import { Title, FirstLetter } from './styles'
 const StudioChifrezz = () => {
   return (
     <Title>
-      <FirstLetter>S</FirstLetter>
-      TUDIO <FirstLetter>C</FirstLetter>
-      HIFREZZ
+      <div>
+        <FirstLetter>S</FirstLetter>
+        TUDIO&nbsp;
+      </div>
+      <div>
+        <FirstLetter>C</FirstLetter>
+        HIFREZZ
+      </div>
     </Title>
   )
 }

@@ -5,7 +5,8 @@ import useScrollOpacity from '@/hooks/useScrollOpacity'
 import LogoAndName from '../LogoAndName'
 import SwitchLanguage from '../SwitchLanguage'
 
-import { HeaderBarContainer, ItemLink, Menu, MenuItem } from './styles'
+import { Hamburguer, HeaderBarContainer, ItemLink, Menu, MenuItem, Navigation } from './styles'
+import SocialMedias from '../SocialMedias'
 
 const routes = [
   { path: '/', key: 'home' },
@@ -37,12 +38,19 @@ const HeaderBar = () => {
     [opacity]
   )
 
+  const [classActive, setClassActive] = useState('')
+
+  const toggleClassActive = () => {
+    setClassActive(classActive === '' ? 'active' : '')
+  }
+
   return (
     <HeaderBarContainer style={headerStyle}>
-      <SwitchLanguage />
+      <SwitchLanguage className='outOfMenu' />
       <LogoAndName />
-      <Menu>
-        {routes.map((route, index) => (
+      <Menu className={classActive}>
+        <Navigation>
+          {routes.map((route, index) => (
           <MenuItem
             key={route.key}
             $isHovered={hovered !== null && hovered !== index}
@@ -50,15 +58,29 @@ const HeaderBar = () => {
             onMouseLeave={handleMouseLeave}
             aria-haspopup="true"
             aria-expanded={hovered === index}
+            className={classActive ? 'fade-in' : ''}
           >
             <Link href={route.path} passHref legacyBehavior>
-              <ItemLink href={route.path} aria-label={t(route.key)}>
+              <ItemLink href={route.path} aria-label={t(route.key)} onClick={toggleClassActive}>
                 {t(route.key).toUpperCase()}
               </ItemLink>
             </Link>
           </MenuItem>
         ))}
+        </Navigation>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1em' }}>
+          <SwitchLanguage className={`inMenu ${classActive ? 'fade-in' : ''}`} />
+          <SocialMedias className={`inMenu ${classActive ? 'fade-in' : ''}`} />
+        </div>
       </Menu>
+      <Hamburguer
+        onClick={toggleClassActive}
+        className={`menu-hamburguer ${classActive}`}
+      >
+        <div className={`line ${classActive}`} />
+        <div className={`line ${classActive}`} />
+        <div className={`line ${classActive}`} />
+      </Hamburguer>
     </HeaderBarContainer>
   )
 }

@@ -57,7 +57,7 @@ export const NavigationButton = styled.button`
   padding: 8px;
   border-radius: 50%;
   cursor: pointer;
-  z-index: 10;
+  z-index: 1;
   transition: 0.3s;
 
   &:hover {
