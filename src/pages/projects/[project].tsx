@@ -90,16 +90,6 @@ const ProjectPage = () => {
             <p>{translatedProject.sinopse}</p>
           </ProjectStyle.Description>
         </ProjectStyle.Infos>
-        <ProjectCredits
-          technicalSheet={Object.fromEntries(
-            Object.entries(translatedProject.technicalSheet || {}).map(
-              ([key, value]) => [
-                key,
-                Array.isArray(value) ? value.join(', ') : (value ?? '')
-              ]
-            )
-          )}
-        />
         <ProjectStyle.Gallery>
           {images.map((image, index) => (
             <ProjectStyle.ImageWrapper
@@ -129,6 +119,17 @@ const ProjectPage = () => {
             height={1080}
           />
         </Modal>
+        <ProjectCredits
+          technicalSheet={Object.fromEntries(
+            Object.entries(translatedProject.technicalSheet || {}).map(
+              ([key, value]) => [
+                key,
+                Array.isArray(value) ? value.join(', ') : (value ?? '')
+              ]
+            )
+          )}
+        />
+
         {projectSlug === 'kale' && (
           <ProjectStyle.Support>
             <h1>{t('supports', { ns: 'common' })}:</h1>
