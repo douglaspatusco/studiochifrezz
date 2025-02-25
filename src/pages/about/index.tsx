@@ -1,14 +1,11 @@
 import { useEffect } from 'react'
 import Head from 'next/head'
-
 import { GetServerSideProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-
 import { useTranslation } from 'next-i18next'
-
 import Carousel from '@/components/Carousel'
 import { images } from '../../data/eventsPics'
-
+import { getStaffData } from '../../data/staffMembers'
 import AOS from 'aos'
 
 import {
@@ -19,36 +16,9 @@ import {
   Us
 } from '../../styles/about.styles'
 
-interface StaffMember {
-  name: string
-  avatar: string
-  description: string
-  linkedin: string
-}
-
 const About = () => {
   const { t } = useTranslation()
-
-  const staff: StaffMember[] = [
-    {
-      name: 'Lena Franzz',
-      avatar: '/images/avatar-lena.webp',
-      description: `${t('about-lena')}`,
-      linkedin: 'https://www.linkedin.com/in/lenafranzz/'
-    },
-    {
-      name: 'Luiza Ferraz',
-      avatar: '/images/avatar-luiza.webp',
-      description: `${t('about-luiza')}`,
-      linkedin: 'https://www.linkedin.com/in/luizaferrazz/'
-    },
-    {
-      name: 'Priscila Vilas Boas',
-      avatar: '/images/avatar-priscila.webp',
-      description: `${t('about-priscila')}`,
-      linkedin: 'https://www.linkedin.com/in/priscila-vilas-boas-production/'
-    }
-  ]
+  const staff = getStaffData(t)
 
   useEffect(() => {
     AOS.init({

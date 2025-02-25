@@ -23,3 +23,10 @@ declare interface Project {
     animatic?: string | string[]
   }
 }
+
+declare interface StaffMember {
+  name: string
+  avatar: string
+  description: string
+  linkedin: string
+}

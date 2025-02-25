@@ -10,6 +10,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import useFetchProjects from '@/hooks/useFetchProjects'
 import useModal from '@/hooks/useModal'
 import { imageData } from '@/data/projectsPics'
+import { supports } from '@/data/supportsImages'
 
 import ProjectNavigation from '@/components/Project/ProjectNavigation'
 import Modal from '@/components/Modal'
@@ -26,37 +27,6 @@ const ProjectPage = () => {
   const { data } = useFetchProjects()
   const images = imageData[projectSlug] || []
   const modalProps = useModal(images)
-
-  const supports = [
-    {
-      src: '/images/supports/01_VS.png',
-      alt: 'Ventana Sur'
-    },
-    {
-      src: '/images/supports/02_VS.png',
-      alt: 'Ventana Sur'
-    },
-    {
-      src: '/images/supports/03_incaa.png',
-      alt: 'Instituto Nacional de Cine Y Artes Audiovisuales'
-    },
-    {
-      src: '/images/supports/04_quirino.png',
-      alt: 'Premios Quirino'
-    },
-    {
-      src: '/images/supports/05_OEI.png',
-      alt: 'Organización de Estados Uberoamericanos'
-    },
-    {
-      src: '/images/supports/06_annecy.png',
-      alt: 'Annecy'
-    },
-    {
-      src: '/images/supports/07_paradiso.png',
-      alt: 'Paradiso'
-    }
-  ]
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: false, mirror: true })
