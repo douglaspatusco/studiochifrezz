@@ -4,9 +4,9 @@ import { useTranslation } from 'next-i18next'
 import useScrollOpacity from '@/hooks/useScrollOpacity'
 import LogoAndName from '../LogoAndName'
 import SwitchLanguage from '../SwitchLanguage'
+import SocialMedias from '../SocialMedias'
 
 import { Hamburguer, HeaderBarContainer, ItemLink, Menu, MenuItem, Navigation } from './styles'
-import SocialMedias from '../SocialMedias'
 
 const routes = [
   { path: '/', key: 'home' },
@@ -73,10 +73,7 @@ const HeaderBar = () => {
           <SocialMedias className={`inMenu ${classActive ? 'fade-in' : ''}`} />
         </div>
       </Menu>
-      <Hamburguer
-        onClick={toggleClassActive}
-        className={`menu-hamburguer ${classActive}`}
-      >
+      <Hamburguer onClick={toggleClassActive} className={`menu-hamburguer ${classActive}`}>
         <div className={`line ${classActive}`} />
         <div className={`line ${classActive}`} />
         <div className={`line ${classActive}`} />

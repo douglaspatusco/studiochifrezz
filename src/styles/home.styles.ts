@@ -1,4 +1,4 @@
-import { colors } from '@/styles/GlobalStyles'
+import { colors, screenSizes } from '@/styles/GlobalStyles'
 import styled from 'styled-components'
 
 export const Content = styled.main`
@@ -17,6 +17,12 @@ export const Container = styled.div`
   height: 100vh;
   margin-top: 40vh;
   padding: 4em 0 1em 0;
+
+  @media (max-width: ${screenSizes.tablet}) {
+    margin-top: 20vh;
+    padding: 2em 0 1em 0;
+  }
+
 `
 
 export const Video = styled.div`
@@ -27,10 +33,22 @@ export const Video = styled.div`
   overflow: hidden;
   z-index: 0;
 
+  @media (max-width: ${screenSizes.tablet}) {
+    position: unset;
+  }
+
+  @media (max-width: ${screenSizes.mobile}) {
+    position: unset;
+  }
+
   video {
-    width: 100vw;
+    width: 100%;
     height: auto;
     pointer-events: none;
+
+    @media (max-width: ${screenSizes.mobile}) {
+      width: 150%;
+    }
   }
 
   img {

@@ -14,7 +14,7 @@ export const HeaderBarContainer = styled.header`
   background-color: ${colors.roxoEscuro};
   z-index: 2;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${screenSizes.tablet}) {
     padding: 0.5em 2em;
   }
 `
@@ -61,6 +61,11 @@ export const Menu = styled.ul`
       background-color: red;
     }
   }
+
+  @media screen and (max-width: ${screenSizes.mobile}) {
+
+    width: 100vw;
+  }
 `
 
 export const Navigation = styled.div`
@@ -92,6 +97,10 @@ export const MenuItem = styled.li<{ $isHovered: boolean }>`
   transition: 0.3s;
   opacity: ${({ $isHovered }) => ($isHovered ? 0.5 : 1)};
 
+  @media screen and (max-width: ${screenSizes.tablet}) {
+    font-size: 24px;
+  }
+
   &:hover {
     transform: scale(1.1);
   }
@@ -105,19 +114,23 @@ export const ItemLink = styled(Link)`
 
 export const Hamburguer = styled.div`
   width: 2em;
-  margin: 1em;
+  margin: 1.5em;
   cursor: pointer;
   z-index: 2;
 
   &.active {
+
     .line:nth-child(1) {
       transform: rotate(45deg) translate(5px, 5px);
+      transition: 0.3s;
     }
     .line:nth-child(2) {
       opacity: 0;
+      transition: 0.3s;
     }
     .line:nth-child(3) {
       transform: rotate(-45deg) translate(2px, -5px);
+      transition: 0.3s;
     }
   }
 
@@ -131,5 +144,18 @@ export const Hamburguer = styled.div`
 
   @media (min-width: 769px) {
     display: none;
+
+  }
+
+  @media (min-width: ${screenSizes.tablet}) {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  @media (min-width: ${screenSizes.mobile}) {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 `

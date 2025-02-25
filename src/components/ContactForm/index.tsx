@@ -10,40 +10,48 @@ export const ContactForm = () => {
 
   return (
     <S.Form onSubmit={handleSubmit}>
-      <label htmlFor="name">{t('form-name')}</label>
-      <S.Input
-        id="name"
-        type="text"
-        placeholder={t('form-name')}
-        {...register('name')}
-      />
-      {errors.name && <p>{errors.name.message}</p>}
+      <S.InputGroup>
+        <label htmlFor="name">{t('form-name')}</label>
+        <S.Input
+          id="name"
+          type="text"
+          placeholder={t('form-name')}
+          {...register('name')}
+        />
+        {errors.name && <p>{errors.name.message}</p>}
+      </S.InputGroup>
 
-      <label htmlFor="email">Email</label>
-      <S.Input
-        id="email"
-        type="text"
-        placeholder={t('form-email')}
-        {...register('email')}
-      />
-      {errors.email && <p>{errors.email.message}</p>}
+      <S.InputGroup>
+        <label htmlFor="email">Email</label>
+        <S.Input
+          id="email"
+          type="text"
+          placeholder={t('form-email')}
+          {...register('email')}
+        />
+        {errors.email && <p>{errors.email.message}</p>}
+      </S.InputGroup>
 
-      <label htmlFor="subject">Assunto</label>
-      <S.Input
-        id="subject"
-        type="text"
-        placeholder={t('form-subject')}
-        {...register('subject')}
-      />
-      {errors.subject && <p>{errors.subject.message}</p>}
+      <S.InputGroup>
+        <label htmlFor="subject">Assunto</label>
+        <S.Input
+          id="subject"
+          type="text"
+          placeholder={t('form-subject')}
+          {...register('subject')}
+        />
+        {errors.subject && <p>{errors.subject.message}</p>}
+      </S.InputGroup>
 
-      <label htmlFor="message">Mensagem</label>
-      <S.TextArea
-        id="message"
-        placeholder={t('form-message')}
-        {...register('message')}
-      />
-      {errors.message && <p>{errors.message.message}</p>}
+      <S.InputGroup>
+        <label htmlFor="message">Mensagem</label>
+        <S.TextArea
+          id="message"
+          placeholder={t('form-message')}
+          {...register('message')}
+        />
+        {errors.message && <p>{errors.message.message}</p>}
+      </S.InputGroup>
 
       <S.Button type="submit" disabled={isSubmitting}>
         {t('form-send').toUpperCase()}

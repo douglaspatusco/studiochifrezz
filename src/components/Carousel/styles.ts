@@ -15,6 +15,10 @@ export const CarouselContainer = styled.div`
   @media screen and (max-width: ${screenSizes.laptop}) {
     max-width: 640px;
   }
+
+  @media screen and (max-width: ${screenSizes.mobile}) {
+    max-width: 100%;
+  }
 `
 
 export const CarouselTrack = styled(motion.div)`
@@ -24,6 +28,10 @@ export const CarouselTrack = styled(motion.div)`
 
   &:active {
     cursor: grabbing;
+  }
+
+  @media screen and (max-width: ${screenSizes.mobile}) {
+    padding: 0 3.5em;
   }
 `
 

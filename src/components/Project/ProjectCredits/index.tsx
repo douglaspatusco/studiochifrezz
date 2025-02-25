@@ -1,6 +1,6 @@
 import { useTranslation } from 'next-i18next'
-import * as ProjectStyle from '../../../styles/project.styles'
 import capitalizeFirstLetter from '@/services/capitalizaFirstLetter'
+import { Credits, CreditsContainer, Person, Role } from './styles'
 
 interface Role {
   key: string
@@ -27,27 +27,21 @@ const ProjectCredits: React.FC<ProjectCreditsProps> = ({ technicalSheet }) => {
   if (!technicalSheet || Object.keys(technicalSheet).length === 0) return null
 
   return (
-    <ProjectStyle.CreditsContainer>
+    <CreditsContainer>
       <h1>{capitalizeFirstLetter(t('credits'))}</h1>
-      <ProjectStyle.Credits>
-        <ProjectStyle.Role>
-          {roles.map(
-            (role) =>
-              technicalSheet?.[role.key] && (
-                <h3 key={role.key}>{t(role.label)}</h3>
-              )
-          )}
-        </ProjectStyle.Role>
-        <ProjectStyle.Person>
-          {roles.map(
-            (role) =>
-              technicalSheet?.[role.key] && (
-                <h3 key={role.key}>{technicalSheet[role.key]}</h3>
-              )
-          )}
-        </ProjectStyle.Person>
-      </ProjectStyle.Credits>
-    </ProjectStyle.CreditsContainer>
+      <Credits>
+        {roles.map((role) => technicalSheet?.[role.key] &&
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <Role key={role.key}>
+              <h3>{t(role.label)}</h3>
+            </Role>
+            <Person key={role.key}>
+              <h3>{technicalSheet[role.key]}</h3>
+            </Person>
+          </div>
+        )}
+      </Credits>
+    </CreditsContainer>
   )
 }
 

@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { colors } from '@/styles/GlobalStyles'
+import { colors, screenSizes } from '@/styles/GlobalStyles'
 
 export const Title = styled.div`
   display: flex;
@@ -14,8 +14,12 @@ export const Title = styled.div`
     align-items: center;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${screenSizes.tablet}) {
     flex-direction: column;
+  }
+
+  @media screen and (max-width: ${screenSizes.mobile}) {
+    font-size: 1em;
   }
 `
 

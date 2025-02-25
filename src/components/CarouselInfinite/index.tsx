@@ -1,5 +1,4 @@
 import useCarouselInfinite from '../../hooks/useCarouselInfinite'
-import { awardsImages } from '../../data/awardsImages'
 
 import { CarouselContainer, CarouselTrack } from './styles'
 
@@ -8,7 +7,7 @@ interface awardsPics {
   eventName: string
 }
 interface CarouselInfiniteProps {
-  images: awardsPics[];
+  images: awardsPics[]
 }
 
 const CarouselInfinite: React.FC<CarouselInfiniteProps> = ({ images }) => {

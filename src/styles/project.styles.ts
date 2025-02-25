@@ -14,7 +14,6 @@ export const ContainerProduct = styled.section`
     height: auto;
   }
 
-
   h1 {
     color: ${colors.cinzaChumbo};
     font-size: 2em;
@@ -23,6 +22,13 @@ export const ContainerProduct = styled.section`
   @media screen and (max-width: ${screenSizes.tablet}) {
     img {
       width: 150%;
+      height: auto;
+    }
+  }
+
+  @media screen and (max-width: ${screenSizes.mobile}) {
+    img {
+      width: 200%;
       height: auto;
     }
   }
@@ -40,20 +46,10 @@ export const Infos = styled.div`
     display: block;
     padding: 0 2em;
   }
-`
-export const CreditsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2em;
-  padding: 0.5em;
 
-  h1 {
-    font-size: 2em;
-
-    @media screen and (max-width: ${screenSizes.tablet}) {
-      font-size: 1.5em;
-    }
+  @media screen and (max-width: ${screenSizes.mobile}) {
+    width: 100%;
+    margin: 2em 0;
   }
 `
 
@@ -77,62 +73,20 @@ export const TechnicalSheet = styled.div`
   h2 {
     font-size: 2em;
     letter-spacing: 4px;
-
-    @media screen and (max-width: ${screenSizes.tablet}) {
-      font-size: 1.5em;
-    }
   }
 
   @media screen and (max-width: ${screenSizes.tablet}) {
     flex-direction: row;
     align-items: center;
-  }
-`
 
-export const Credits = styled.div`
-  display: flex;
-  gap: 2em;
-  min-width: max-content;
-
-  h1 {
-    font-size: 1.5em;
-
-    @media screen and (max-width: ${screenSizes.tablet}) {
-      font-size: 1em;
+    h2 {
+      font-size: 1.5em;
     }
   }
-`
 
-export const Role = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.25em;
-
-  h3 {
-    font-size: 1.25em;
-    letter-spacing: 1px;
-
-    @media screen and (max-width: ${screenSizes.tablet}) {
-      font-size: 1em;
-    }
-  }
-`
-
-export const Person = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.25em;
-
-  h3 {
-    font-size: 1.25em;
-    font-weight: 400;
-    letter-spacing: 1px;
-
-    @media screen and (max-width: ${screenSizes.tablet}) {
-      font-size: 1em;
-    }
+  @media screen and (max-width: ${screenSizes.mobile}) {
+    width: 100%;
+    flex-direction: column;
   }
 `
 
@@ -161,6 +115,13 @@ export const Description = styled.div`
     p {
       font-size: 1em;
       width: 75%;
+    }
+  }
+
+  @media screen and (max-width: ${screenSizes.mobile}) {
+    min-width: 0;
+    p {
+      width: 100%;
     }
   }
 `
@@ -212,6 +173,10 @@ export const Gallery = styled.div`
   @media screen and (max-width: ${screenSizes.tablet}) {
     padding: 4em 2em;
   }
+
+  @media screen and (max-width: ${screenSizes.mobile}) {
+    gap: 2em;
+  }
 `
 
 export const ImageWrapper = styled.div`
@@ -220,25 +185,30 @@ export const ImageWrapper = styled.div`
 
   flex: 1 1 calc(50% - 2em);
   max-width: calc(50% - 2em);
+
+  @media screen and (max-width: ${screenSizes.mobile}) {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 `
 
 export const Support = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1em;
   padding: 1em 8em;
 
-  @media screen and (max-width: ${screenSizes.tablet}) {
-      padding: 1em 2em;
+    h1 {
+      font-size: 2em;
+    }
 
+  @media screen and (max-width: ${screenSizes.tablet}) {
+    padding: 1em 2em;
   }
 
-  h1 {
-    font-size: 2em;
-
-    @media screen and (max-width: ${screenSizes.tablet}) {
-      font-size: 1.5em;
-    }
+    @media screen and (max-width: ${screenSizes.mobile}) {
+    padding: 1em;
   }
 `
 
@@ -251,10 +221,6 @@ export const SupportsImages = styled.div`
   align-items: center;
   width: 100%;
 
-  @media screen and (max-width: ${screenSizes.tablet}) {
-    gap: 0.5em;
-  }
-
   img {
     max-width: 25%;
     height: auto;
@@ -264,9 +230,19 @@ export const SupportsImages = styled.div`
     &:hover {
       transform: scale(0.9);
     }
+  }
 
-    @media screen and (max-width: ${screenSizes.tablet}) {
+  @media screen and (max-width: ${screenSizes.tablet}) {
+    gap: 0.5em;
+
+    img {
       max-width: 20%;
+    }
+  }
+
+  @media screen and (max-width: ${screenSizes.mobile}) {
+    img {
+      max-width: 40%;
     }
   }
 `
