@@ -1,5 +1,6 @@
 import { useTranslation } from 'next-i18next'
 import * as ProjectStyle from '../../../styles/project.styles'
+import capitalizeFirstLetter from '@/services/capitalizaFirstLetter'
 
 interface Role {
   key: string
@@ -27,7 +28,7 @@ const ProjectCredits: React.FC<ProjectCreditsProps> = ({ technicalSheet }) => {
 
   return (
     <ProjectStyle.CreditsContainer>
-      <h1>{t('credits')}</h1>
+      <h1>{capitalizeFirstLetter(t('credits'))}</h1>
       <ProjectStyle.Credits>
         <ProjectStyle.Role>
           {roles.map(

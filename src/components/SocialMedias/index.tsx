@@ -8,13 +8,13 @@ import {
 
 import { Item, List } from './styles'
 
-const SocialMedias = () => {
+const SocialMedias = ({ className }: { className?: string }) => {
   const [socialMediaHovered, setSocialMediaHovered] = useState<number | null>(
     null
   )
 
   return (
-    <List aria-label={'social-medias'}>
+    <List aria-label={'social-medias'} className={className}>
       <Item
         $isHovered={socialMediaHovered !== null && socialMediaHovered !== 0}
         onMouseEnter={() => setSocialMediaHovered(0)}

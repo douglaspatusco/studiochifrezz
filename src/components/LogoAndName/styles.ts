@@ -9,4 +9,9 @@ export const Container = styled.div`
     width: 4em;
     height: 4em;
   }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: row;
+    gap: 2em;
+  }
 `

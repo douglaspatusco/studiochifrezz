@@ -11,13 +11,15 @@ export const Footer = styled.footer`
   background-color: ${colors.roxoEscuro};
   color: #fff;
 
-  img {
-    width: 4em;
-    height: 4em;
-  }
+  @media screen and (max-width: 768px) {
 
-  svg {
-    width: 2em;
-    height: 2em;
+    img {
+      width: 5em;
+      height: 5em;
+    }
+
+    p {
+      font-size: 0.8em;
+    }
   }
 `

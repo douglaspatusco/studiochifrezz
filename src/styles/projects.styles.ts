@@ -26,7 +26,7 @@ export const ProjectsList = styled.ul`
   justify-content: center;
   flex-wrap: wrap;
   gap: 4em;
-  width: 64em;
+  width: auto;
   margin: 2em 0;
 `
 

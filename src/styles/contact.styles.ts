@@ -7,7 +7,7 @@ export const Container = styled.section`
   flex-direction: column;
   padding: 7.5em 0;
   gap: 4em;
-  height: 100vh;
+  min-height: 100vh;
 `
 
 export const TalkWithUs = styled.div`

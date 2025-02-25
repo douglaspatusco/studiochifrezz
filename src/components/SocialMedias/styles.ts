@@ -7,6 +7,20 @@ export const List = styled.ul`
   gap: 2em;
 
   max-width: max-content;
+
+  &.inMenu {
+  display: none;
+
+    @media screen and (max-width: 768px) {
+      display: flex;
+    }
+  }
+
+  &.outOfMenu {
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
 `
 
 export const Item = styled.li<{ $isHovered: boolean }>`
@@ -16,5 +30,15 @@ export const Item = styled.li<{ $isHovered: boolean }>`
   &:hover {
     transform: scale(1.1);
     opacity: 1;
+  }
+
+    img {
+    width: 4em;
+    height: 4em;
+  }
+
+  svg {
+    width: 2em;
+    height: 2em;
   }
 `

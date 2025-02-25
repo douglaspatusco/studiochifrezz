@@ -9,13 +9,21 @@ export const ContainerProduct = styled.section`
   width: 100%;
   height: 100%;
 
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+
   h1 {
     color: ${colors.cinzaChumbo};
     font-size: 2em;
   }
 
-  @media screen and (max-width: ${screenSizes.laptop}) {
+  @media screen and (max-width: ${screenSizes.tablet}) {
     img {
+      width: 150%;
+      height: auto;
     }
   }
 `
@@ -25,9 +33,13 @@ export const Infos = styled.div`
   align-items: center;
   justify-content: space-around;
   gap: 4em;
-  width: 100%;
   padding: 0 4em;
   margin: 4em 0;
+
+  @media screen and (max-width: ${screenSizes.tablet}) {
+    display: block;
+    padding: 0 2em;
+  }
 `
 export const CreditsContainer = styled.div`
   display: flex;
@@ -35,23 +47,45 @@ export const CreditsContainer = styled.div`
   align-items: center;
   gap: 2em;
   padding: 0.5em;
+
+  h1 {
+    font-size: 2em;
+
+    @media screen and (max-width: ${screenSizes.tablet}) {
+      font-size: 1.5em;
+    }
+  }
 `
 
 export const TechnicalSheet = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   gap: 2em;
   padding: 0.5em;
-  width: fit-content;
+  width: 100%;
   font-family: 'Austral Slab';
 
   h1 {
     font-size: 4em;
+
+    @media screen and (max-width: ${screenSizes.tablet}) {
+      font-size: 3em;
+    }
   }
 
   h2 {
     font-size: 2em;
     letter-spacing: 4px;
+
+    @media screen and (max-width: ${screenSizes.tablet}) {
+      font-size: 1.5em;
+    }
+  }
+
+  @media screen and (max-width: ${screenSizes.tablet}) {
+    flex-direction: row;
+    align-items: center;
   }
 `
 
@@ -62,6 +96,10 @@ export const Credits = styled.div`
 
   h1 {
     font-size: 1.5em;
+
+    @media screen and (max-width: ${screenSizes.tablet}) {
+      font-size: 1em;
+    }
   }
 `
 
@@ -74,6 +112,10 @@ export const Role = styled.div`
   h3 {
     font-size: 1.25em;
     letter-spacing: 1px;
+
+    @media screen and (max-width: ${screenSizes.tablet}) {
+      font-size: 1em;
+    }
   }
 `
 
@@ -87,6 +129,10 @@ export const Person = styled.div`
     font-size: 1.25em;
     font-weight: 400;
     letter-spacing: 1px;
+
+    @media screen and (max-width: ${screenSizes.tablet}) {
+      font-size: 1em;
+    }
   }
 `
 
@@ -104,6 +150,18 @@ export const Description = styled.div`
     font-size: 1.25em;
     letter-spacing: 1px;
     line-height: 1.5em;
+    text-align: justify;
+  }
+
+  @media screen and (max-width: ${screenSizes.tablet}) {
+    width: 100%;
+    align-items: center;
+    margin: 6em 0 4em 0;
+
+    p {
+      font-size: 1em;
+      width: 75%;
+    }
   }
 `
 
@@ -150,6 +208,10 @@ export const Gallery = styled.div`
       transform: scale(1.1);
     }
   }
+
+  @media screen and (max-width: ${screenSizes.tablet}) {
+    padding: 4em 2em;
+  }
 `
 
 export const ImageWrapper = styled.div`
@@ -165,6 +227,19 @@ export const Support = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 1em 8em;
+
+  @media screen and (max-width: ${screenSizes.tablet}) {
+      padding: 1em 2em;
+
+  }
+
+  h1 {
+    font-size: 2em;
+
+    @media screen and (max-width: ${screenSizes.tablet}) {
+      font-size: 1.5em;
+    }
+  }
 `
 
 export const SupportsImages = styled.div`
@@ -176,6 +251,10 @@ export const SupportsImages = styled.div`
   align-items: center;
   width: 100%;
 
+  @media screen and (max-width: ${screenSizes.tablet}) {
+    gap: 0.5em;
+  }
+
   img {
     max-width: 25%;
     height: auto;
@@ -184,6 +263,10 @@ export const SupportsImages = styled.div`
 
     &:hover {
       transform: scale(0.9);
+    }
+
+    @media screen and (max-width: ${screenSizes.tablet}) {
+      max-width: 20%;
     }
   }
 `
