@@ -68,7 +68,7 @@ export const Us = styled.div`
   gap: 4em;
 
   @media screen and (max-width: ${screenSizes.laptop}) {
-    padding: 0 4em;
+    padding: 4em;
   }
 `
 
