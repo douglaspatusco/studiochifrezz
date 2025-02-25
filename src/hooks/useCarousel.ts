@@ -19,7 +19,7 @@ const useCarousel = (images: { src: string; eventName: string }[]) => {
   const handleNext = useCallback(() => {
     if (!isTransitioning) {
       setIsTransitioning(true)
-      setX((prev) => prev - 228) // Move o carrossel para a esquerda
+      setX((prev) => prev - 219) // Move o carrossel para a esquerda
       setCurrentImageIndex((prev) => (prev + 1) % images.length) // Atualiza o índice da imagem
     }
   }, [isTransitioning, images.length])
@@ -28,7 +28,7 @@ const useCarousel = (images: { src: string; eventName: string }[]) => {
   const handlePrev = useCallback(() => {
     if (!isTransitioning) {
       setIsTransitioning(true)
-      setX((prev) => prev + 228) // Move o carrossel para a direita
+      setX((prev) => prev + 219) // Move o carrossel para a direita
       setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length) // Atualiza o índice da imagem
     }
   }, [isTransitioning, images.length])

@@ -49,6 +49,16 @@ export const DescriptionContainer = styled.div`
     line-height: 1.5;
     width: 640px;
   }
+
+  @media screen and (max-width: ${screenSizes.mobile}) {
+    gap: 0;
+
+    h2 {
+      width: 100%;
+      font-size: 1.25em;
+      padding: 1em;
+    }
+  }
 `
 
 export const EventsImagesContainer = styled.div`
@@ -100,6 +110,16 @@ export const Member = styled.div`
     flex-direction: column;
     gap: 1em;
   }
+
+  @media screen and (max-width: ${screenSizes.mobile}) {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  h2 {
+    align-self: center;
+  }
+
 `
 
 export const MemberReverse = styled(Member)`
@@ -108,5 +128,19 @@ export const MemberReverse = styled(Member)`
 
   div {
     align-items: flex-end;
+  }
+
+  @media screen and (max-width: ${screenSizes.mobile}) {
+    flex-direction: column;
+    gap: 1em;
+    text-align: justify;
+
+    h2 {
+      align-self: center;
+    }
+
+    div {
+      align-items: flex-start;
+    }
   }
 `
