@@ -163,8 +163,8 @@ const ProjectPage = () => {
           <ProjectStyle.Support>
             <h1>{t('supports', { ns: 'common' })}:</h1>
             <ProjectStyle.SupportsImages>
-              {supports.map((supports) => (
-                <img src={supports.src} alt={supports.alt} />
+              {supports.map((support) => (
+                <img key={support.src} src={support.src} alt={support.alt} title={support.alt} />
               ))}
             </ProjectStyle.SupportsImages>
           </ProjectStyle.Support>
