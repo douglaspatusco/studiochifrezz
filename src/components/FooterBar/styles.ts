@@ -1,4 +1,4 @@
-import { colors } from '@/styles/GlobalStyles'
+import { colors, screenSizes } from '@/styles/GlobalStyles'
 import styled from 'styled-components'
 
 export const Footer = styled.footer`
@@ -11,7 +11,11 @@ export const Footer = styled.footer`
   background-color: ${colors.roxoEscuro};
   color: #fff;
 
-  @media screen and (max-width: 768px) {
+  p {
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: ${screenSizes.mobile}) {
 
     img {
       width: 5em;
@@ -19,7 +23,9 @@ export const Footer = styled.footer`
     }
 
     p {
-      font-size: 0.8em;
+      width: 160px;
+      font-size: 0.75em;
+      text-align: center;
     }
   }
 `

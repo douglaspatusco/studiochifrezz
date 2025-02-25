@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
-import Image from 'next/image'
 
 import { GetServerSideProps } from 'next'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import { Container, Video } from '../styles/home.styles'
-import Carousel from '@/components/Carousel'
 import { awardsImages } from '../data/awardsImages'
 import CarouselInfinite from '@/components/CarouselInfinite'
 
@@ -18,7 +16,7 @@ export const Home = () => {
   const [videoLoaded, setVideoLoaded] = useState(false)
 
   useEffect(() => {
-    setTimeout(() => setVideoLoaded(true), 2000) // Carrega após 2s (ajuste conforme necessário)
+    setTimeout(() => setVideoLoaded(true), 0)
   }, [])
 
   return (
@@ -34,11 +32,9 @@ export const Home = () => {
       </Head>
       <Video>
         {!videoLoaded ? (
-          <Image
+          <img
             src="/images/banner-home-static.png"
             alt="Background"
-            width={1920}
-            height={600}
           />
         ) : (
           <video

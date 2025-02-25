@@ -1,3 +1,4 @@
+import { screenSizes } from '@/styles/GlobalStyles'
 import { styled } from 'styled-components'
 
 export const Container = styled.div`
@@ -10,8 +11,18 @@ export const Container = styled.div`
     height: 4em;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${screenSizes.tablet}) {
     flex-direction: row;
     gap: 2em;
+  }
+
+  @media screen and (max-width: ${screenSizes.mobile}) {
+    flex-direction: column;
+    gap: 0;
+
+    img {
+      width: 3em;
+      height: 3em;
+    }
   }
 `
