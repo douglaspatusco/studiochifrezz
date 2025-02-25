@@ -8,6 +8,10 @@ export const Container = styled.section`
   padding: 7.5em 0;
   gap: 4em;
   min-height: 100vh;
+
+  @media screen and (max-width: ${screenSizes.mobile}) {
+    padding: 5em 0;
+  }
 `
 
 export const TalkWithUs = styled.div`
@@ -42,9 +46,31 @@ export const Form = styled.form`
   gap: 1em;
   text-align: center;
 
+  @media screen and (max-width: ${screenSizes.mobile}) {
+    width: 100%;
+  }
+
   label {
     display: none;
   }
+
+  p {
+    color: red;
+    font-size: 0.75em;
+    align-self: flex-start;
+
+    @media screen and (max-width: ${screenSizes.mobile}) {
+      padding-left: 1.5em;
+    }
+  }
+`
+
+export const InputGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  width: 100%;
 `
 
 export const TextArea = styled.textarea`
@@ -57,6 +83,10 @@ export const TextArea = styled.textarea`
   height: 8em;
   resize: none;
   outline: none;
+
+  @media screen and (max-width: ${screenSizes.mobile}) {
+    width: 90%;
+  }
 
   &:focus {
     border-color: ${colors.roxoEscuro};
@@ -75,6 +105,10 @@ export const Input = styled.input`
   font-family: 'Candara', sans-serif;
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
   outline: none;
+
+  @media screen and (max-width: ${screenSizes.mobile}) {
+    width: 90%;
+  }
 
   &:focus {
     border-color: ${colors.roxoEscuro};
@@ -96,4 +130,9 @@ export const Button = styled.button`
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   background-color: ${colors.branco};
+
+  @media screen and (max-width: ${screenSizes.mobile}) {
+    width: 90%;
+    margin: 4em 1em 1em 1em;
+}
 `
