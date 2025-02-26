@@ -38,6 +38,8 @@ export const Video = styled.div`
   }
 
   @media (max-width: ${screenSizes.mobileS}) {
+    display: flex;
+    justify-content: center;
     position: unset;
   }
 

@@ -50,8 +50,8 @@ export const DescriptionContainer = styled.div`
     width: 640px;
   }
 
-  @media screen and (max-width: ${screenSizes.mobileS}) {
-    gap: 0;
+  @media screen and (max-width: ${screenSizes.mobileL}) {
+    gap: 4em;
 
     h2 {
       width: 100%;
@@ -79,6 +79,10 @@ export const Us = styled.div`
 
   @media screen and (max-width: ${screenSizes.laptop}) {
     padding: 4em;
+  }
+
+  @media screen and (max-width: ${screenSizes.mobileL}) {
+    padding: 2em;
   }
 `
 
@@ -111,7 +115,7 @@ export const Member = styled.div`
     gap: 1em;
   }
 
-  @media screen and (max-width: ${screenSizes.mobileS}) {
+  @media screen and (max-width: ${screenSizes.mobileL}) {
     flex-direction: column;
     gap: 1em;
   }
@@ -130,7 +134,7 @@ export const MemberReverse = styled(Member)`
     align-items: flex-end;
   }
 
-  @media screen and (max-width: ${screenSizes.mobileS}) {
+  @media screen and (max-width: ${screenSizes.mobileL}) {
     flex-direction: column;
     gap: 1em;
     text-align: justify;

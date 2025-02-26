@@ -62,9 +62,9 @@ export const Menu = styled.ul`
     }
   }
 
-  @media screen and (max-width: ${screenSizes.mobileS}) {
-
+  @media screen and (max-width: ${screenSizes.mobileL}) {
     width: 100vw;
+      padding: 4em 0;
   }
 `
 
@@ -144,16 +144,9 @@ export const Hamburguer = styled.div`
 
   @media (min-width: 769px) {
     display: none;
-
   }
 
-  @media (min-width: ${screenSizes.tablet}) {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-
-  @media (min-width: ${screenSizes.mobileS}) {
+  @media (max-width: ${screenSizes.tablet}) {
     position: absolute;
     top: 0;
     right: 0;

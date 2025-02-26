@@ -15,17 +15,21 @@ export const Footer = styled.footer`
     font-size: 14px;
   }
 
-  @media screen and (max-width: ${screenSizes.mobileS}) {
-
+  @media screen and (max-width: ${screenSizes.mobileL}) {
     img {
       width: 5em;
       height: 5em;
     }
 
     p {
-      width: 160px;
       font-size: 0.75em;
       text-align: center;
+    }
+  }
+
+  @media screen and (max-width: ${screenSizes.mobileS}) {
+    p {
+      width: 190px;
     }
   }
 `

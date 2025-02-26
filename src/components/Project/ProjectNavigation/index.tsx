@@ -1,3 +1,4 @@
+import { useTranslation } from 'next-i18next';
 import * as S from './styles'
 
 interface ProjectNavigationProps {
@@ -9,6 +10,8 @@ const ProjectNavigation = ({
   currentSlug,
   projects
 }: ProjectNavigationProps) => {
+const { t } = useTranslation('projects')
+
   const currentIndex = projects.findIndex(
     (project) => project.slug === currentSlug
   )
@@ -21,14 +24,14 @@ const ProjectNavigation = ({
     <S.NavigationWrapper>
       {previousProject ? (
         <S.NavLink href={`/projects/${previousProject.slug}`}>
-          &larr; {previousProject.name}
+          &larr; {t(`projects.${previousProject.slug}.name`, previousProject.name)}
         </S.NavLink>
       ) : (
         <span />
       )}
       {nextProject ? (
         <S.NavLink href={`/projects/${nextProject.slug}`}>
-          {nextProject.name} &rarr;
+          {t(`projects.${nextProject.slug}.name`, nextProject.name)} &rarr;
         </S.NavLink>
       ) : (
         <span />

@@ -25,7 +25,7 @@ export const CarouselTrack = styled(motion.div)<{ $x: number }>`
       width: 11em;
     }
 
-    @media screen and (max-width: ${screenSizes.mobileS}) {
+    @media screen and (max-width: ${screenSizes.mobileL}) {
       width: 10em;
     }
   }

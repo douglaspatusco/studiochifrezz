@@ -18,9 +18,14 @@ export const Title = styled.div`
     flex-direction: column;
   }
 
+  @media screen and (max-width: ${screenSizes.mobileL}) {
+    font-size: 1.25em;
+  }
+
   @media screen and (max-width: ${screenSizes.mobileS}) {
     font-size: 1em;
   }
+
 `
 
 export const FirstLetter = styled.span`
