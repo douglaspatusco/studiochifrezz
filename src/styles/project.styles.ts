@@ -26,7 +26,7 @@ export const ContainerProduct = styled.section`
     }
   }
 
-  @media screen and (max-width: ${screenSizes.mobileS}) {
+  @media screen and (max-width: ${screenSizes.mobileL}) {
     img {
       width: 200%;
       height: auto;
@@ -47,7 +47,7 @@ export const Infos = styled.div`
     padding: 0 2em;
   }
 
-  @media screen and (max-width: ${screenSizes.mobileS}) {
+  @media screen and (max-width: ${screenSizes.mobileL}) {
     width: 100%;
     margin: 2em 0;
     padding: 0 1em;
@@ -124,7 +124,7 @@ export const Description = styled.div`
     }
   }
 
-  @media screen and (max-width: ${screenSizes.mobileS}) {
+  @media screen and (max-width: ${screenSizes.mobileL}) {
     min-width: 0;
     p {
       width: 100%;
@@ -180,7 +180,7 @@ export const Gallery = styled.div`
     padding: 4em 2em;
   }
 
-  @media screen and (max-width: ${screenSizes.mobileS}) {
+  @media screen and (max-width: ${screenSizes.mobileL}) {
     gap: 2em;
   }
 `
@@ -192,7 +192,7 @@ export const ImageWrapper = styled.div`
   flex: 1 1 calc(50% - 2em);
   max-width: calc(50% - 2em);
 
-  @media screen and (max-width: ${screenSizes.mobileS}) {
+  @media screen and (max-width: ${screenSizes.mobileL}) {
     flex: 1 1 100%;
     max-width: 100%;
   }
@@ -213,7 +213,7 @@ export const Support = styled.div`
     padding: 1em 2em;
   }
 
-    @media screen and (max-width: ${screenSizes.mobileS}) {
+    @media screen and (max-width: ${screenSizes.mobileL}) {
     padding: 1em;
   }
 `
@@ -246,7 +246,7 @@ export const SupportsImages = styled.div`
     }
   }
 
-  @media screen and (max-width: ${screenSizes.mobileS}) {
+  @media screen and (max-width: ${screenSizes.mobileL}) {
     img {
       max-width: 40%;
     }
