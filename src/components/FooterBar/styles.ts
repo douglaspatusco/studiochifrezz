@@ -15,7 +15,7 @@ export const Footer = styled.footer`
     font-size: 14px;
   }
 
-  @media screen and (max-width: ${screenSizes.mobile}) {
+  @media screen and (max-width: ${screenSizes.mobileS}) {
 
     img {
       width: 5em;

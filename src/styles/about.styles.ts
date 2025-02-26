@@ -50,7 +50,7 @@ export const DescriptionContainer = styled.div`
     width: 640px;
   }
 
-  @media screen and (max-width: ${screenSizes.mobile}) {
+  @media screen and (max-width: ${screenSizes.mobileS}) {
     gap: 0;
 
     h2 {
@@ -111,7 +111,7 @@ export const Member = styled.div`
     gap: 1em;
   }
 
-  @media screen and (max-width: ${screenSizes.mobile}) {
+  @media screen and (max-width: ${screenSizes.mobileS}) {
     flex-direction: column;
     gap: 1em;
   }
@@ -130,7 +130,7 @@ export const MemberReverse = styled(Member)`
     align-items: flex-end;
   }
 
-  @media screen and (max-width: ${screenSizes.mobile}) {
+  @media screen and (max-width: ${screenSizes.mobileS}) {
     flex-direction: column;
     gap: 1em;
     text-align: justify;

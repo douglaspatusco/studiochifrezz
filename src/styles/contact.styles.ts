@@ -9,7 +9,7 @@ export const Container = styled.section`
   gap: 4em;
   min-height: 100vh;
 
-  @media screen and (max-width: ${screenSizes.mobile}) {
+  @media screen and (max-width: ${screenSizes.mobileS}) {
     padding: 5em 0;
   }
 `
@@ -46,7 +46,7 @@ export const Form = styled.form`
   gap: 1em;
   text-align: center;
 
-  @media screen and (max-width: ${screenSizes.mobile}) {
+  @media screen and (max-width: ${screenSizes.mobileS}) {
     width: 100%;
   }
 
@@ -59,7 +59,7 @@ export const Form = styled.form`
     font-size: 0.75em;
     align-self: flex-start;
 
-    @media screen and (max-width: ${screenSizes.mobile}) {
+    @media screen and (max-width: ${screenSizes.mobileS}) {
       padding-left: 1.5em;
     }
   }
@@ -84,7 +84,7 @@ export const TextArea = styled.textarea`
   resize: none;
   outline: none;
 
-  @media screen and (max-width: ${screenSizes.mobile}) {
+  @media screen and (max-width: ${screenSizes.mobileS}) {
     width: 90%;
   }
 
@@ -106,7 +106,7 @@ export const Input = styled.input`
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
   outline: none;
 
-  @media screen and (max-width: ${screenSizes.mobile}) {
+  @media screen and (max-width: ${screenSizes.mobileS}) {
     width: 90%;
   }
 
@@ -131,7 +131,7 @@ export const Button = styled.button`
   cursor: pointer;
   background-color: ${colors.branco};
 
-  @media screen and (max-width: ${screenSizes.mobile}) {
+  @media screen and (max-width: ${screenSizes.mobileS}) {
     width: 90%;
     margin: 4em 1em 1em 1em;
 }

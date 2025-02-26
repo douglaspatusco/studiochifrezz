@@ -18,7 +18,7 @@ export const Title = styled.div`
     flex-direction: column;
   }
 
-  @media screen and (max-width: ${screenSizes.mobile}) {
+  @media screen and (max-width: ${screenSizes.mobileS}) {
     font-size: 1em;
   }
 `

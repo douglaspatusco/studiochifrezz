@@ -62,7 +62,7 @@ export const Menu = styled.ul`
     }
   }
 
-  @media screen and (max-width: ${screenSizes.mobile}) {
+  @media screen and (max-width: ${screenSizes.mobileS}) {
 
     width: 100vw;
   }
@@ -153,7 +153,7 @@ export const Hamburguer = styled.div`
     right: 0;
   }
 
-  @media (min-width: ${screenSizes.mobile}) {
+  @media (min-width: ${screenSizes.mobileS}) {
     position: absolute;
     top: 0;
     right: 0;

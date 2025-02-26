@@ -15,7 +15,7 @@ export const CreditsContainer = styled.div`
     }
   }
 
-  @media screen and (max-width: ${screenSizes.mobile}) {
+  @media screen and (max-width: ${screenSizes.mobileS}) {
     width: 100%;
   }
 `
@@ -35,7 +35,7 @@ export const Credits = styled.div`
     }
   }
 
-  @media screen and (max-width: ${screenSizes.mobile}) {
+  @media screen and (max-width: ${screenSizes.mobileS}) {
     width: 100%;
   }
 `

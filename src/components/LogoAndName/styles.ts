@@ -16,7 +16,7 @@ export const Container = styled.div`
     gap: 2em;
   }
 
-  @media screen and (max-width: ${screenSizes.mobile}) {
+  @media screen and (max-width: ${screenSizes.mobileS}) {
     flex-direction: column;
     gap: 0;
 

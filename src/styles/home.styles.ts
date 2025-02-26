@@ -37,7 +37,7 @@ export const Video = styled.div`
     position: unset;
   }
 
-  @media (max-width: ${screenSizes.mobile}) {
+  @media (max-width: ${screenSizes.mobileS}) {
     position: unset;
   }
 
@@ -46,7 +46,7 @@ export const Video = styled.div`
     height: auto;
     pointer-events: none;
 
-    @media (max-width: ${screenSizes.mobile}) {
+    @media (max-width: ${screenSizes.mobileS}) {
       width: 150%;
     }
   }
