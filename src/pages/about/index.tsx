@@ -4,8 +4,9 @@ import { GetServerSideProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 import Carousel from '@/components/Carousel'
+import Loading from '@/components/Loading'
 import { images } from '../../data/eventsPics'
-import { getStaffData } from '../../data/staffMembers'
+import { useStaffData } from '@/hooks/useStaffData'
 import AOS from 'aos'
 
 import {
@@ -18,7 +19,7 @@ import {
 
 const About = () => {
   const { t } = useTranslation()
-  const staff = getStaffData(t)
+  const { staff, loading } = useStaffData()
 
   useEffect(() => {
     AOS.init({
@@ -27,6 +28,10 @@ const About = () => {
       mirror: true
     })
   }, [])
+
+  if (loading) {
+    return <Loading />
+  }
 
   return (
     <>

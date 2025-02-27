@@ -12,6 +12,7 @@ const LogoAndName = () => {
         alt="Studio Chifrezz Logotype"
         width={100}
         height={100}
+        priority={true}
       />
       <StudioChifrezz />
     </Container>

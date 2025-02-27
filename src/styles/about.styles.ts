@@ -41,13 +41,14 @@ export const DescriptionContainer = styled.div`
   gap: 2em;
   width: 100vw;
   height: 80vh;
+  padding: 1em;
   position: relative;
 
   h2 {
     font-weight: 400;
     text-align: center;
     line-height: 1.5;
-    width: 640px;
+    max-width: 640px;
   }
 
   @media screen and (max-width: ${screenSizes.mobileL}) {
@@ -76,9 +77,13 @@ export const Us = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4em;
+  max-width: 1024px;
 
   @media screen and (max-width: ${screenSizes.laptop}) {
     padding: 4em;
+  }
+
+  @media screen and (max-width: ${screenSizes.tablet}) {
   }
 
   @media screen and (max-width: ${screenSizes.mobileL}) {
@@ -115,6 +120,22 @@ export const Member = styled.div`
     gap: 1em;
   }
 
+  @media screen and (max-width: ${screenSizes.tablet}) {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+
+    a {
+      display: flex;
+      justify-content: center;
+
+        img {
+        width: 50%;
+        height: auto;
+      }
+    }
+  }
+
   @media screen and (max-width: ${screenSizes.mobileL}) {
     flex-direction: column;
     gap: 1em;
@@ -132,6 +153,22 @@ export const MemberReverse = styled(Member)`
 
   div {
     align-items: flex-end;
+  }
+
+    @media screen and (max-width: ${screenSizes.tablet}) {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+
+    a {
+      display: flex;
+      justify-content: center;
+
+        img {
+        width: 50%;
+        height: auto;
+      }
+    }
   }
 
   @media screen and (max-width: ${screenSizes.mobileL}) {

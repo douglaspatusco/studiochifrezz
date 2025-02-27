@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app'
 import { appWithTranslation } from 'next-i18next'
-import nextI18NextConfig from '../../next-i18next.config' // Ajuste o caminho se necessário
+import nextI18NextConfig from '../../next-i18next.config'
 
 import HeaderBar from '@/components/HeaderBar'
 import FooterBar from '@/components/FooterBar'

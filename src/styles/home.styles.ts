@@ -22,7 +22,6 @@ export const Container = styled.div`
     margin-top: 20vh;
     padding: 2em 0 1em 0;
   }
-
 `
 
 export const Video = styled.div`
@@ -58,9 +57,5 @@ export const Video = styled.div`
     height: auto;
     object-fit: contain;
     pointer-events: none;
-
-    position: absolute;
-    top: 0;
-    left: 0;
   }
 `

@@ -62,10 +62,18 @@ const ProjectPage = () => {
 
   // Obtém os dados traduzidos
   const translatedProject = translateProject(projectData)
+
   return (
     <>
       <Head>
         <title>{translatedProject.name} | Studio Chifrezz</title>
+        <link
+            rel="preload"
+            href="/fonts/austral_slab/Austral-Slab_Blur-Regular.otf"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
       </Head>
       <ProjectStyle.ContainerProduct>
         <Image
@@ -73,7 +81,7 @@ const ProjectPage = () => {
           alt={translatedProject.name}
           width={2560}
           height={300}
-          priority
+          priority={true}
         />
         <ProjectStyle.Infos>
           <ProjectStyle.TechnicalSheet>
@@ -129,7 +137,6 @@ const ProjectPage = () => {
             )
           )}
         />
-
         {projectSlug === 'kale' && (
           <ProjectStyle.Support>
             <h1>{t('supports', { ns: 'common' })}:</h1>

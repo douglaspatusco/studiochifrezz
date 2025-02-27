@@ -1,8 +1,9 @@
+import Image from 'next/image'
 import { LoadingContainer } from './styles'
 
 const Loading = () => (
   <LoadingContainer>
-    <img src="/images/logo-roxo.png" alt="Logotipo Studio Chifrezz" />
+    <Image src="/images/logo-roxo.png" alt="Logotipo Studio Chifrezz" width={500} height={500} priority={true} />
   </LoadingContainer>
 )
 

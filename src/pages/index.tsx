@@ -8,6 +8,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { Container, Video } from '../styles/home.styles'
 import { awardsImages } from '../data/awardsImages'
 import CarouselInfinite from '@/components/CarouselInfinite'
+import Image from 'next/image'
 
 export const Home = () => {
   const srcVideo = '/videos/banner-studiochifrezz-1920X600.mp4'
@@ -16,7 +17,13 @@ export const Home = () => {
   const [videoLoaded, setVideoLoaded] = useState(false)
 
   useEffect(() => {
-    setTimeout(() => setVideoLoaded(true), 0)
+    const videoPreload = document.createElement('video')
+    videoPreload.src = srcVideo
+    videoPreload.preload = 'auto'
+
+    videoPreload.oncanplaythrough = () => {
+      setVideoLoaded(true)
+    }
   }, [])
 
   return (
@@ -32,18 +39,18 @@ export const Home = () => {
       </Head>
       <Video>
         {!videoLoaded ? (
-          <img
+          <Image
             src="/images/banner-home-static.png"
             alt="Background"
+            width={1920}
+            height={600}
           />
         ) : (
           <video
             loop
             muted
             autoPlay
-            controls={false}
-            onLoadedMetadata={(event) => (event.currentTarget.currentTime = 13)}
-            aria-hidden="true"
+            aria-label="Banner Home"
           >
             <source src={srcVideo} type="video/mp4" />
           </video>
@@ -60,7 +67,7 @@ export const Home = () => {
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? 'pt', ['common', 'projects']))
+      ...(await serverSideTranslations(locale ?? 'pt', ['common']))
     }
   }
 }
