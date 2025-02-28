@@ -1,35 +1,51 @@
 import React from "react"
+import Image from "next/image"
 import useFetchTitle from "@/hooks/useFetchTitle"
+import { mockNewsPreview } from "@/data/NewsPreview"
 
-type NewsItem = {
-  url: string
-}
+import {
+  NewsContainer,
+  NewsCard,
+  NewsImage,
+  NewsContent,
+  NewsTitle,
+  NewsDescription,
+  NewsDate,
+  NewsLink
+} from "./styles"
 
-const NewsSection: React.FC<{ news: NewsItem[] }> = ({ news }) => {
+const NewsSection: React.FC = () => {
   return (
-    <section>
+    <>
       <h2>Últimas Notícias</h2>
-      <ul>
-        {news.map((item, index) => {
-          const title = useFetchTitle(item.url)
+      <NewsContainer>
+        {mockNewsPreview.map((news, index) => {
+          const fetchedTitle = useFetchTitle(news.url)
+          const title = fetchedTitle || "" // Usa o título do hook ou uma string vazia
+
           return (
-            <li key={index}>
-              {title ? (
-                <a
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {title}
-                </a>
-              ) : (
-                <span>Carregando título...</span>
-              )}
-            </li>
+            <NewsCard key={index}>
+              <NewsImage
+                src={news.image}
+                alt={title}
+                width={320}
+                height={180}
+              />
+              <NewsContent>
+                <div>
+                  <NewsDate>{news.released}</NewsDate>
+                  <NewsTitle>{title}</NewsTitle>
+                  <NewsDescription>{news.description}</NewsDescription>
+                </div>
+                <NewsLink href={news.url} target="_blank" rel="noopener noreferrer">
+                  Ler mais
+                </NewsLink>
+              </NewsContent>
+            </NewsCard>
           )
         })}
-      </ul>
-    </section>
+      </NewsContainer>
+    </>
   )
 }
 
