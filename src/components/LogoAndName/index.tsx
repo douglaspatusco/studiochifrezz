@@ -1,9 +1,9 @@
 import React from 'react'
-import StudioChifrezz from '@/components/StudioChifrezz'
 import Image from 'next/image'
+import Link from 'next/link'
+import StudioChifrezz from '@/components/StudioChifrezz'
 
 import { Container } from './styles'
-import Link from 'next/link'
 
 const LogoAndName = () => {
   return (

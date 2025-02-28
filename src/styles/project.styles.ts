@@ -234,7 +234,7 @@ export const SupportsImages = styled.div`
     transition: 0.3s;
 
     &:hover {
-      transform: scale(0.9);
+      transform: scale(1.1);
     }
   }
 

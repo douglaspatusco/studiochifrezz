@@ -9,12 +9,22 @@ import { Container, Video } from '../styles/home.styles'
 import { awardsImages } from '../data/awardsImages'
 import CarouselInfinite from '@/components/CarouselInfinite'
 import Image from 'next/image'
+import NewsSection from '@/components/NewsSection'
 
 export const Home = () => {
   const srcVideo = '/videos/banner-studiochifrezz-1920X600.mp4'
   const { t } = useTranslation('common')
 
   const [videoLoaded, setVideoLoaded] = useState(false)
+
+  const newsList = [
+    { url: "https://www.animation.com.ar/the-third-edition-of-the-mentoring-program-for-female-creators-is-a-resounding-success/?lang=en" },
+    { url: "https://variety.com/2023/film/global/la-liga-showcase-annecy-1235643590/" },
+    { url: "https://www.instagram.com/p/Cp5K1R2OMzq/" },
+    { url: "https://mostramumia.blogspot.com/2020/01/17-mumia-entrevista-lena-franzz-hornzz.html" },
+    { url: "https://letterboxd.com/film/hornzz/" },
+    { url: "https://www.youtube.com/watch?v=Ld8ji7ahbdg" },
+  ]
 
   useEffect(() => {
     const videoPreload = document.createElement('video')
@@ -58,6 +68,7 @@ export const Home = () => {
       </Video>
       <Container>
         <h1>{t('hello')}</h1>
+        <NewsSection news={newsList} />
         <CarouselInfinite images={awardsImages} />
       </Container>
     </>
