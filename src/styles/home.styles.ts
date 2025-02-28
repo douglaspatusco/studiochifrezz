@@ -9,7 +9,7 @@ export const Content = styled.main`
   background-color: ${colors.branco};
 `
 
-export const Container = styled.div`
+export const ContainerContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;

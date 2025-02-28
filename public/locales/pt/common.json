@@ -2,7 +2,12 @@
   "hello": "Olá, seja bem-vindo!",
   "toggle_language": "Trocar idioma",
 
-  "home": "início",
+  "last-news": "Últimas Notícias",
+  "read-more": "Ler Mais",
+  "see-more": "Mais notícias",
+  "see-less": "Menos notícias",
+
+"home": "início",
   "projects": "projetos",
   "about": "sobre",
   "contact": "contato",

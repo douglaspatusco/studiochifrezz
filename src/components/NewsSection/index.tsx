@@ -1,30 +1,43 @@
-import React from "react"
-import Image from "next/image"
+import React, { useState } from "react"
 import useFetchTitle from "@/hooks/useFetchTitle"
 import { mockNewsPreview } from "@/data/NewsPreview"
+import { useTranslation } from 'next-i18next'
 
 import {
-  NewsContainer,
+  NewsCards,
   NewsCard,
   NewsImage,
   NewsContent,
   NewsTitle,
   NewsDescription,
   NewsDate,
-  NewsLink
+  NewsLink,
+  ShowMoreButton,
+  NewsContainer,
+  NewsTag,
+  NewsHeader
 } from "./styles"
 
+const INITIAL_COUNT = 5
+
 const NewsSection: React.FC = () => {
+  const [showAll, setShowAll] = useState(false)
+  const { t } = useTranslation('common')
+
+  const handleToggleShow = () => {
+    setShowAll((prev) => !prev)
+  }
+
   return (
-    <>
-      <h2>Últimas Notícias</h2>
-      <NewsContainer>
+    <NewsContainer>
+      <h2>{t('last-news')}</h2>
+      <NewsCards>
         {mockNewsPreview.map((news, index) => {
           const fetchedTitle = useFetchTitle(news.url)
-          const title = fetchedTitle || "" // Usa o título do hook ou uma string vazia
+          const title = fetchedTitle || ""
 
           return (
-            <NewsCard key={index}>
+            <NewsCard key={index} className={showAll || index < INITIAL_COUNT ? "visible" : "hidden"}>
               <NewsImage
                 src={news.image}
                 alt={title}
@@ -33,19 +46,25 @@ const NewsSection: React.FC = () => {
               />
               <NewsContent>
                 <div>
-                  <NewsDate>{news.released}</NewsDate>
+                  <NewsHeader>
+                    <NewsDate>{news.released}</NewsDate>
+                    <NewsTag>{news.tag}</NewsTag>
+                  </NewsHeader>
                   <NewsTitle>{title}</NewsTitle>
                   <NewsDescription>{news.description}</NewsDescription>
                 </div>
                 <NewsLink href={news.url} target="_blank" rel="noopener noreferrer">
-                  Ler mais
+                  {t('read-more')}
                 </NewsLink>
               </NewsContent>
             </NewsCard>
           )
         })}
-      </NewsContainer>
-    </>
+      </NewsCards>
+      <ShowMoreButton onClick={handleToggleShow}>
+        {showAll ? t('see-less') : t('see-more')}
+      </ShowMoreButton>
+    </NewsContainer>
   )
 }
 

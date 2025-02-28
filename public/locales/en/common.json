@@ -2,6 +2,11 @@
   "hello": "Hello, welcome!",
   "toggle_language": "Switch language",
 
+  "last-news": "Last News",
+  "read-more": "Read More",
+  "see-more": "More news",
+  "see-less": "Less news",
+
   "home": "home",
   "projects": "projects",
   "about": "about",
