@@ -1,4 +1,4 @@
-import { List, Icon, WWDContainer, ListItem, ListItemReverse } from "./styles"
+import { List, Icon, WWDContainer, ListItem } from "./styles"
 
 const WhatWeDo = () => {
   return (
@@ -10,19 +10,28 @@ const WhatWeDo = () => {
             <div>
               <Icon src="/images/icons/animacao.png" alt="Animação" />
             </div>
-            <p>Animation<br /> services</p>
+            <p>
+              Animation<br />
+              services
+            </p>
           </ListItem>
-          <ListItemReverse>
+          <ListItem>
             <div>
               <Icon src="/images/icons/filmes-e-series.png" alt="Filmes e Séries" />
             </div>
-            <p>Production of original<br /> films and series</p>
-          </ListItemReverse>
+            <p>
+              Production of original<br />
+              films and series
+            </p>
+          </ListItem>
           <ListItem>
             <div>
               <Icon src="/images/icons/consultoria.png" alt="Consultoria" />
             </div>
-            <p>Consulting for projects<br /> and public notices</p>
+            <p>
+              Consulting for projects<br />
+              and public notices
+            </p>
           </ListItem>
         </List>
       </WWDContainer>

@@ -20,7 +20,7 @@ export const NewsCards = styled.div`
   justify-content: center;
   align-items: center;
   max-width: 1600px;
-  width: 1300px;
+  width: 100%;
 `
 
 export const NewsCard = styled.div`
@@ -46,9 +46,13 @@ export const NewsCard = styled.div`
   &:hover {
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   }
-  
+
+  @media (max-width: ${screenSizes.mobileL}) {
+    width: 90%;
+  }
+
   @media (max-width: ${screenSizes.mobileS}) {
-    width: 100%;
+    width: 90%;
   }
 `
 
@@ -123,8 +127,6 @@ export const ShowMoreButton = styled.button`
   display: block;
   width: fit-content;
   transition: background 0.3s ease;
-  margin-top: 2em;
-
 
   &:hover {
     background-color: ${colors.roxoPastel};

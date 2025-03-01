@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import useFetchTitle from "@/hooks/useFetchTitle"
 import { mockNewsPreview } from "@/data/NewsPreview"
 import { useTranslation } from 'next-i18next'
@@ -18,11 +18,27 @@ import {
   NewsHeader
 } from "./styles"
 
-const INITIAL_COUNT = 5
-
 const NewsSection: React.FC = () => {
   const [showAll, setShowAll] = useState(false)
   const { t } = useTranslation('common')
+  const [initialCount, setInitialCount] = useState(5)
+
+  useEffect(() => {
+    const updateInitialCount = () => {
+      if (window.innerWidth < 769) {
+        setInitialCount(3)
+      } else if (window.innerWidth < 1025) {
+        setInitialCount(4)
+      } else {
+        setInitialCount(5)
+      }
+    }
+
+    updateInitialCount() // Definir o valor inicial correto
+    window.addEventListener("resize", updateInitialCount)
+
+    return () => window.removeEventListener("resize", updateInitialCount)
+  }, [])
 
   const handleToggleShow = () => {
     setShowAll((prev) => !prev)
@@ -37,7 +53,7 @@ const NewsSection: React.FC = () => {
           const title = fetchedTitle || ""
 
           return (
-            <NewsCard key={index} className={showAll || index < INITIAL_COUNT ? "visible" : "hidden"}>
+            <NewsCard key={index} className={showAll || index < initialCount ? "visible" : "hidden"}>
               <NewsImage
                 src={news.image}
                 alt={title}
@@ -61,7 +77,7 @@ const NewsSection: React.FC = () => {
           )
         })}
       </NewsCards>
-      <ShowMoreButton onClick={handleToggleShow}>
+      <ShowMoreButton onClick={handleToggleShow} style={showAll ? { marginTop: '2em' } : {marginTop: '0'}}>
         {showAll ? t('see-less') : t('see-more')}
       </ShowMoreButton>
     </NewsContainer>

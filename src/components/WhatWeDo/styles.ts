@@ -5,7 +5,7 @@ export const WWDContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1em;
+  gap: 2em;
   width: 100%;
   margin: 8em 0;
 `
@@ -14,13 +14,8 @@ export const List = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 2em;
-  width: 50%;
   padding: 0 4em;
   list-style: none;
-
-  @media (max-width: ${screenSizes.tablet}) {
-    width: 100%;
-  }
 
   @media (max-width: ${screenSizes.mobileL}) {
     padding: 0 2em;
@@ -35,8 +30,19 @@ export const ListItem = styled.li`
   gap: 0.5em;
 
   div {
-    border-radius: 0.125em;
+    display: flex;
+    border-radius: 0.25em;
     background-color: ${colors.roxoClaro};
+    transition: 2s;
+
+    &:hover {
+      background-color: ${colors.roxoEscuro};
+
+      img {
+        filter: invert(1);
+        transition: 0.5s;
+      }
+    }
   }
 
   p {
@@ -44,17 +50,8 @@ export const ListItem = styled.li`
   }
 `
 
-export const ListItemReverse = styled(ListItem)`
-  flex-direction: row-reverse;
-
-  p {
-    text-align: right;
-  }
-`
-
-
 export const Icon = styled.img`
-  width: 128px;
+  width: 96px;
   height: auto;
   padding: 0.25em;
 `
