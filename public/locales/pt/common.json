@@ -2,12 +2,17 @@
   "hello": "Olá, seja bem-vindo!",
   "toggle_language": "Trocar idioma",
 
+  "what-we-do": "O que fazemos",
+  "wwd-animation": "Serviços de animação",
+  "wwd-production": "Produção de filmes e séries originais",
+  "wwd-consulting": "Consultoria para projetos e editais",
+
   "last-news": "Últimas Notícias",
   "read-more": "Ler Mais",
   "see-more": "Mais notícias",
   "see-less": "Menos notícias",
 
-"home": "início",
+  "home": "início",
   "projects": "projetos",
   "about": "sobre",
   "contact": "contato",

@@ -1,18 +1,21 @@
+import { useTranslation } from "next-i18next"
+
 import { List, Icon, WWDContainer, ListItem } from "./styles"
 
 const WhatWeDo = () => {
+  const { t } = useTranslation('common')
+
   return (
     <>
       <WWDContainer>
-        <h1>What We Do</h1>
+        <h1>{t('what-we-do')}</h1>
         <List>
           <ListItem>
             <div>
               <Icon src="/images/icons/animacao.png" alt="Animação" />
             </div>
             <p>
-              Animation<br />
-              services
+              {t('wwd-animation')}
             </p>
           </ListItem>
           <ListItem>
@@ -20,8 +23,7 @@ const WhatWeDo = () => {
               <Icon src="/images/icons/filmes-e-series.png" alt="Filmes e Séries" />
             </div>
             <p>
-              Production of original<br />
-              films and series
+              {t('wwd-production')}
             </p>
           </ListItem>
           <ListItem>
@@ -29,8 +31,7 @@ const WhatWeDo = () => {
               <Icon src="/images/icons/consultoria.png" alt="Consultoria" />
             </div>
             <p>
-              Consulting for projects<br />
-              and public notices
+              {t('wwd-consulting')}
             </p>
           </ListItem>
         </List>
