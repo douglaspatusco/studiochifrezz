@@ -6,6 +6,27 @@ export const CarouselContainer = styled.div`
   position: relative;
   width: 100%;
   overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
+
+  @media screen and (max-width: ${screenSizes.tablet}) {
+    padding: 0 1em;
+
+    p {
+      width: 75%;
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: ${screenSizes.mobileL}) {
+    p {
+      width: 100%;
+    }
+  }
 `
 export const CarouselTrack = styled(motion.div)<{ $x: number }>`
   display: flex;

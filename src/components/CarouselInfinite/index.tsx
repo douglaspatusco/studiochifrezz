@@ -1,3 +1,4 @@
+import { useTranslation } from 'next-i18next'
 import useCarouselInfinite from '../../hooks/useCarouselInfinite'
 
 import { CarouselContainer, CarouselTrack } from './styles'
@@ -11,11 +12,15 @@ interface CarouselInfiniteProps {
 }
 
 const CarouselInfinite: React.FC<CarouselInfiniteProps> = ({ images }) => {
+  const { t } = useTranslation('common')
+
   const { x, extendedImages, handleMouseEnter, handleMouseLeave } =
     useCarouselInfinite(images)
 
   return (
     <CarouselContainer>
+      <h2>{t('awards')}</h2>
+      <p>{t('awards-description')}</p>
       <CarouselTrack
         $x={x}
         onMouseEnter={handleMouseEnter}
