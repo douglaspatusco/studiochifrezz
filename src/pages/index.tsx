@@ -10,6 +10,7 @@ import { awardsImages } from '../data/awardsImages'
 import CarouselInfinite from '@/components/CarouselInfinite'
 import Image from 'next/image'
 import NewsSection from '@/components/NewsSection'
+import WhatWeDo from '@/components/WhatWeDo'
 
 export const Home = () => {
   const srcVideo = '/videos/banner-studiochifrezz-1920X600.mp4'
@@ -59,6 +60,7 @@ export const Home = () => {
       </Video>
       <ContainerContent>
         <h1>{t('hello')}</h1>
+        <WhatWeDo />
         <NewsSection />
         <CarouselInfinite images={awardsImages} />
       </ContainerContent>
