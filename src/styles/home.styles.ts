@@ -24,6 +24,34 @@ export const ContainerContent = styled.div`
   }
 `
 
+export const Welcome = styled.div`
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 10em;
+    height: auto;
+
+    &.kale {
+      width: 14em;
+
+      @media (max-width: ${screenSizes.mobileL}) {
+        position: absolute;
+        right: -66px;
+        top: 369px;
+      }
+    }
+
+    &.kiza {
+      @media (max-width: ${screenSizes.mobileL}) {
+        position: absolute;
+        left: -20px;
+        top: 386px;
+      }
+    }
+  }
+`
+
 export const Video = styled.div`
   position: absolute;
   top: 0;

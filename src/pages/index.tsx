@@ -5,7 +5,7 @@ import { GetServerSideProps } from 'next'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-import { ContainerContent, Video } from '../styles/home.styles'
+import { ContainerContent, Video, Welcome } from '../styles/home.styles'
 import { awardsImages } from '../data/awardsImages'
 import CarouselInfinite from '@/components/CarouselInfinite'
 import Image from 'next/image'
@@ -59,7 +59,11 @@ export const Home = () => {
         )}
       </Video>
       <ContainerContent>
-        <h1>{t('hello')}</h1>
+        <Welcome>
+          <img src="/images/kiza.png" alt="Kiza" className='kiza' />
+          <h1>{t('hello')}</h1>
+          <img src="/images/kale.png" alt="Kale" className='kale' />
+        </Welcome>
         <WhatWeDo />
         <NewsSection />
         <CarouselInfinite images={awardsImages} />
