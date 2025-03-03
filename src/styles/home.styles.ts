@@ -15,11 +15,11 @@ export const ContainerContent = styled.div`
   justify-content: space-between;
   flex-direction: column;
   height: auto;
-  margin-top: 40vh;
+  margin-top: 20vh;
   padding: 4em 0 1em 0;
 
   @media (max-width: ${screenSizes.tablet}) {
-    margin-top: 20vh;
+    margin-top: 0vh;
     padding: 2em 0 1em 0;
   }
 `
@@ -27,26 +27,52 @@ export const ContainerContent = styled.div`
 export const Welcome = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 2em;
+  width: 100%;
+  text-align: center;
+  position: relative;
+
+  @media (max-width: ${screenSizes.mobileL}) {
+    align-items: flex-start;
+    justify-content: center;
+    margin: 2em 0 10em 0;
+
+    padding: 0 1em 0 1em;
+    width: 100%;
+  }
 
   img {
     width: 10em;
     height: auto;
 
     &.kale {
-      width: 14em;
+      width: 11em;
 
       @media (max-width: ${screenSizes.mobileL}) {
+        width: 6em;
+
         position: absolute;
-        right: -66px;
-        top: 369px;
+        top: 48px;
+        right: 80px;
+      }
+
+      @media (max-width: ${screenSizes.mobileS}) {
+        right: 60px;
       }
     }
 
     &.kiza {
       @media (max-width: ${screenSizes.mobileL}) {
+        width: 6em;
+
         position: absolute;
-        left: -20px;
-        top: 386px;
+        top: 48px;
+        left: 80px;
+      }
+
+      @media (max-width: ${screenSizes.mobileS}) {
+        left: 60px;
       }
     }
   }
