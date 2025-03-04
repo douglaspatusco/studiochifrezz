@@ -23,13 +23,16 @@ const NewsSection: React.FC = () => {
   const { t } = useTranslation('common')
   const [initialCount, setInitialCount] = useState(5)
 
+  // valores baseados no tamanho dos cards + gap
   useEffect(() => {
     const updateInitialCount = () => {
       if (window.innerWidth < 769) {
         setInitialCount(3)
-      } else if (window.innerWidth < 1025) {
+      } else if (window.innerWidth < 1216) {
         setInitialCount(4)
-      } else {
+      } else if (window.innerWidth > 1450) {
+        setInitialCount(6)
+      }else {
         setInitialCount(5)
       }
     }
@@ -46,7 +49,7 @@ const NewsSection: React.FC = () => {
 
   return (
     <NewsContainer>
-      <h2>{t('last-news')}</h2>
+      <h1>{t('last-news')}</h1>
       <NewsCards>
         {mockNewsPreview.map((news, index) => {
           const fetchedTitle = useFetchTitle(news.url)

@@ -1,4 +1,4 @@
-import { screenSizes } from "@/styles/GlobalStyles";
+import { colors, screenSizes } from "@/styles/GlobalStyles";
 import styled from "styled-components";
 
 export const CreditsContainer = styled.div`
@@ -7,6 +7,9 @@ export const CreditsContainer = styled.div`
   align-items: center;
   gap: 2em;
   padding: 2em 0.5em 6em 0.5em;
+
+  width: 100%;
+  background-color: ${colors.roxoQuaseBranco};
 
   @media screen and (max-width: ${screenSizes.tablet}) {
 

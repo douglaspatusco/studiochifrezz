@@ -16,8 +16,8 @@ const LogoAndName = () => {
         height={100}
         priority={true}
       />
-      </Link>
       <StudioChifrezz />
+      </Link>
     </Container>
   )
 }

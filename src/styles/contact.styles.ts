@@ -1,13 +1,14 @@
 import { colors, screenSizes } from '@/styles/GlobalStyles'
 import { styled } from 'styled-components'
 
-export const Container = styled.section`
+export const ContactContainer = styled.section`
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 7.5em 0;
   gap: 4em;
   min-height: 100vh;
+  background-color: ${colors.roxoQuaseBranco};
 
   @media screen and (max-width: ${screenSizes.mobileL}) {
     padding: 5em 0;

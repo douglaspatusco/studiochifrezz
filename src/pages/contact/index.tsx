@@ -7,7 +7,7 @@ import { useTranslation } from 'next-i18next'
 
 import capitalizeFirstLetter from '@/services/capitalizaFirstLetter'
 
-import * as S from '../../styles/contact.styles'
+import {ContactContainer, TalkWithUs} from '../../styles/contact.styles'
 
 const Contact = () => {
   const { t } = useTranslation()
@@ -17,15 +17,15 @@ const Contact = () => {
       <Head>
         <title>{`Studio Chifrezz | ${t(capitalizeFirstLetter('contact'))}`}</title>
       </Head>
-      <S.Container>
-        <S.TalkWithUs>
+      <ContactContainer>
+        <TalkWithUs>
           <div>
             <p>{t('form-questions')}</p>
             <p>{t('form-talkToUs')}</p>
           </div>
-        </S.TalkWithUs>
+        </TalkWithUs>
         <ContactForm />
-      </S.Container>
+      </ContactContainer>
     </>
   )
 }

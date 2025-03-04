@@ -17,11 +17,9 @@ export const imageData = {
     '/images/project-gallery-images/hornzz-image5.png',
     '/images/project-gallery-images/hornzz-image6.png'
   ],
-  roommate: [
-    '/images/project-gallery-images/roommate-image1.png',
-    '/images/project-gallery-images/roommate-image2.png',
-    '/images/project-gallery-images/roommate-image3.png',
-    '/images/project-gallery-images/roommate-image4.png'
+  roommates: [
+    '/images/project-gallery-images/roommates-image1.png',
+    '/images/project-gallery-images/roommates-image2.png',
   ],
   quartzzo: [
     '/images/project-gallery-images/quartzzo-image1.png',

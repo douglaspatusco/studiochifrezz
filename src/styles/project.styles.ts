@@ -5,7 +5,6 @@ export const ContainerProduct = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: ${screenSizes.ultrawide};
   width: 100%;
   height: 100%;
 
@@ -21,7 +20,7 @@ export const ContainerProduct = styled.section`
 
   @media screen and (max-width: ${screenSizes.tablet}) {
     img {
-      width: 150%;
+      width: 200%;
       height: auto;
     }
   }
@@ -37,20 +36,21 @@ export const ContainerProduct = styled.section`
 export const Infos = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   gap: 4em;
-  padding: 0 4em;
-  margin: 4em 0;
+  padding: 4em 0;
+  width: 100%;
+
+  background-color: ${colors.roxoQuaseBranco};
 
   @media screen and (max-width: ${screenSizes.tablet}) {
     display: block;
-    padding: 0 2em;
+    padding: 2em;
   }
 
   @media screen and (max-width: ${screenSizes.mobileL}) {
     width: 100%;
-    margin: 2em 0;
-    padding: 0 1em;
+    padding: 2em 1em;
   }
 `
 
@@ -60,7 +60,6 @@ export const TechnicalSheet = styled.div`
   justify-content: space-around;
   gap: 2em;
   padding: 0.5em;
-  width: 100%;
   font-family: 'Austral Slab';
 
   h1 {

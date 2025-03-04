@@ -16,11 +16,59 @@ export const ContainerContent = styled.div`
   flex-direction: column;
   height: auto;
   margin-top: 20vh;
-  padding: 4em 0 1em 0;
+  padding: 4em 0 0 0;
+
+  @media (min-width: ${screenSizes.ultrawide}) {
+    margin-top: 45vh;
+  }
+
+  @media (max-width: ${screenSizes.laptop}) {
+    margin-top: 0;
+  }
 
   @media (max-width: ${screenSizes.tablet}) {
     margin-top: 0vh;
-    padding: 2em 0 1em 0;
+  }
+`
+
+export const Video = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 0;
+
+  @media (min-width: ${screenSizes.ultrawide}) {
+    top: -20%
+  }
+
+
+  @media (max-width: ${screenSizes.laptop}) {
+    position: unset;
+  }
+
+  @media (max-width: ${screenSizes.mobileS}) {
+    display: flex;
+    justify-content: center;
+    position: unset;
+  }
+
+  video {
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+
+    @media (max-width: ${screenSizes.mobileS}) {
+      width: 150%;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    pointer-events: none;
   }
 `
 
@@ -32,6 +80,10 @@ export const Welcome = styled.div`
   width: 100%;
   text-align: center;
   position: relative;
+
+  @media (min-width: ${screenSizes.ultrawide}) {
+    margin: 5em 0;
+  }
 
   @media (max-width: ${screenSizes.mobileL}) {
     align-items: flex-start;
@@ -75,41 +127,5 @@ export const Welcome = styled.div`
         left: 60px;
       }
     }
-  }
-`
-
-export const Video = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  z-index: 0;
-
-  @media (max-width: ${screenSizes.tablet}) {
-    position: unset;
-  }
-
-  @media (max-width: ${screenSizes.mobileS}) {
-    display: flex;
-    justify-content: center;
-    position: unset;
-  }
-
-  video {
-    width: 100%;
-    height: auto;
-    pointer-events: none;
-
-    @media (max-width: ${screenSizes.mobileS}) {
-      width: 150%;
-    }
-  }
-
-  img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    pointer-events: none;
   }
 `

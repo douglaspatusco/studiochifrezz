@@ -5,12 +5,13 @@ import styled from 'styled-components'
 export const NavigationWrapper = styled.div`
   display: flex;
   width: 100%;
-  padding: 0 4em;
   justify-content: space-between;
-  margin: 2rem 0;
+  padding: 2rem 4em;
+  background-color: ${colors.roxoQuaseBranco};
+
 
   @media screen and (max-width: ${screenSizes.mobileL}) {
-    padding: 0 1em;
+    padding: 1em;
     gap: 1em;
   }
 `

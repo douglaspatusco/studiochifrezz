@@ -1,4 +1,4 @@
-import { screenSizes } from '@/styles/GlobalStyles'
+import { colors, screenSizes } from '@/styles/GlobalStyles'
 import styled from 'styled-components'
 
 export const AboutContainer = styled.div`
@@ -43,6 +43,7 @@ export const DescriptionContainer = styled.div`
   height: 80vh;
   padding: 1em;
   position: relative;
+  background-color: ${colors.roxoQuaseBranco};
 
   h2 {
     font-weight: 400;

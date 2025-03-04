@@ -28,8 +28,8 @@ export const ModalContent = styled.div`
   justify-content: center;
 
   img {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
     border-radius: 0.5em;
     object-fit: contain;
   }
@@ -54,9 +54,6 @@ export const ModalContent = styled.div`
       background: ${colors.roxoClaro};
       color: ${colors.branco};
     }
-  }
-
-  @media screen and (max-width: ${screenSizes.laptop}) {
   }
 `
 
@@ -99,6 +96,26 @@ export const ArrowButton = styled.button`
 
     &.right {
       right: -64px;
+    }
+  }
+
+  @media screen and (max-width: ${screenSizes.tablet}) {
+    &.left {
+      left: -52px;
+    }
+
+    &.right {
+      right: -52px;
+    }
+  }
+
+  @media screen and (max-width: ${screenSizes.mobileL}) {
+    &.left {
+      left: 0px;
+    }
+
+    &.right {
+      right: 0px;
     }
   }
 `

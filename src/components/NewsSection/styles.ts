@@ -8,8 +8,8 @@ export const NewsContainer = styled.div`
   align-items: center;
   padding: 4em 1em;
 
-  h2 {
-    margin-bottom: 2em;
+  h1 {
+    margin-bottom: 1em;
   }
 `
 

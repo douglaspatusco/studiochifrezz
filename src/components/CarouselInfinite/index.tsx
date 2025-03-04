@@ -19,7 +19,7 @@ const CarouselInfinite: React.FC<CarouselInfiniteProps> = ({ images }) => {
 
   return (
     <CarouselContainer>
-      <h2>{t('awards')}</h2>
+      <h1>{t('awards')}</h1>
       <p>{t('awards-description')}</p>
       <CarouselTrack
         $x={x}

@@ -70,8 +70,8 @@ const projects: Project[] = [
     ]
   },
   {
-    slug: 'roommate',
-    name: 'Roommate',
+    slug: 'roommates',
+    name: 'Roommates',
     sinopse:
       'Duas amigas perto dos trinta anos moram juntas em um apartamento pequeno no centro da cidade. Com dificuldades de entender se está na hora de  se acomodar ou de viver intensamente antes que seja tarde, as duas amigas de longa data enfrentam problemas no amor e no trabalho. Roommate é uma história de comédia para adultos, com pitadas de drama.',
     status: 'Em desenvolvimento',

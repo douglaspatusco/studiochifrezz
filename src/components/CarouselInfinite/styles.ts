@@ -1,4 +1,4 @@
-import { screenSizes } from '@/styles/GlobalStyles'
+import { colors, screenSizes } from '@/styles/GlobalStyles'
 import { motion } from 'framer-motion'
 import { styled } from 'styled-components'
 
@@ -13,9 +13,10 @@ export const CarouselContainer = styled.div`
   flex-direction: column;
   gap: 1em;
 
-  @media screen and (max-width: ${screenSizes.tablet}) {
-    padding: 0 1em;
+  background-color: ${colors.roxoQuaseBranco};
+  padding: 2em;
 
+  @media screen and (max-width: ${screenSizes.tablet}) {
     p {
       width: 75%;
       text-align: center;

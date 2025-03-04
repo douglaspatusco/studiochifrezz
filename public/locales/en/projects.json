@@ -22,8 +22,8 @@
         "duration": "5 min"
       }
     },
-    "roommate": {
-      "name": "Roommate",
+    "roommates": {
+      "name": "Roommates",
       "sinopse": "Two friends in their early thirties live together in a small apartment in the city center. Struggling to decide whether it's time to settle down or live life to the fullest before it's too late, the two longtime friends face problems in love and at work. Roommate is a comedy story for adults, with a hint of drama.",
       "status": "In development",
       "description": {

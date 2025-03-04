@@ -8,6 +8,7 @@ export const colors = {
   roxoPastel: '#9a9ad1',
   roxoAcinzentado: '#b0b0d3',
   roxoClaro: '#ccccff',
+  roxoQuaseBranco: '#f1f1fd',
   branco: '#ffffff'
 }
 
