@@ -18,7 +18,7 @@
       "description": {
         "productionType": "Short Film",
         "gender": "Fantasy",
-        "targetAudience": "All",
+        "targetAudience": "All ages",
         "duration": "5 min"
       }
     },
@@ -30,7 +30,7 @@
         "productionType": "Animated Series",
         "gender": "Comedy and Drama",
         "targetAudience": "+18",
-        "duration": "13 x 11\""
+        "duration": "13 x 22\""
       }
     },
     "quartzzo": {

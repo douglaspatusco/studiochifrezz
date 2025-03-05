@@ -9,11 +9,11 @@ export const CarouselContainer = styled.div`
   overflow: hidden;
 
   @media (max-width: ${screenSizes.desktopL}) {
-    max-width: 900px;
+    max-width: 896px;
   }
 
   @media (max-width: ${screenSizes.laptop}) {
-    max-width: 640px;
+    max-width: 669px;
   }
 
   @media (max-width: ${screenSizes.mobileL}) {
@@ -49,8 +49,7 @@ export const ImageWrapper = styled(motion.div)`
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 
   @media (max-width: ${screenSizes.laptop}) {
-    width: 203px;
-    height: 160px;
+    height: 206px;
   }
 
   img {

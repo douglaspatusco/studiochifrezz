@@ -79,13 +79,13 @@ const projects: Project[] = [
       productionType: 'Animação Seriada',
       gender: 'Comédia e drama',
       targetAudience: '+18',
-      duration: '13 x 11"'
+      duration: '13 x 22"'
     },
     technicalSheet: {
       creators: 'Lena Franzz',
       directors: 'Lena Franzz e Priscila Vilas Boas',
       production: 'Priscila Vilas Boas e Luiza Ferraz',
-      artDirection: 'Marina Vasconcelos',
+      artDirection: 'Rodolfo Perissé',
       soundtrack: 'Felipe dos Santos',
       characterConcept: 'João Neto',
       storyboard: 'Daniela Smith-Fisher'

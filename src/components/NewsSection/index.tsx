@@ -24,24 +24,23 @@ const NewsSection: React.FC = () => {
   const [initialCount, setInitialCount] = useState(5)
 
   // valores baseados no tamanho dos cards + gap
-  useEffect(() => {
-    const updateInitialCount = () => {
-      if (window.innerWidth < 769) {
-        setInitialCount(3)
-      } else if (window.innerWidth < 1216) {
-        setInitialCount(4)
-      } else if (window.innerWidth > 1450) {
-        setInitialCount(6)
-      }else {
-        setInitialCount(5)
-      }
-    }
+useEffect(() => {
+  const updateInitialCount = () => {
+    const cardWidth = 224
+    const gap = 16
+    const totalCardSize = cardWidth + gap
 
-    updateInitialCount() // Definir o valor inicial correto
-    window.addEventListener("resize", updateInitialCount)
+    const availableWidth = window.innerWidth
+    const count = Math.floor(availableWidth / totalCardSize)
 
-    return () => window.removeEventListener("resize", updateInitialCount)
-  }, [])
+    setInitialCount(count)
+  }
+
+  updateInitialCount() // Definir o valor inicial correto
+  window.addEventListener("resize", updateInitialCount)
+
+  return () => window.removeEventListener("resize", updateInitialCount)
+}, [])
 
   const handleToggleShow = () => {
     setShowAll((prev) => !prev)

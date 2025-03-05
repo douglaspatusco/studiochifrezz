@@ -20,7 +20,8 @@ export const screenSizes = {
   laptop: '1024px',
   desktop: '1280px',
   desktopL: '1440px',
-  ultrawide: '2560px'
+  ultrawide: '2560px',
+  ultrawidePlus: '3200px'
 }
 
 const GlobalStyles = createGlobalStyle`

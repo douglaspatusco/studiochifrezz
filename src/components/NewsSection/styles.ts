@@ -6,7 +6,6 @@ export const NewsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4em 1em;
 
   h1 {
     margin-bottom: 1em;

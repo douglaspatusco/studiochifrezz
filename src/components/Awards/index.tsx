@@ -11,7 +11,7 @@ interface CarouselInfiniteProps {
   images: awardsPics[]
 }
 
-const CarouselInfinite: React.FC<CarouselInfiniteProps> = ({ images }) => {
+const Awards: React.FC<CarouselInfiniteProps> = ({ images }) => {
   const { t } = useTranslation('common')
 
   const { x, extendedImages, handleMouseEnter, handleMouseLeave } =
@@ -40,4 +40,4 @@ const CarouselInfinite: React.FC<CarouselInfiniteProps> = ({ images }) => {
   )
 }
 
-export default CarouselInfinite
+export default Awards

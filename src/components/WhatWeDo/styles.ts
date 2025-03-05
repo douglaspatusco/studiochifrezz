@@ -7,10 +7,9 @@ export const WWDContainer = styled.div`
   align-items: center;
   gap: 2em;
   width: 100%;
-  margin: 8em 0;
 
   background-color: ${colors.roxoQuaseBranco};
-  padding: 2em;
+  padding: 8em 2em;
 `
 
 export const List = styled.ul`

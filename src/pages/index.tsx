@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
+import Image from 'next/image'
 
 import { GetServerSideProps } from 'next'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-import { ContainerContent, Video, Welcome } from '../styles/home.styles'
 import { awardsImages } from '../data/awardsImages'
-import CarouselInfinite from '@/components/CarouselInfinite'
-import Image from 'next/image'
-import NewsSection from '@/components/NewsSection'
+
 import WhatWeDo from '@/components/WhatWeDo'
+import NewsSection from '@/components/NewsSection'
+import Awards from '@/components/Awards'
+
+import { ContainerContent, Video, Welcome } from '../styles/home.styles'
 
 export const Home = () => {
   const srcVideo = '/videos/banner-studiochifrezz-1920X600.mp4'
@@ -66,7 +68,7 @@ export const Home = () => {
         </Welcome>
         <WhatWeDo />
         <NewsSection />
-        <CarouselInfinite images={awardsImages} />
+        <Awards images={awardsImages} />
       </ContainerContent>
     </>
   )

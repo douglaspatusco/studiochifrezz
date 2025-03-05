@@ -227,7 +227,7 @@ export const SupportsImages = styled.div`
   width: 100%;
 
   img {
-    max-width: 25%;
+    width: 10em;
     height: auto;
     object-fit: cover;
     transition: 0.3s;
@@ -238,10 +238,8 @@ export const SupportsImages = styled.div`
   }
 
   @media (max-width: ${screenSizes.tablet}) {
-    gap: 0.5em;
-
     img {
-      max-width: 20%;
+      width: 9em;
     }
   }
 

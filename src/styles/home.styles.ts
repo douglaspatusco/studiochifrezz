@@ -14,20 +14,36 @@ export const ContainerContent = styled.div`
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
+  gap: 8em;
   height: auto;
   margin-top: 20vh;
-  padding: 4em 0 0 0;
 
-  @media (min-width: ${screenSizes.ultrawide}) {
-    margin-top: 45vh;
+  @media (max-width: ${screenSizes.ultrawidePlus}) {
+    margin-top: 35em;
+  }
+
+  @media (max-width: ${screenSizes.ultrawide}) {
+    margin-top: 28em;
+  }
+
+  @media (max-width: ${screenSizes.desktop}) {
+    margin-top: 25em;
+  }
+
+  @media (min-width: ${screenSizes.laptop}) and (max-width: ${screenSizes.desktop}) {
+    margin-top: 20em;
+  }
+
+  @media (min-width: ${screenSizes.desktop}) and (max-width: ${screenSizes.desktopL}) {
+    margin-top: 26em;
   }
 
   @media (max-width: ${screenSizes.laptop}) {
-    margin-top: 0;
+    margin-top: 4em;
   }
 
   @media (max-width: ${screenSizes.tablet}) {
-    margin-top: 0vh;
+    margin-top: 10vh;
   }
 `
 

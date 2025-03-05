@@ -44,28 +44,28 @@ export const mockNewsPreview: newsPreview[] = [
   },
     {
     released: "Sep, 2020",
-    tag: "hornzz",
+    tag: "#hornzz",
     image: "https://dyxel.com.br/wp-content/uploads/2021/08/dyxel_posts_2021_itau_cultural.jpg",
     description: "Como cada escolha se reflete em nossa vida? Por meio da narrativa surrealista de Hornzz, acompanhamos as escolhas e os desafios da menina Lu, que vive experiências únicas em cenários lúdicos.",
     url: "https://www.itaucultural.org.br/secoes/videos/cine-curtinhas-mostra-animacoes-infantis"
   },
   {
     released: "Jul, 2019",
-    tag: "hornzz",
+    tag: "#hornzz",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHlKS2RjoakB4L6yfknLhzWa-iZgS3cpIDs0INzv0r_Kju73vg1XfxQgr-YGbLzfgkJXc&usqp=CAU",
     description: "O Sesc divulgou a lista de filmes selecionados para a III Mostra de Cinema 2019. São 42 produções, sendo 10 infanto-juvenil, que comporão o Panorama Brasil e circularão por todo país a partir de novembro. Os filmes foram avaliados por uma curadoria formada por profissionais do Sesc e especialistas das áreas de cultura e cinema.",
     url: "https://www.jb.com.br/cultura/2019/07/1010091-mostra-sesc-de-cinema-anuncia-os-selecionados-da-edicao-2019.html"
   },
   {
     released: "Nov, 2019",
-    tag: "hornzz",
+    tag: "#hornzz",
     image: "https://i0.wp.com/vertentesdocinema.com/wp-content/uploads/2019/11/hornzz_imagem.jpg?fit=600%2C359&ssl=1",
     description: "O breve curta-metragem “Hornzz” traz uma viagem surrealista da diretora, roteirista e animadora Lena Franzz. Um trabalho que ganha força com a trilha sonora melancólica e tocante de Felipe dos Santos. Uma obra que se junta a “Vivi e o Quadro Mágico” na seleção infanto-juvenil da 3ª Mostra Sesc de Cinema como aulas sobre força e autoconfiança para os mais jovens em pílulas de animação muito bem construídas e realizadas.",
     url: "https://vertentesdocinema.com/hornzz/"
   },
   {
     released: "Nov, 2019",
-    tag: "hornzz",
+    tag: "#hornzz",
     image: "https://www.planoaberto.com.br/wp-content/uploads/2019/11/msdc2.jpg",
     description: "Após o dia de abertura, a 3ª Mostra Sesc de Cinema apresentou para o público de Paraty alguns curtas-metragem com temáticas infantis. A seleção, assim como na cerimônia de abertura, foi muito bem feita. São obras que debatem questões culturais, de gênero e raciais por meio de obras que até se encontram, tematicamente, em algum ponto, mas que possuem propostas bastante diferentes entre si.",
     url: "https://www.planoaberto.com.br/3a-msdc-vivi-lobo-e-o-quarto-magico-icamiabas-hornzz/"
