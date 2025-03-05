@@ -16,14 +16,14 @@ export const CarouselContainer = styled.div`
   background-color: ${colors.roxoQuaseBranco};
   padding: 2em;
 
-  @media screen and (max-width: ${screenSizes.tablet}) {
+  @media (max-width: ${screenSizes.tablet}) {
     p {
       width: 75%;
       text-align: center;
     }
   }
 
-  @media screen and (max-width: ${screenSizes.mobileL}) {
+  @media (max-width: ${screenSizes.mobileL}) {
     p {
       width: 100%;
     }
@@ -43,11 +43,11 @@ export const CarouselTrack = styled(motion.div)<{ $x: number }>`
     border-radius: 0.5em;
     overflow: hidden;
 
-    @media screen and (max-width: ${screenSizes.tablet}) {
+    @media (max-width: ${screenSizes.tablet}) {
       width: 11em;
     }
 
-    @media screen and (max-width: ${screenSizes.mobileL}) {
+    @media (max-width: ${screenSizes.mobileL}) {
       width: 10em;
     }
   }

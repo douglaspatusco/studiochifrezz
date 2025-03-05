@@ -15,12 +15,12 @@ export const Container = styled.div`
   }
 
 
-  @media screen and (max-width: ${screenSizes.tablet}) {
+  @media (max-width: ${screenSizes.tablet}) {
     flex-direction: row;
     gap: 2em;
   }
 
-  @media screen and (max-width: ${screenSizes.mobileL}) {
+  @media (max-width: ${screenSizes.mobileL}) {
     flex-direction: column;
     gap: 0;
 

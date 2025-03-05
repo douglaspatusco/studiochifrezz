@@ -11,13 +11,13 @@ export const SwitchLanguageContainer = styled.div<{ $isEN: boolean }>`
   &.inMenu {
     display: none;
 
-    @media screen and (max-width: ${screenSizes.tablet}) {
+    @media (max-width: ${screenSizes.tablet}) {
       display: flex;
     }
   }
 
   &.outOfMenu {
-    @media screen and (max-width: ${screenSizes.tablet}) {
+    @media (max-width: ${screenSizes.tablet}) {
       display: none;
     }
   }

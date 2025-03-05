@@ -10,7 +10,7 @@ export const NavigationWrapper = styled.div`
   background-color: ${colors.roxoQuaseBranco};
 
 
-  @media screen and (max-width: ${screenSizes.mobileL}) {
+  @media (max-width: ${screenSizes.mobileL}) {
     padding: 1em;
     gap: 1em;
   }
@@ -35,7 +35,7 @@ export const NavLink = styled(Link)`
     background-color: ${colors.roxoEscuro};
   }
 
-  @media screen and (max-width: ${screenSizes.mobileL}) {
+  @media (max-width: ${screenSizes.mobileL}) {
     width: 100%;
     font-size: 1em;
   }

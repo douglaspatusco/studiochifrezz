@@ -11,14 +11,14 @@ export const CreditsContainer = styled.div`
   width: 100%;
   background-color: ${colors.roxoQuaseBranco};
 
-  @media screen and (max-width: ${screenSizes.tablet}) {
+  @media (max-width: ${screenSizes.tablet}) {
 
     h1 {
       font-size: 1.5em;
     }
   }
 
-  @media screen and (max-width: ${screenSizes.mobileL}) {
+  @media (max-width: ${screenSizes.mobileL}) {
     width: 100%;
   }
 `
@@ -33,12 +33,12 @@ export const Credits = styled.div`
   h1 {
     font-size: 1.5em;
 
-    @media screen and (max-width: ${screenSizes.tablet}) {
+    @media (max-width: ${screenSizes.tablet}) {
       font-size: 1em;
     }
   }
 
-  @media screen and (max-width: ${screenSizes.mobileL}) {
+  @media (max-width: ${screenSizes.mobileL}) {
     width: 100%;
   }
 `
@@ -52,7 +52,7 @@ export const Role = styled.div`
     font-size: 1.25em;
     letter-spacing: 1px;
 
-    @media screen and (max-width: ${screenSizes.tablet}) {
+    @media (max-width: ${screenSizes.tablet}) {
       font-size: 1em;
     }
   }
@@ -68,7 +68,7 @@ export const Person = styled.div`
     font-weight: 400;
     letter-spacing: 1px;
 
-    @media screen and (max-width: ${screenSizes.tablet}) {
+    @media (max-width: ${screenSizes.tablet}) {
       font-size: 1em;
     }
   }

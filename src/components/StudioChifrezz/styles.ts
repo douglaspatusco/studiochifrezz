@@ -14,15 +14,15 @@ export const Title = styled.div`
     align-items: center;
   }
 
-  @media screen and (max-width: ${screenSizes.tablet}) {
+  @media (max-width: ${screenSizes.tablet}) {
     flex-direction: column;
   }
 
-  @media screen and (max-width: ${screenSizes.mobileL}) {
+  @media (max-width: ${screenSizes.mobileL}) {
     font-size: 1.25em;
   }
 
-  @media screen and (max-width: ${screenSizes.mobileS}) {
+  @media (max-width: ${screenSizes.mobileS}) {
     font-size: 1em;
   }
 

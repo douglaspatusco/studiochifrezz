@@ -11,13 +11,13 @@ export const List = styled.ul`
   &.inMenu {
   display: none;
 
-    @media screen and (max-width: 768px) {
+    @media (max-width: 768px) {
       display: flex;
     }
   }
 
   &.outOfMenu {
-    @media screen and (max-width: 768px) {
+    @media (max-width: 768px) {
       display: none;
     }
   }

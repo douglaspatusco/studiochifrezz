@@ -14,7 +14,7 @@ export const HeaderBarContainer = styled.header`
   background-color: ${colors.roxoEscuro};
   z-index: 2;
 
-  @media screen and (max-width: ${screenSizes.tablet}) {
+  @media (max-width: ${screenSizes.tablet}) {
     padding: 0.5em 2em;
   }
 `
@@ -24,7 +24,7 @@ export const Menu = styled.ul`
   padding: 1em 0;
   gap: 1em;
 
-  @media screen and (max-width: ${screenSizes.tablet}) {
+  @media (max-width: ${screenSizes.tablet}) {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -62,7 +62,7 @@ export const Menu = styled.ul`
     }
   }
 
-  @media screen and (max-width: ${screenSizes.mobileL}) {
+  @media (max-width: ${screenSizes.mobileL}) {
     width: 100vw;
       padding: 4em 0;
   }
@@ -76,7 +76,7 @@ export const Navigation = styled.div`
     gap: 2em;
     height: 100%;
 
-  @media screen and (max-width: ${screenSizes.tablet}) {
+  @media (max-width: ${screenSizes.tablet}) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -97,7 +97,7 @@ export const MenuItem = styled.li<{ $isHovered: boolean }>`
   transition: 0.3s;
   opacity: ${({ $isHovered }) => ($isHovered ? 0.5 : 1)};
 
-  @media screen and (max-width: ${screenSizes.tablet}) {
+  @media (max-width: ${screenSizes.tablet}) {
     font-size: 24px;
   }
 

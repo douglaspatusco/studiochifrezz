@@ -18,14 +18,14 @@ export const ContainerProduct = styled.section`
     font-size: 2em;
   }
 
-  @media screen and (max-width: ${screenSizes.tablet}) {
+  @media (max-width: ${screenSizes.tablet}) {
     img {
       width: 200%;
       height: auto;
     }
   }
 
-  @media screen and (max-width: ${screenSizes.mobileL}) {
+  @media (max-width: ${screenSizes.mobileL}) {
     img {
       width: 200%;
       height: auto;
@@ -43,12 +43,12 @@ export const Infos = styled.div`
 
   background-color: ${colors.roxoQuaseBranco};
 
-  @media screen and (max-width: ${screenSizes.tablet}) {
+  @media (max-width: ${screenSizes.tablet}) {
     display: block;
     padding: 2em;
   }
 
-  @media screen and (max-width: ${screenSizes.mobileL}) {
+  @media (max-width: ${screenSizes.mobileL}) {
     width: 100%;
     padding: 2em 1em;
   }
@@ -65,7 +65,7 @@ export const TechnicalSheet = styled.div`
   h1 {
     font-size: 4em;
 
-    @media screen and (max-width: ${screenSizes.tablet}) {
+    @media (max-width: ${screenSizes.tablet}) {
       font-size: 3em;
     }
   }
@@ -75,7 +75,7 @@ export const TechnicalSheet = styled.div`
     letter-spacing: 4px;
   }
 
-  @media screen and (max-width: ${screenSizes.tablet}) {
+  @media (max-width: ${screenSizes.tablet}) {
     flex-direction: row;
     align-items: center;
 
@@ -84,7 +84,7 @@ export const TechnicalSheet = styled.div`
     }
   }
 
-    @media screen and (max-width: ${screenSizes.mobileL}) {
+    @media (max-width: ${screenSizes.mobileL}) {
     width: 100%;
     flex-direction: column;
     text-align: center;
@@ -112,7 +112,7 @@ export const Description = styled.div`
     text-align: justify;
   }
 
-  @media screen and (max-width: ${screenSizes.tablet}) {
+  @media (max-width: ${screenSizes.tablet}) {
     width: 100%;
     align-items: center;
     margin: 6em 0 4em 0;
@@ -123,7 +123,7 @@ export const Description = styled.div`
     }
   }
 
-  @media screen and (max-width: ${screenSizes.mobileL}) {
+  @media (max-width: ${screenSizes.mobileL}) {
     min-width: 0;
     p {
       width: 100%;
@@ -175,11 +175,11 @@ export const Gallery = styled.div`
     }
   }
 
-  @media screen and (max-width: ${screenSizes.tablet}) {
+  @media (max-width: ${screenSizes.tablet}) {
     padding: 4em 2em;
   }
 
-  @media screen and (max-width: ${screenSizes.mobileL}) {
+  @media (max-width: ${screenSizes.mobileL}) {
     gap: 2em;
   }
 `
@@ -191,7 +191,7 @@ export const ImageWrapper = styled.div`
   flex: 1 1 calc(50% - 2em);
   max-width: calc(50% - 2em);
 
-  @media screen and (max-width: ${screenSizes.mobileL}) {
+  @media (max-width: ${screenSizes.mobileL}) {
     flex: 1 1 100%;
     max-width: 100%;
   }
@@ -208,11 +208,11 @@ export const Support = styled.div`
       font-size: 2em;
     }
 
-  @media screen and (max-width: ${screenSizes.tablet}) {
+  @media (max-width: ${screenSizes.tablet}) {
     padding: 1em 2em;
   }
 
-    @media screen and (max-width: ${screenSizes.mobileL}) {
+    @media (max-width: ${screenSizes.mobileL}) {
     padding: 1em;
   }
 `
@@ -237,7 +237,7 @@ export const SupportsImages = styled.div`
     }
   }
 
-  @media screen and (max-width: ${screenSizes.tablet}) {
+  @media (max-width: ${screenSizes.tablet}) {
     gap: 0.5em;
 
     img {
@@ -245,7 +245,7 @@ export const SupportsImages = styled.div`
     }
   }
 
-  @media screen and (max-width: ${screenSizes.mobileL}) {
+  @media (max-width: ${screenSizes.mobileL}) {
     img {
       max-width: 40%;
     }

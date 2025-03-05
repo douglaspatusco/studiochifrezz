@@ -10,7 +10,7 @@ export const ContactContainer = styled.section`
   min-height: 100vh;
   background-color: ${colors.roxoQuaseBranco};
 
-  @media screen and (max-width: ${screenSizes.mobileL}) {
+  @media (max-width: ${screenSizes.mobileL}) {
     padding: 5em 0;
   }
 `
@@ -32,7 +32,7 @@ export const TalkWithUs = styled.div`
     }
   }
 
-  @media screen and (max-width: ${screenSizes.laptop}) {
+  @media (max-width: ${screenSizes.laptop}) {
     width: 75%;
     text-align: center;
   }
@@ -47,7 +47,7 @@ export const Form = styled.form`
   gap: 1em;
   text-align: center;
 
-  @media screen and (max-width: ${screenSizes.mobileL}) {
+  @media (max-width: ${screenSizes.mobileL}) {
     width: 100%;
   }
 
@@ -60,7 +60,7 @@ export const Form = styled.form`
     font-size: 0.75em;
     align-self: flex-start;
 
-    @media screen and (max-width: ${screenSizes.mobileL}) {
+    @media (max-width: ${screenSizes.mobileL}) {
       padding-left: 1.5em;
     }
   }
@@ -85,7 +85,7 @@ export const TextArea = styled.textarea`
   resize: none;
   outline: none;
 
-  @media screen and (max-width: ${screenSizes.mobileL}) {
+  @media (max-width: ${screenSizes.mobileL}) {
     width: 90%;
   }
 
@@ -107,7 +107,7 @@ export const Input = styled.input`
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
   outline: none;
 
-  @media screen and (max-width: ${screenSizes.mobileL}) {
+  @media (max-width: ${screenSizes.mobileL}) {
     width: 90%;
   }
 
@@ -132,7 +132,7 @@ export const Button = styled.button`
   cursor: pointer;
   background-color: ${colors.branco};
 
-  @media screen and (max-width: ${screenSizes.mobileL}) {
+  @media (max-width: ${screenSizes.mobileL}) {
     width: 90%;
     margin: 4em 1em 1em 1em;
 }

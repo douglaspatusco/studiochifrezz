@@ -7,7 +7,7 @@ export const AboutContainer = styled.div`
   align-items: center;
   justify-content: space-evenly;
 
-  @media screen and (max-width: ${screenSizes.desktopL}) {
+  @media (max-width: ${screenSizes.desktopL}) {
     gap: 4em;
   }
 `
@@ -52,7 +52,7 @@ export const DescriptionContainer = styled.div`
     max-width: 640px;
   }
 
-  @media screen and (max-width: ${screenSizes.mobileL}) {
+  @media (max-width: ${screenSizes.mobileL}) {
     gap: 4em;
 
     h2 {
@@ -80,14 +80,14 @@ export const Us = styled.div`
   gap: 4em;
   max-width: 1024px;
 
-  @media screen and (max-width: ${screenSizes.laptop}) {
+  @media (max-width: ${screenSizes.laptop}) {
     padding: 4em;
   }
 
-  @media screen and (max-width: ${screenSizes.tablet}) {
+  @media (max-width: ${screenSizes.tablet}) {
   }
 
-  @media screen and (max-width: ${screenSizes.mobileL}) {
+  @media (max-width: ${screenSizes.mobileL}) {
     padding: 2em;
   }
 `
@@ -121,7 +121,7 @@ export const Member = styled.div`
     gap: 1em;
   }
 
-  @media screen and (max-width: ${screenSizes.tablet}) {
+  @media (max-width: ${screenSizes.tablet}) {
     flex-direction: column;
     justify-content: center;
     gap: 1em;
@@ -137,7 +137,7 @@ export const Member = styled.div`
     }
   }
 
-  @media screen and (max-width: ${screenSizes.mobileL}) {
+  @media (max-width: ${screenSizes.mobileL}) {
     flex-direction: column;
     gap: 1em;
   }
@@ -156,7 +156,7 @@ export const MemberReverse = styled(Member)`
     align-items: flex-end;
   }
 
-    @media screen and (max-width: ${screenSizes.tablet}) {
+    @media (max-width: ${screenSizes.tablet}) {
     flex-direction: column;
     justify-content: center;
     gap: 1em;
@@ -172,7 +172,7 @@ export const MemberReverse = styled(Member)`
     }
   }
 
-  @media screen and (max-width: ${screenSizes.mobileL}) {
+  @media (max-width: ${screenSizes.mobileL}) {
     flex-direction: column;
     gap: 1em;
     text-align: justify;

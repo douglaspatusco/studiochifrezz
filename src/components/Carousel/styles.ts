@@ -8,15 +8,15 @@ export const CarouselContainer = styled.div`
   max-width: 1360px;
   overflow: hidden;
 
-  @media screen and (max-width: ${screenSizes.desktopL}) {
+  @media (max-width: ${screenSizes.desktopL}) {
     max-width: 900px;
   }
 
-  @media screen and (max-width: ${screenSizes.laptop}) {
+  @media (max-width: ${screenSizes.laptop}) {
     max-width: 640px;
   }
 
-  @media screen and (max-width: ${screenSizes.mobileL}) {
+  @media (max-width: ${screenSizes.mobileL}) {
     max-width: 100%;
   }
 `
@@ -30,12 +30,12 @@ export const CarouselTrack = styled(motion.div)`
     cursor: grabbing;
   }
 
-  @media screen and (max-width: ${screenSizes.mobileL}) {
+  @media (max-width: ${screenSizes.mobileL}) {
     padding: 0 7em;
   }
 
 
-  @media screen and (max-width: ${screenSizes.mobileS}) {
+  @media (max-width: ${screenSizes.mobileS}) {
     padding: 0 3.5em;
   }
 `
@@ -48,7 +48,7 @@ export const ImageWrapper = styled(motion.div)`
   overflow: hidden;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 
-  @media screen and (max-width: ${screenSizes.laptop}) {
+  @media (max-width: ${screenSizes.laptop}) {
     width: 203px;
     height: 160px;
   }

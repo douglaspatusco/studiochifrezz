@@ -15,7 +15,7 @@ export const Footer = styled.footer`
     font-size: 14px;
   }
 
-  @media screen and (max-width: ${screenSizes.mobileL}) {
+  @media (max-width: ${screenSizes.mobileL}) {
     img {
       width: 5em;
       height: 5em;
@@ -27,7 +27,7 @@ export const Footer = styled.footer`
     }
   }
 
-  @media screen and (max-width: ${screenSizes.mobileS}) {
+  @media (max-width: ${screenSizes.mobileS}) {
     p {
       width: 190px;
     }

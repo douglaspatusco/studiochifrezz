@@ -89,7 +89,7 @@ export const ArrowButton = styled.button`
     }
   }
 
-  @media screen and (max-width: ${screenSizes.laptop}) {
+  @media (max-width: ${screenSizes.laptop}) {
     &.left {
       left: -64px;
     }
@@ -99,7 +99,7 @@ export const ArrowButton = styled.button`
     }
   }
 
-  @media screen and (max-width: ${screenSizes.tablet}) {
+  @media (max-width: ${screenSizes.tablet}) {
     &.left {
       left: -52px;
     }
@@ -109,7 +109,7 @@ export const ArrowButton = styled.button`
     }
   }
 
-  @media screen and (max-width: ${screenSizes.mobileL}) {
+  @media (max-width: ${screenSizes.mobileL}) {
     &.left {
       left: 0px;
     }
