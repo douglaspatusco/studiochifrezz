@@ -6,6 +6,7 @@ export const NewsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 2em;
 
   h1 {
     margin-bottom: 1em;
