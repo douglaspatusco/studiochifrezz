@@ -17,11 +17,14 @@ This project is a website that presents information about the studio, its projec
 ├── public
 │   ├── /fonts
 │   ├── /images
+│   ├── /locales
 │   └── /videos
 ├── src
 │   ├── /components
+│   ├── /data
 │   ├── /hooks
 │   ├── /pages
+│   ├── /services
 │   ├── /styles
 │   └── /types
 ├── package.json
@@ -30,21 +33,12 @@ This project is a website that presents information about the studio, its projec
 
 ### Website features
 
+- Button to switch languages
 - Home page with news involving the studio at the bottom.
 - List of the studio's projects and dedicated pages for each animation showing more details.
 - Presentation page of the people involved in the studio.
 - Quick contact page where the studio receives the user's message directly via email.
 
-## Installation
-
-In the terminal, clone the project, install and run:
-
-```sh
-git clone git@github.com:eyelexx/studiochifrezz.git
-cd studiochifrezz
-npm i
-npm run dev
-```
 
 ## License
 
