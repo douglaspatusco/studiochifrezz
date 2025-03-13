@@ -45,7 +45,7 @@ const SwitchLanguage = ({ className}: { className?: string}) => {
       if (cachedData) {
         setTranslations(JSON.parse(cachedData))
       } else {
-        const response = await fetch(`/locales/${locale}.json`)
+        const response = await fetch(`/locales/${locale}/common.json`)
         const data = await response.json()
         localStorage.setItem(`translations_${locale}`, JSON.stringify(data))
         setTranslations(data)

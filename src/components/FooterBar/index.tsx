@@ -25,6 +25,9 @@ const FooterBar = () => {
       </Link>
       <SocialMedias />
       <p>Copyright &copy; {currentYear} - {t('copy')} Studio Chifrezz</p>
+      <Link href={'https://linkedin.com/in/doug-eduardo'} target='_blank'>
+        <p>{t('developed')} Douglas Eduardo</p>
+      </Link>
     </Footer>
   )
 }
