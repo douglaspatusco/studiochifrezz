@@ -8,7 +8,7 @@ export const CarouselContainer = styled.div`
   max-width: 1360px;
   overflow: hidden;
 
-  @media (max-width: ${screenSizes.desktopL}) {
+  @media (max-width: ${screenSizes.desktop}) {
     max-width: 896px;
   }
 

@@ -7,7 +7,7 @@ export const AboutContainer = styled.div`
   align-items: center;
   justify-content: space-evenly;
 
-  @media (max-width: ${screenSizes.desktopL}) {
+  @media (max-width: ${screenSizes.desktop}) {
     gap: 4em;
   }
 `

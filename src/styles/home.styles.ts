@@ -5,6 +5,7 @@ export const Content = styled.main`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
   padding-top: 20vh;
   background-color: ${colors.branco};
 `
@@ -26,6 +27,10 @@ export const ContainerContent = styled.div`
     margin-top: 28em;
   }
 
+  @media (max-width: 2250px) {
+    margin-top: 40em;
+  }
+
   @media (max-width: ${screenSizes.desktop}) {
     margin-top: 25em;
   }
@@ -34,7 +39,7 @@ export const ContainerContent = styled.div`
     margin-top: 20em;
   }
 
-  @media (min-width: ${screenSizes.desktop}) and (max-width: ${screenSizes.desktopL}) {
+  @media (min-width: ${screenSizes.desktop}) and (max-width: ${screenSizes.desktop}) {
     margin-top: 26em;
   }
 

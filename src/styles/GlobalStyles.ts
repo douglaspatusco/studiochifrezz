@@ -18,8 +18,10 @@ export const screenSizes = {
   mobileL: '425px',
   tablet: '768px',
   laptop: '1024px',
-  desktop: '1280px',
-  desktopL: '1440px',
+  laptopL: '1280px',
+  /* Telas extra grandes (Monitores 4K, Ultra-wide) */
+  desktop: '1440px',
+  desktopG: '1920px',
   ultrawide: '2560px',
   ultrawidePlus: '3200px'
 }
@@ -34,7 +36,7 @@ const GlobalStyles = createGlobalStyle`
 
   @font-face {
     font-family: 'Austral Slab';
-    src: url('/fonts/austral_slab/Austral-Slab_Blur-Regular.otf'), format('truetype');
+    src: url('/fonts/austral_slab/Austral-Slab_Blur-Regular.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
