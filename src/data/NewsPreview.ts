@@ -11,7 +11,7 @@ export const mockNewsPreview: newsPreview[] = [
     released: "Mar, 2025",
     tag: "#quartzzo",
     image: "https://radixanimacion.com/wp-content/uploads/2025/03/Quartzzo-Lena-Franzz-Studio-Chifrezz-Brasil-main.jpg",
-    description: "Vistazo y detalles de Quartzzo, segundo cortometraje de Studio Chifrezz",
+    description: "Studio Chifrezz ha cosechado numerosas alegrías con su cortometraje Hornzz y con su proyecto de serie Kale do Museu Assustador. Ahora el estudio brasileño se dice listo para un nuevo reto tras la presentación oficial de su segundo cortometraje, Quartzzo, bajo la dirección de Lena Franzz.",
     url: "https://radixanimacion.com/noticias/quartzzo-vistazo-detalles/"
   },
   {
