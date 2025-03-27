@@ -24,7 +24,7 @@ export const ContainerContent = styled.div`
   }
 
   @media (max-width: ${screenSizes.ultrawide}) {
-    margin-top: 28em;
+    margin-top: 40em;
   }
 
   @media (max-width: 2250px) {
