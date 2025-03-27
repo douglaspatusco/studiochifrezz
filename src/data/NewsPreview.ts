@@ -7,10 +7,17 @@ interface newsPreview {
 }
 
 export const mockNewsPreview: newsPreview[] = [
+    {
+    released: "Mar, 2025",
+    tag: "#quartzzo",
+    image: "https://radixanimacion.com/wp-content/uploads/2025/03/Quartzzo-Lena-Franzz-Studio-Chifrezz-Brasil-main.jpg",
+    description: "Vistazo y detalles de Quartzzo, segundo cortometraje de Studio Chifrezz",
+    url: "https://radixanimacion.com/noticias/quartzzo-vistazo-detalles/"
+  },
   {
     released: "Mar, 2023",
     tag: "#kale",
-    image: "https://instagram.fsdu38-1.fna.fbcdn.net/v/t51.29350-15/336502550_873980390329178_4112416727533538858_n.jpg?stp=dst-jpg_e15_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMDgweDEwODAuc2RyLmYyOTM1MC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=instagram.fsdu38-1.fna.fbcdn.net&_nc_cat=102&_nc_oc=Q6cZ2AHuC9Bis_DuSLPU-tW2kylD7AT3nOgKQ5FLPGK8I-mkQlYU1c3DFpPDY3cyUo33lKo&_nc_ohc=qjo_E1kltxgQ7kNvgGgLRGW&_nc_gid=6ea76a7112404ebca501b62230de1dfc&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzA2MDUyNTA2MzUzNTY0Mzg4Mg%3D%3D.3-ccb7-5&oh=00_AYCltH63Nx6-KidnQUJb3x_TTPSjfDkLPbqf5SDU-8bDPg&oe=67C6C7F4&_nc_sid=10d13b",
+    image: "https://instagram.fsdu38-1.fna.fbcdn.net/v/t51.29350-15/336502550_873980390329178_4112416727533538858_n.jpg?stp=dst-jpg_e15_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjEwODB4MTA4MC5zZHIuZjI5MzUwLmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsdu38-1.fna.fbcdn.net&_nc_cat=102&_nc_oc=Q6cZ2QFlUfkMtQwZGIfvDLW-lRHlEIcPkhsvzkaF3xclCw-bQCYsBK_-W9JFtAQQXOW2pngUrtGgbawIfsW751BkUdcm&_nc_ohc=KzVcNB9nI0IQ7kNvgHo_mub&_nc_gid=XWAtAp6zTlEsxWHD6Gx-pQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzA2MDUyNTA2MzUzNTY0Mzg4Mg%3D%3D.3-ccb7-5&oh=00_AYGWTH_g1Q2Czn8cZVfo4CS8NvXqqWTrTbWDVsm4skHmtg&oe=67EB0934&_nc_sid=10d13b",
     description: "El comité de especialistas seleccionó a uno de los proyectos para participar en el programa especial La Liga de la Animación Iberoamericana in Focus @MIFA 2023 en el Festival Internacional de Cine de Animación de Annecy ¡Felicitaciones KALE'S MUSEUM OF SPOOKINESS! (Studio Chifrezz LTDA) @franzz_art @studiochifrezz",
     url: "https://www.instagram.com/p/Cp5K1R2OMzq/"
   },
