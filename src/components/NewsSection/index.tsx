@@ -73,7 +73,7 @@ const NewsSection: React.FC = () => {
                       <NewsDate>{news.released}</NewsDate>
                       <NewsTag>{news.tag}</NewsTag>
                     </NewsHeader>
-                    <NewsTitle>{title}</NewsTitle>
+                    <NewsTitle>{news.title}</NewsTitle>
                     <NewsDescription>{news.description}</NewsDescription>
                   </div>
                   <NewsLink href={news.url} target="_blank" rel="noopener noreferrer">
