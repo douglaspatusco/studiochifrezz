@@ -7,6 +7,7 @@ export const NewsContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 2em;
+  max-width: 100vw;
 
   h1 {
     margin-bottom: 1em;
@@ -19,7 +20,6 @@ export const NewsCards = styled.div`
   gap: 1em;
   justify-content: center;
   align-items: center;
-  max-width: 1600px;
   width: 100%;
 `
 

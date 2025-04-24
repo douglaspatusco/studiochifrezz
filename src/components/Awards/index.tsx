@@ -14,7 +14,7 @@ interface CarouselInfiniteProps {
 const Awards: React.FC<CarouselInfiniteProps> = ({ images }) => {
   const { t } = useTranslation('common')
 
-  const { x, extendedImages, handleMouseEnter, handleMouseLeave } =
+  const { x, extendedImages, isTransitioning, handleMouseEnter, handleMouseLeave } =
     useCarouselInfinite(images)
 
   return (
@@ -25,6 +25,7 @@ const Awards: React.FC<CarouselInfiniteProps> = ({ images }) => {
         $x={x}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        $isTransitioning={isTransitioning}
       >
         {extendedImages.map((image, index) => (
           <img

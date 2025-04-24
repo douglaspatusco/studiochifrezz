@@ -6,7 +6,7 @@ export const WWDContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 2em;
-  width: 100%;
+  width: 100vw;
 
   background-color: ${colors.roxoQuaseBranco};
   padding: 8em 2em;
@@ -49,6 +49,10 @@ export const ListItem = styled.li`
 
   p {
     text-align: left;
+
+    @media (max-width: ${screenSizes.mobileL}) {
+      font-size: 0.8em;
+    }
   }
 `
 

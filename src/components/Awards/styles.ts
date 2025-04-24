@@ -25,16 +25,16 @@ export const CarouselContainer = styled.div`
 
   @media (max-width: ${screenSizes.mobileL}) {
     p {
-      width: 100%;
+      width: 100vw;
     }
   }
 `
-export const CarouselTrack = styled(motion.div)<{ $x: number }>`
+export const CarouselTrack = styled(motion.div)<{ $x: number; $isTransitioning: boolean }>`
   display: flex;
   gap: 1em;
 
   transform: ${({ $x }) => `translateX(${$x}px)`};
-  transition: transform 5s linear;
+  transition: ${({ $isTransitioning }) => $isTransitioning ? 'transform 5s linear' : 'none'};
 
   img {
     width: 14em;

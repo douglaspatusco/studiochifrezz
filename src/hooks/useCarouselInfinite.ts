@@ -15,22 +15,25 @@ const useCarouselInfinite = (images: { src: string; eventName: string }[]) => {
 
   // Função para avançar para a próxima imagem automaticamente
   const handleNext = useCallback(() => {
-    setX((prev) => {
-      const nextX = prev - 228 // Move o carrossel para a esquerda
+  setX((prev) => {
+    const nextX = prev - 228
 
-      if (Math.abs(nextX) >= transitionWidth) {
-        setTimeout(() => {
-          setIsTransitioning(false) // Remove a transição para resetar sem efeito visível
-          setX(-totalWidth) // Reposiciona no meio da lista
-        }, 100) // Pequeno delay para garantir que o usuário não perceba
+    if (Math.abs(nextX) >= transitionWidth) {
+      setIsTransitioning(true) // mantém a transição para o último passo visível
 
-        return nextX
-      }
+      // Após o último item visível, fazemos o salto sem transição
+      setTimeout(() => {
+        setIsTransitioning(false) // desativa transição
+        setX(-totalWidth) // reseta a posição pro meio
+      }, 500) // tempo ligeiramente menor que o intervalo de 5s (igual à duração da transição de 5s)
 
-      setIsTransitioning(true) // Mantém a transição ativa normalmente
       return nextX
-    })
-  }, [totalWidth, transitionWidth])
+    }
+
+    setIsTransitioning(true)
+    return nextX
+  })
+}, [totalWidth, transitionWidth])
 
   // Efeito para o autoplay do carrossel
   useEffect(() => {
